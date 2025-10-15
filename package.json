@@ -1,0 +1,24 @@
+{
+  "name": "verba-en",
+  "version": "1.0.0",
+  "description": "Telegram Mini App for reading and studying from PDF books",
+  "main": "src/bot.js",
+  "scripts": {
+    "start": "node src/bot.js",
+    "dev": "node src/bot.js"
+  },
+  "keywords": [
+    "telegram",
+    "mini-app",
+    "pdf",
+    "learning",
+    "vocabulary"
+  ],
+  "author": "Nick",
+  "license": "MIT",
+  "dependencies": {
+    "node-telegram-bot-api": "^0.64.0",
+    "pdf-parse": "^1.1.1",
+    "express": "^4.18.2"
+  }
+}
