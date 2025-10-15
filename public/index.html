@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Verba-EN - Book Reader</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <header class="app-header">
+            <h1>📚 Verba-EN</h1>
+            <p class="subtitle">Your English Learning Companion</p>
+        </header>
+
+        <main class="main-content">
+            <!-- Book Info Section -->
+            <section id="book-info" class="card">
+                <h2>📖 Current Book</h2>
+                <div id="book-details">
+                    <p class="info-text">Loading book information...</p>
+                </div>
+            </section>
+
+            <!-- Reading Progress -->
+            <section id="progress-section" class="card">
+                <h2>📊 Your Progress</h2>
+                <div class="progress-bar">
+                    <div id="progress-fill" class="progress-fill"></div>
+                </div>
+                <p id="progress-text" class="progress-text">0% completed</p>
+            </section>
+
+            <!-- Book Content -->
+            <section id="content-section" class="card">
+                <div class="navigation-buttons">
+                    <button id="prev-page" class="nav-button" disabled>← Previous</button>
+                    <span id="page-info" class="page-info">Page 1</span>
+                    <button id="next-page" class="nav-button">Next →</button>
+                </div>
+                
+                <div id="book-content" class="book-content">
+                    <p>Welcome to Verba-EN! Your book content will appear here.</p>
+                    <p>Upload a PDF book to the repository to get started.</p>
+                </div>
+
+                <div class="navigation-buttons">
+                    <button id="prev-page-bottom" class="nav-button" disabled>← Previous</button>
+                    <button id="next-page-bottom" class="nav-button">Next →</button>
+                </div>
+            </section>
+
+            <!-- Bookmarks Section -->
+            <section id="bookmarks-section" class="card">
+                <h2>🔖 Bookmarks</h2>
+                <button id="add-bookmark" class="action-button">Add Bookmark</button>
+                <div id="bookmarks-list" class="bookmarks-list">
+                    <p class="info-text">No bookmarks yet</p>
+                </div>
+            </section>
+
+            <!-- Vocabulary Section -->
+            <section id="vocabulary-section" class="card">
+                <h2>📝 Vocabulary Notes</h2>
+                <div class="vocab-input-group">
+                    <input type="text" id="vocab-word" placeholder="Word" class="input-field">
+                    <input type="text" id="vocab-definition" placeholder="Definition/Translation" class="input-field">
+                    <button id="add-vocab" class="action-button">Add Word</button>
+                </div>
+                <div id="vocab-list" class="vocab-list">
+                    <p class="info-text">No vocabulary notes yet</p>
+                </div>
+            </section>
+        </main>
+
+        <footer class="app-footer">
+            <p>Made with ❤️ for language learners</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
