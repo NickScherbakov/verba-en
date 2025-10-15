@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level 2 - EGE English Quest</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/level.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <nav class="level-nav">
+            <a href="../index.html" class="back-button">← Back to Levels</a>
+            <div class="level-info">
+                <h2>Variant 2</h2>
+                <div class="level-progress">
+                    <span id="questionProgress">Question 1 of 10</span>
+                </div>
+            </div>
+            <div class="level-score">
+                Score: <span id="currentScore">0</span>/<span id="maxScore">100</span>
+            </div>
+        </nav>
+
+        <!-- Quiz Container -->
+        <div class="quiz-container" id="quizContainer">
+            <!-- Questions will be loaded here -->
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="quiz-navigation">
+            <button id="prevBtn" class="nav-btn" style="visibility: hidden;">Previous</button>
+            <button id="nextBtn" class="nav-btn primary">Next</button>
+            <button id="submitBtn" class="nav-btn success" style="display: none;">Submit & Finish</button>
+        </div>
+    </div>
+
+    <script src="../js/storage.js"></script>
+    <script src="../js/quiz.js"></script>
+</body>
+</html>
