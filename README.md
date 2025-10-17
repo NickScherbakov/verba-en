@@ -8,6 +8,10 @@ A Telegram Mini App for reading and studying from PDF books. Perfect for languag
 - 📊 **Progress Tracking** - Automatically track your reading progress
 - 🔖 **Bookmarks** - Save important pages with notes
 - 📝 **Vocabulary Notes** - Build your personal vocabulary list
+- 🤖 **AI Word Definitions** - Get instant definitions and examples with AI
+- ✨ **AI Text Summarization** - Summarize pages and chapters automatically
+- ✓ **AI Grammar Checking** - Check your notes for grammar errors
+- 💬 **AI Chatbot** - Practice English conversation with an AI tutor
 - 🎨 **Telegram Theme Integration** - Automatically matches your Telegram theme
 - 💾 **Auto-Save** - Your progress is saved automatically
 
@@ -36,20 +40,26 @@ A Telegram Mini App for reading and studying from PDF books. Perfect for languag
    - Place your PDF file in the `/books` directory
    - The app will automatically process the first PDF it finds
 
-4. **Configure your Telegram Bot**
-   - Create a bot using [@BotFather](https://t.me/botfather)
-   - Get your bot token
-   - Set up environment variables:
+4. **Configure environment variables**
+   - Copy `.env.example` to `.env`
+   - Add your Telegram bot token
+   - (Optional) Add AI provider API keys for enhanced features
    ```bash
-   export BOT_TOKEN="your_bot_token_here"
-   export WEB_APP_URL="https://your-domain.com"
-   export PORT=3000
+   cp .env.example .env
+   # Edit .env with your configuration
    ```
 
-5. **Run the application**
+5. **Configure your Telegram Bot**
+   - Create a bot using [@BotFather](https://t.me/botfather)
+   - Get your bot token
+   - Update the `.env` file with your bot token and web app URL
+
+6. **Run the application**
    ```bash
    npm start
    ```
+
+For detailed AI features setup, see [AI_FEATURES.md](AI_FEATURES.md).
 
 ### Telegram Bot Setup
 
