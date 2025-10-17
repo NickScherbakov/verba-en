@@ -45,6 +45,15 @@
                     <p>Upload a PDF book to the repository to get started.</p>
                 </div>
 
+                <div class="ai-actions">
+                    <button id="summarize-page" class="ai-button">✨ Summarize Page</button>
+                </div>
+
+                <div id="summary-section" class="summary-section" style="display: none;">
+                    <h3>📝 Page Summary</h3>
+                    <div id="summary-content" class="summary-content"></div>
+                </div>
+
                 <div class="navigation-buttons">
                     <button id="prev-page-bottom" class="nav-button" disabled>← Previous</button>
                     <button id="next-page-bottom" class="nav-button">Next →</button>
@@ -65,11 +74,30 @@
                 <h2>📝 Vocabulary Notes</h2>
                 <div class="vocab-input-group">
                     <input type="text" id="vocab-word" placeholder="Word" class="input-field">
+                    <div class="button-group">
+                        <button id="get-definition" class="ai-button-small">🤖 Get Definition</button>
+                        <button id="check-grammar" class="ai-button-small">✓ Check Grammar</button>
+                    </div>
                     <input type="text" id="vocab-definition" placeholder="Definition/Translation" class="input-field">
                     <button id="add-vocab" class="action-button">Add Word</button>
                 </div>
+                <div id="grammar-feedback" class="grammar-feedback" style="display: none;"></div>
                 <div id="vocab-list" class="vocab-list">
                     <p class="info-text">No vocabulary notes yet</p>
+                </div>
+            </section>
+
+            <!-- AI Chatbot Section -->
+            <section id="chatbot-section" class="card">
+                <h2>💬 English Practice Chat</h2>
+                <div id="chat-messages" class="chat-messages">
+                    <div class="chat-message bot-message">
+                        <p>👋 Hello! I'm your AI English practice partner. Ask me anything about English grammar, vocabulary, or just practice conversation!</p>
+                    </div>
+                </div>
+                <div class="chat-input-group">
+                    <input type="text" id="chat-input" placeholder="Type your message..." class="input-field">
+                    <button id="send-chat" class="action-button">Send</button>
                 </div>
             </section>
         </main>
