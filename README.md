@@ -1,9 +1,12 @@
 # Verba-EN 📚
 
-A Telegram Mini App for reading and studying from PDF books. Perfect for language learners who want to read books, track progress, create bookmarks, and build vocabulary lists.
+A comprehensive English learning platform featuring a Telegram Mini App for PDF reading, an interactive quest website, and AI-powered learning tools. Perfect for language learners who want to read books, practice with quizzes, and enhance their learning with AI assistance.
+
+> **Note**: All project branches have been consolidated into `main`. See [BRANCH_CONSOLIDATION.md](BRANCH_CONSOLIDATION.md) for details.
 
 ## Features
 
+### Telegram Mini App
 - 📖 **PDF Book Reader** - Upload any PDF book and read it page by page
 - 📊 **Progress Tracking** - Automatically track your reading progress
 - 🔖 **Bookmarks** - Save important pages with notes
@@ -14,6 +17,13 @@ A Telegram Mini App for reading and studying from PDF books. Perfect for languag
 - 💬 **AI Chatbot** - Practice English conversation with an AI tutor
 - 🎨 **Telegram Theme Integration** - Automatically matches your Telegram theme
 - 💾 **Auto-Save** - Your progress is saved automatically
+
+### Quest Website
+- 🎯 **20 Interactive Levels** - EGE English exam preparation quizzes
+- 📝 **Multiple Question Types** - Reading, grammar, vocabulary, and listening tasks
+- 🏆 **Progress Tracking** - Track your completion and scores
+- 📱 **Responsive Design** - Works on all devices
+- 💾 **State Management** - Your progress is automatically saved
 
 ## Setup Instructions
 
@@ -100,10 +110,17 @@ git push heroku main
 
 ## Usage
 
+### Telegram Mini App
 1. Open your bot in Telegram
 2. Send `/start` command
 3. Click "Open Book Reader" button
 4. Start reading!
+
+### Quest Website
+1. Open `quest/index.html` in a web browser
+2. Or deploy to GitHub Pages / any web server
+3. Select a level to start practicing
+4. Complete all 20 levels for comprehensive EGE preparation
 
 ### Bot Commands
 
@@ -116,14 +133,24 @@ git push heroku main
 ```
 verba-en/
 ├── books/              # Place your PDF files here
-├── public/             # Frontend files
+├── public/             # Telegram Mini App frontend
 │   ├── index.html      # Main HTML file
 │   ├── styles.css      # Styling
-│   └── app.js          # Frontend logic
+│   └── app.js          # Frontend logic with AI features
+├── quest/              # Quest website
+│   ├── css/            # Quest styling
+│   ├── js/             # Quiz engine and logic
+│   ├── levels/         # 20 quiz level pages
+│   └── index.html      # Quest home page
 ├── src/                # Backend files
-│   └── bot.js          # Telegram bot and server
+│   └── bot.js          # Telegram bot and server with AI
+├── scripts/            # Utility scripts
 ├── package.json        # Dependencies
-└── README.md          # This file
+├── README.md           # This file
+├── AI_FEATURES.md      # AI features documentation
+├── DEPLOYMENT.md       # Deployment guide
+├── QUICKSTART.md       # Quick start guide
+└── BRANCH_CONSOLIDATION.md  # Branch merge documentation
 ```
 
 ## Development
