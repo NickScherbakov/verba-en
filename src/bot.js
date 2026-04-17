@@ -37,8 +37,11 @@ if (WEBHOOK_MODE) {
 
 // Webhook endpoint (only active when WEBHOOK_MODE=true)
 app.post('/webhook', (req, res) => {
-    if (TELEGRAM_BOT_SECRET && req.headers['x-telegram-bot-api-secret-token'] !== TELEGRAM_BOT_SECRET) {
-        return res.status(403).send('Forbidden');
+    // If a secret token is configured, every request must carry it
+    if (TELEGRAM_BOT_SECRET.length > 0) {
+        if (req.headers['x-telegram-bot-api-secret-token'] !== TELEGRAM_BOT_SECRET) {
+            return res.status(403).send('Forbidden');
+        }
     }
     if (bot) bot.processUpdate(req.body);
     res.sendStatus(200);
@@ -96,7 +99,29 @@ function requireInitData(req, res, next) {
     next();
 }
 
-app.use('/api/', requireInitData);
+// Simple in-memory rate limiter for /api/* routes (no external dependencies)
+const rateLimitStore = new Map();
+const RATE_LIMIT_WINDOW_MS = 60 * 1000; // 1 minute
+const RATE_LIMIT_MAX = 60; // max 60 requests per minute per IP
+
+function rateLimiter(req, res, next) {
+    const key = req.ip || 'unknown';
+    const now = Date.now();
+    const entry = rateLimitStore.get(key);
+
+    if (!entry || (now - entry.start) > RATE_LIMIT_WINDOW_MS) {
+        rateLimitStore.set(key, { start: now, count: 1 });
+        return next();
+    }
+    if (entry.count >= RATE_LIMIT_MAX) {
+        return res.status(429).json({ success: false, error: 'Too many requests. Please slow down.' });
+    }
+    entry.count++;
+    next();
+}
+
+app.use('/api', requireInitData);
+app.use('/api', rateLimiter);
 
 // ─── User progress store ──────────────────────────────────────────────────────
 // In-memory store with JSON file persistence (no native dependencies required).
@@ -590,7 +615,7 @@ app.listen(PORT, async () => {
         const webhookUrl = `${WEB_APP_URL}/webhook`;
         try {
             await bot.setWebHook(webhookUrl, {
-                secret_token: TELEGRAM_BOT_SECRET || undefined
+                secret_token: TELEGRAM_BOT_SECRET.length > 0 ? TELEGRAM_BOT_SECRET : undefined
             });
             console.log(`✅ Webhook set to: ${webhookUrl}`);
         } catch (e) {

@@ -265,7 +265,13 @@ function questRenderQuestion(index) {
         html += '</div>';
     } else if (question.type === 'fill-blank') {
         var val = questUserAnswers[index] || '';
-        var safeVal = val.replace(/"/g, '&quot;');
+        // Escape HTML entities in the value to prevent XSS in the innerHTML context
+        var safeVal = val
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#x27;');
         html += '<p class="sentence-with-blank">' +
             question.sentence.replace('_____',
                 '<input type="text" class="blank-input" id="q-blankInput" value="' + safeVal + '" />') +
