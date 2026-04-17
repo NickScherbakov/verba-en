@@ -1,4 +1,45 @@
 // Main application logic
+
+// Telegram WebApp façade — works whether opened inside Telegram or in a regular browser
+var tg = (window.Telegram && window.Telegram.WebApp) || {
+    expand: function () {},
+    ready: function () {},
+    showAlert: function (msg, cb) { alert(msg); if (cb) cb(); },
+    showPopup: function (opts, cb) {
+        var isDestructive = opts.buttons && opts.buttons.some(function (b) { return b.type === 'destructive'; });
+        var ok = isDestructive ? confirm(opts.message) : (alert(opts.message), true);
+        if (cb) {
+            var btn = ok && opts.buttons
+                ? opts.buttons.find(function (b) { return b.type !== 'cancel'; })
+                : null;
+            cb(btn ? btn.id : '');
+        }
+    },
+    themeParams: {},
+    BackButton: { show: function () {}, hide: function () {}, onClick: function () {}, offClick: function () {} },
+    HapticFeedback: { notificationOccurred: function () {}, impactOccurred: function () {} },
+    onEvent: function () {},
+    enableClosingConfirmation: function () {}
+};
+
+// Apply Telegram theme colors to quest CSS variables
+function applyQuestTheme() {
+    var p = tg.themeParams || {};
+    var root = document.documentElement;
+    if (p.bg_color) root.style.setProperty('--background', p.bg_color);
+    if (p.secondary_bg_color) root.style.setProperty('--surface', p.secondary_bg_color);
+    if (p.text_color) root.style.setProperty('--text-primary', p.text_color);
+    if (p.hint_color) {
+        root.style.setProperty('--text-muted', p.hint_color);
+        root.style.setProperty('--text-secondary', p.hint_color);
+    }
+    if (p.button_color) root.style.setProperty('--primary-color', p.button_color);
+}
+
+tg.expand();
+applyQuestTheme();
+tg.onEvent('themeChanged', applyQuestTheme);
+
 const storage = new ProgressStorage();
 
 // Level configuration
@@ -15,6 +56,7 @@ function init() {
     renderLevels();
     updateBadges();
     setupEventListeners();
+    tg.ready();
 }
 
 // Update header statistics
@@ -86,11 +128,11 @@ function createLevelCard(level) {
 // Start a level
 function startLevel(levelId) {
     if (!storage.isLevelUnlocked(levelId)) {
-        alert('This level is locked! Complete previous levels first.');
+        tg.showAlert('This level is locked! Complete previous levels first.');
         return;
     }
 
-    // Redirect to level page
+    // Navigate to the level page
     window.location.href = `levels/level-${levelId}.html`;
 }
 
@@ -120,10 +162,18 @@ function setupEventListeners() {
     // Reset progress button
     document.getElementById('resetProgress').addEventListener('click', (e) => {
         e.preventDefault();
-        if (confirm('Are you sure you want to reset all progress? This action cannot be undone.')) {
-            storage.reset();
-            location.reload();
-        }
+        tg.showPopup({
+            message: 'Reset all progress? This action cannot be undone.',
+            buttons: [
+                { id: 'confirm', type: 'destructive', text: 'Reset' },
+                { id: 'cancel', type: 'cancel' }
+            ]
+        }, (btnId) => {
+            if (btnId === 'confirm') {
+                storage.reset();
+                location.reload();
+            }
+        });
     });
 
     // View stats button
@@ -133,25 +183,29 @@ function setupEventListeners() {
     });
 }
 
-// Show statistics modal
+// Show statistics via Telegram popup
 function showStatistics() {
     const progress = storage.getProgress();
     if (!progress) return;
 
-    const stats = `
-📊 Your Statistics:
+    const avg = progress.completedLevels.length > 0
+        ? Math.round(progress.totalScore / progress.completedLevels.length)
+        : 0;
 
-Total Score: ${progress.totalScore} points
-Completed Levels: ${progress.completedLevels.length}/20
-Current Level: ${progress.currentLevel}
-Badges Earned: ${progress.badges.length}/4
+    const stats =
+        `📊 Your Statistics\n\n` +
+        `Total Score: ${progress.totalScore} pts\n` +
+        `Completed: ${progress.completedLevels.length}/20 levels\n` +
+        `Current Level: ${progress.currentLevel}\n` +
+        `Badges: ${progress.badges.length}/4\n` +
+        `Average Score: ${avg} pts/level\n\n` +
+        `${20 - progress.completedLevels.length} levels remaining!`;
 
-Average Score: ${progress.completedLevels.length > 0 ? Math.round(progress.totalScore / progress.completedLevels.length) : 0} points per level
-
-Keep going! ${20 - progress.completedLevels.length} levels remaining!
-    `;
-
-    alert(stats);
+    tg.showPopup({
+        title: 'Statistics',
+        message: stats,
+        buttons: [{ id: 'ok', type: 'close' }]
+    });
 }
 
 // Initialize when DOM is loaded

@@ -1,4 +1,40 @@
 // Quiz logic for level pages
+
+// Telegram WebApp façade — works whether opened inside Telegram or in a regular browser
+var tg = (window.Telegram && window.Telegram.WebApp) || {
+    expand: function () {},
+    ready: function () {},
+    showAlert: function (msg, cb) { alert(msg); if (cb) cb(); },
+    themeParams: {},
+    BackButton: { show: function () {}, hide: function () {}, onClick: function () {}, offClick: function () {} },
+    MainButton: {
+        setText: function () { return this; }, show: function () {}, hide: function () {},
+        onClick: function () {}, offClick: function () {},
+        showProgress: function () {}, hideProgress: function () {}, isVisible: false
+    },
+    HapticFeedback: { notificationOccurred: function () {}, impactOccurred: function () {} },
+    onEvent: function () {},
+    enableClosingConfirmation: function () {}
+};
+
+// Apply Telegram theme colors to quest CSS variables
+function applyLevelTheme() {
+    var p = tg.themeParams || {};
+    var root = document.documentElement;
+    if (p.bg_color) root.style.setProperty('--background', p.bg_color);
+    if (p.secondary_bg_color) root.style.setProperty('--surface', p.secondary_bg_color);
+    if (p.text_color) root.style.setProperty('--text-primary', p.text_color);
+    if (p.hint_color) {
+        root.style.setProperty('--text-muted', p.hint_color);
+        root.style.setProperty('--text-secondary', p.hint_color);
+    }
+    if (p.button_color) root.style.setProperty('--primary-color', p.button_color);
+}
+
+tg.expand();
+applyLevelTheme();
+tg.onEvent('themeChanged', applyLevelTheme);
+
 const storage = new ProgressStorage();
 let currentQuestionIndex = 0;
 let questions = [];
@@ -229,13 +265,10 @@ function selectAnswer(optionIndex) {
     
     // Update visual selection
     document.querySelectorAll('.answer-option').forEach((option, i) => {
-        if (i === optionIndex) {
-            option.classList.add('selected');
-        } else {
-            option.classList.remove('selected');
-        }
+        option.classList.toggle('selected', i === optionIndex);
     });
 
+    tg.HapticFeedback.impactOccurred('light');
     updateNavigationButtons();
 }
 
@@ -255,10 +288,8 @@ function updateNavigationButtons() {
     const nextBtn = document.getElementById('nextBtn');
     const submitBtn = document.getElementById('submitBtn');
 
-    // Previous button visibility
     prevBtn.style.visibility = currentQuestionIndex > 0 ? 'visible' : 'hidden';
 
-    // Next/Submit button logic
     const isLastQuestion = currentQuestionIndex === questions.length - 1;
     const hasAnswer = userAnswers[currentQuestionIndex] !== null;
 
@@ -270,6 +301,17 @@ function updateNavigationButtons() {
         nextBtn.style.display = 'block';
         submitBtn.style.display = 'none';
         nextBtn.disabled = !hasAnswer;
+    }
+
+    // Telegram MainButton mirrors the HTML Submit button on the last question
+    if (isLastQuestion && hasAnswer) {
+        tg.MainButton.setText('Submit & Finish');
+        tg.MainButton.offClick(submitQuiz);
+        tg.MainButton.onClick(submitQuiz);
+        tg.MainButton.show();
+    } else {
+        tg.MainButton.offClick(submitQuiz);
+        tg.MainButton.hide();
     }
 }
 
@@ -315,6 +357,17 @@ function submitQuiz() {
     // Save progress
     const levelId = getLevelId();
     storage.updateProgress(levelId, score);
+
+    // Haptic feedback based on percentage
+    const maxScore = questions.reduce((sum, q) => sum + q.points, 0);
+    const pct = maxScore > 0 ? (score / maxScore) * 100 : 0;
+    if (pct >= 75) tg.HapticFeedback.notificationOccurred('success');
+    else if (pct >= 50) tg.HapticFeedback.notificationOccurred('warning');
+    else tg.HapticFeedback.notificationOccurred('error');
+
+    tg.MainButton.offClick(submitQuiz);
+    tg.MainButton.hide();
+    tg.BackButton.hide();
 
     // Show results
     showResults();
@@ -373,9 +426,23 @@ function showResults() {
 
 // Setup event listeners
 document.addEventListener('DOMContentLoaded', () => {
+    tg.expand();
+
+    // BackButton navigates back to the levels page
+    tg.BackButton.offClick(goBackToLevels);
+    tg.BackButton.onClick(goBackToLevels);
+    tg.BackButton.show();
+
     initQuiz();
+    tg.ready();
 
     document.getElementById('prevBtn').addEventListener('click', previousQuestion);
     document.getElementById('nextBtn').addEventListener('click', nextQuestion);
     document.getElementById('submitBtn').addEventListener('click', submitQuiz);
 });
+
+function goBackToLevels() {
+    tg.BackButton.hide();
+    tg.MainButton.hide();
+    window.location.href = '../index.html';
+}
