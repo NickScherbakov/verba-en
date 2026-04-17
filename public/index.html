@@ -2,111 +2,177 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Verba-EN - Book Reader</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Verba-EN</title>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div id="app">
-        <header class="app-header">
-            <h1>📚 Verba-EN</h1>
-            <p class="subtitle">Your English Learning Companion</p>
-        </header>
 
-        <main class="main-content">
-            <!-- Book Info Section -->
-            <section id="book-info" class="card">
-                <h2>📖 Current Book</h2>
-                <div id="book-details">
-                    <p class="info-text">Loading book information...</p>
-                </div>
-            </section>
+        <!-- Mode tabs (hidden during quiz level) -->
+        <div class="mode-tabs" id="mode-tabs">
+            <button class="mode-tab active" id="tab-reader">📚 Reader</button>
+            <button class="mode-tab" id="tab-quest">🎯 Quest</button>
+        </div>
 
-            <!-- Reading Progress -->
-            <section id="progress-section" class="card">
-                <h2>📊 Your Progress</h2>
-                <div class="progress-bar">
-                    <div id="progress-fill" class="progress-fill"></div>
-                </div>
-                <p id="progress-text" class="progress-text">0% completed</p>
-            </section>
+        <!-- ── Reader Screen ─────────────────────────────────────────── -->
+        <div id="screen-reader" class="screen active">
+            <header class="app-header">
+                <h1>📚 Verba-EN</h1>
+                <p class="subtitle" id="user-greeting">Your English Learning Companion</p>
+            </header>
 
-            <!-- Book Content -->
-            <section id="content-section" class="card">
-                <div class="navigation-buttons">
-                    <button id="prev-page" class="nav-button" disabled>← Previous</button>
-                    <span id="page-info" class="page-info">Page 1</span>
-                    <button id="next-page" class="nav-button">Next →</button>
-                </div>
-                
-                <div id="book-content" class="book-content">
-                    <p>Welcome to Verba-EN! Your book content will appear here.</p>
-                    <p>Upload a PDF book to the repository to get started.</p>
-                </div>
-
-                <div class="ai-actions">
-                    <button id="summarize-page" class="ai-button">✨ Summarize Page</button>
-                </div>
-
-                <div id="summary-section" class="summary-section" style="display: none;">
-                    <h3>📝 Page Summary</h3>
-                    <div id="summary-content" class="summary-content"></div>
-                </div>
-
-                <div class="navigation-buttons">
-                    <button id="prev-page-bottom" class="nav-button" disabled>← Previous</button>
-                    <button id="next-page-bottom" class="nav-button">Next →</button>
-                </div>
-            </section>
-
-            <!-- Bookmarks Section -->
-            <section id="bookmarks-section" class="card">
-                <h2>🔖 Bookmarks</h2>
-                <button id="add-bookmark" class="action-button">Add Bookmark</button>
-                <div id="bookmarks-list" class="bookmarks-list">
-                    <p class="info-text">No bookmarks yet</p>
-                </div>
-            </section>
-
-            <!-- Vocabulary Section -->
-            <section id="vocabulary-section" class="card">
-                <h2>📝 Vocabulary Notes</h2>
-                <div class="vocab-input-group">
-                    <input type="text" id="vocab-word" placeholder="Word" class="input-field">
-                    <div class="button-group">
-                        <button id="get-definition" class="ai-button-small">🤖 Get Definition</button>
-                        <button id="check-grammar" class="ai-button-small">✓ Check Grammar</button>
+            <main class="main-content">
+                <!-- Book Info Section -->
+                <section id="book-info" class="card">
+                    <h2>📖 Current Book</h2>
+                    <div id="book-details">
+                        <p class="info-text">Loading book information...</p>
                     </div>
-                    <input type="text" id="vocab-definition" placeholder="Definition/Translation" class="input-field">
-                    <button id="add-vocab" class="action-button">Add Word</button>
-                </div>
-                <div id="grammar-feedback" class="grammar-feedback" style="display: none;"></div>
-                <div id="vocab-list" class="vocab-list">
-                    <p class="info-text">No vocabulary notes yet</p>
-                </div>
-            </section>
+                </section>
 
-            <!-- AI Chatbot Section -->
-            <section id="chatbot-section" class="card">
-                <h2>💬 English Practice Chat</h2>
-                <div id="chat-messages" class="chat-messages">
-                    <div class="chat-message bot-message">
-                        <p>👋 Hello! I'm your AI English practice partner. Ask me anything about English grammar, vocabulary, or just practice conversation!</p>
+                <!-- Reading Progress -->
+                <section id="progress-section" class="card">
+                    <h2>📊 Your Progress</h2>
+                    <div class="progress-bar">
+                        <div id="progress-fill" class="progress-fill"></div>
                     </div>
-                </div>
-                <div class="chat-input-group">
-                    <input type="text" id="chat-input" placeholder="Type your message..." class="input-field">
-                    <button id="send-chat" class="action-button">Send</button>
-                </div>
-            </section>
-        </main>
+                    <p id="progress-text" class="progress-text">0% completed</p>
+                </section>
 
-        <footer class="app-footer">
-            <p>Made with ❤️ for language learners</p>
-        </footer>
-    </div>
+                <!-- Book Content -->
+                <section id="content-section" class="card">
+                    <div class="navigation-buttons">
+                        <button id="prev-page" class="nav-button" disabled>← Previous</button>
+                        <span id="page-info" class="page-info">Page 1</span>
+                        <button id="next-page" class="nav-button">Next →</button>
+                    </div>
 
+                    <div id="book-content" class="book-content">
+                        <p>Welcome to Verba-EN! Your book content will appear here.</p>
+                        <p>Upload a PDF book to the repository to get started.</p>
+                    </div>
+
+                    <div class="ai-actions">
+                        <button id="summarize-page" class="ai-button">✨ Summarize Page</button>
+                    </div>
+
+                    <div id="summary-section" class="summary-section" style="display: none;">
+                        <h3>📝 Page Summary</h3>
+                        <div id="summary-content" class="summary-content"></div>
+                    </div>
+
+                    <div class="navigation-buttons">
+                        <button id="prev-page-bottom" class="nav-button" disabled>← Previous</button>
+                        <button id="next-page-bottom" class="nav-button">Next →</button>
+                    </div>
+                </section>
+
+                <!-- Bookmarks Section -->
+                <section id="bookmarks-section" class="card">
+                    <h2>🔖 Bookmarks</h2>
+                    <button id="add-bookmark" class="action-button">Add Bookmark</button>
+                    <div id="bookmarks-list" class="bookmarks-list">
+                        <p class="info-text">No bookmarks yet</p>
+                    </div>
+                </section>
+
+                <!-- Vocabulary Section -->
+                <section id="vocabulary-section" class="card">
+                    <h2>📝 Vocabulary Notes</h2>
+                    <div class="vocab-input-group">
+                        <input type="text" id="vocab-word" placeholder="Word" class="input-field">
+                        <div class="button-group">
+                            <button id="get-definition" class="ai-button-small">🤖 Get Definition</button>
+                            <button id="check-grammar" class="ai-button-small">✓ Check Grammar</button>
+                        </div>
+                        <input type="text" id="vocab-definition" placeholder="Definition/Translation" class="input-field">
+                        <button id="add-vocab" class="action-button">Add Word</button>
+                    </div>
+                    <div id="grammar-feedback" class="grammar-feedback" style="display: none;"></div>
+                    <div id="vocab-list" class="vocab-list">
+                        <p class="info-text">No vocabulary notes yet</p>
+                    </div>
+                </section>
+
+                <!-- AI Chatbot Section -->
+                <section id="chatbot-section" class="card">
+                    <h2>💬 English Practice Chat</h2>
+                    <div id="chat-messages" class="chat-messages">
+                        <div class="chat-message bot-message">
+                            <p>👋 Hello! I'm your AI English practice partner. Ask me anything about English grammar, vocabulary, or just practice conversation!</p>
+                        </div>
+                    </div>
+                    <div class="chat-input-group">
+                        <input type="text" id="chat-input" placeholder="Type your message..." class="input-field">
+                        <button id="send-chat" class="action-button">Send</button>
+                    </div>
+                </section>
+            </main>
+
+            <footer class="app-footer">
+                <p>Made with ❤️ for language learners</p>
+            </footer>
+        </div><!-- /screen-reader -->
+
+        <!-- ── Quest Home Screen ──────────────────────────────────────── -->
+        <div id="screen-quest" class="screen">
+            <header class="app-header">
+                <h1>🎯 EGE English Quest</h1>
+                <p class="subtitle">20 Practice Variants</p>
+            </header>
+
+            <div class="quest-stats-bar">
+                <div class="quest-stat">
+                    <span class="quest-stat-label">Score</span>
+                    <span class="quest-stat-value" id="q-totalScore">0</span>
+                </div>
+                <div class="quest-stat">
+                    <span class="quest-stat-label">Level</span>
+                    <span class="quest-stat-value" id="q-currentLevel">1</span>
+                </div>
+                <div class="quest-stat">
+                    <span class="quest-stat-label">Done</span>
+                    <span class="quest-stat-value"><span id="q-completedLevels">0</span>/20</span>
+                </div>
+            </div>
+
+            <div class="progress-bar" style="margin: 0 15px 12px;">
+                <div class="progress-fill" id="q-progressBar" style="width: 0%"></div>
+            </div>
+
+            <div class="levels-grid" id="q-levelsGrid"></div>
+
+            <div style="padding: 10px 15px 20px;">
+                <button class="action-button" id="q-resetProgress">🔄 Reset Progress</button>
+            </div>
+        </div><!-- /screen-quest -->
+
+        <!-- ── Quest Level Screen ─────────────────────────────────────── -->
+        <div id="screen-quest-level" class="screen">
+            <div class="level-nav-bar">
+                <h2 id="q-levelTitle" class="level-title">Variant 1</h2>
+                <div class="level-score-info">
+                    <span id="q-questionProgress">Question 1 of 10</span>
+                    &nbsp;·&nbsp;
+                    Score: <span id="q-currentScore">0</span>/<span id="q-maxScore">100</span>
+                </div>
+            </div>
+
+            <div id="q-quizContainer" class="quiz-container"></div>
+
+            <div class="quiz-navigation" id="q-navigation">
+                <button id="q-prevBtn" class="nav-btn" style="visibility: hidden;">Previous</button>
+                <button id="q-nextBtn" class="nav-btn primary">Next</button>
+                <button id="q-submitBtn" class="nav-btn success" style="display: none;">Submit &amp; Finish</button>
+            </div>
+        </div><!-- /screen-quest-level -->
+
+    </div><!-- /app -->
+
+    <script src="js/levels-data.js"></script>
+    <script src="js/quest.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
