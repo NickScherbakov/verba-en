@@ -1,0 +1,11 @@
+services:
+  verba-en:
+    build: .
+    container_name: verba-en
+    env_file:
+      - .env
+    ports:
+      - "${PORT:-3000}:3000"
+    volumes:
+      - ./books:/usr/src/app/books
+    restart: unless-stopped

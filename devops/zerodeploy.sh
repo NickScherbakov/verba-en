@@ -21,7 +21,7 @@ AI_PROVIDER="${AI_PROVIDER:-mock}"
 OPENAI_API_KEY="${OPENAI_API_KEY:-}"
 NODE_ENV="${NODE_ENV:-production}"
 
-echo "[1/7] Updating APT cache and installing prerequisites..."
+echo "[1/6] Updating APT cache and installing prerequisites..."
 apt-get update -y
 apt-get upgrade -y
 apt-get install -y --no-install-recommends docker.io docker-compose-plugin git ca-certificates curl
@@ -34,13 +34,13 @@ if [ -z "$TARGET_USER" ] || [ "$TARGET_USER" = "root" ]; then
 fi
 
 if id "$TARGET_USER" &>/dev/null && [ "$TARGET_USER" != "root" ]; then
-  echo "[2/7] Adding $TARGET_USER to docker group (effective after re-login)..."
+  echo "[2/6] Adding $TARGET_USER to docker group (effective after re-login)..."
   usermod -aG docker "$TARGET_USER"
 else
-  echo "[2/7] Skipping docker group modification for root user."
+  echo "[2/6] Skipping docker group modification for root user."
 fi
 
-echo "[3/7] Cloning or updating repository in $REPO_DIR..."
+echo "[3/6] Cloning or updating repository in $REPO_DIR..."
 mkdir -p "$(dirname "$REPO_DIR")"
 if [ -d "$REPO_DIR/.git" ]; then
   git -C "$REPO_DIR" pull --ff-only
@@ -48,12 +48,12 @@ else
   git clone "$REPO_URL" "$REPO_DIR"
 fi
 
-echo "[4/7] Ensuring books directory exists..."
+echo "[4/6] Ensuring books directory exists..."
 mkdir -p "$REPO_DIR/books"
 chown -R "$TARGET_USER":"$TARGET_USER" "$REPO_DIR/books" || true
 
 ENV_FILE="$REPO_DIR/.env"
-echo "[5/7] Writing environment file to $ENV_FILE..."
+echo "[5/6] Writing environment file to $ENV_FILE..."
 cat > "$ENV_FILE" <<EOF
 BOT_TOKEN=$BOT_TOKEN
 WEB_APP_URL=$WEB_APP_URL
@@ -63,49 +63,9 @@ OPENAI_API_KEY=$OPENAI_API_KEY
 NODE_ENV=$NODE_ENV
 EOF
 
-DOCKERFILE_PATH="$REPO_DIR/Dockerfile"
-if [ ! -f "$DOCKERFILE_PATH" ]; then
-  echo "[6/7] Creating Dockerfile..."
-  cat > "$DOCKERFILE_PATH" <<'EOF'
-FROM node:20-bookworm-slim
-
-WORKDIR /usr/src/app
-
-COPY package*.json ./
-RUN npm ci --omit=dev
-
-COPY . .
-
-EXPOSE 3000
-
-CMD ["npm", "start"]
-EOF
-else
-  echo "[6/7] Dockerfile already exists, leaving as-is."
-fi
-
 COMPOSE_FILE="$REPO_DIR/compose.yaml"
-if [ ! -f "$COMPOSE_FILE" ]; then
-  echo "[6/7] Creating compose.yaml..."
-  cat > "$COMPOSE_FILE" <<EOF
-services:
-  verba:
-    build: .
-    image: $IMAGE_NAME
-    container_name: $SERVICE_NAME
-    env_file:
-      - .env
-    ports:
-      - "$PORT:3000"
-    volumes:
-      - ./books:/usr/src/app/books
-    restart: unless-stopped
-EOF
-else
-  echo "[6/7] compose.yaml already exists, leaving as-is."
-fi
 
-echo "[7/7] Building and starting the container..."
+echo "[6/6] Building and starting the container..."
 cd "$REPO_DIR"
 docker compose -f "$COMPOSE_FILE" down || true
 docker compose -f "$COMPOSE_FILE" up -d --build
