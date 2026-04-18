@@ -21,6 +21,11 @@ body {
     line-height: 1.6;
     padding: 0;
     margin: 0;
+    /* iOS safe area (notch / home indicator) */
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
 }
 
 #app {
@@ -405,4 +410,212 @@ body {
     .card {
         padding: 15px;
     }
+}
+
+/* ── Screen management ───────────────────────────────────────────────────── */
+.screen { display: none; }
+.screen.active { display: block; }
+
+/* ── Mode tabs ───────────────────────────────────────────────────────────── */
+.mode-tabs {
+    display: flex;
+    background: var(--tg-theme-secondary-bg-color);
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.mode-tab {
+    flex: 1;
+    padding: 12px 8px;
+    border: none;
+    background: transparent;
+    color: var(--tg-theme-hint-color);
+    font-size: 15px;
+    cursor: pointer;
+    transition: color 0.2s;
+    border-bottom: 2px solid transparent;
+}
+.mode-tab.active {
+    color: var(--tg-theme-button-color);
+    border-bottom-color: var(--tg-theme-button-color);
+    font-weight: 600;
+}
+
+/* ── Quest stats bar ─────────────────────────────────────────────────────── */
+.quest-stats-bar {
+    display: flex;
+    justify-content: space-around;
+    padding: 12px 15px 8px;
+    background: var(--tg-theme-secondary-bg-color);
+    margin-bottom: 8px;
+}
+.quest-stat { text-align: center; }
+.quest-stat-label {
+    display: block;
+    font-size: 11px;
+    color: var(--tg-theme-hint-color);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.quest-stat-value {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--tg-theme-text-color);
+}
+
+/* ── Levels grid ─────────────────────────────────────────────────────────── */
+.levels-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    padding: 0 15px 10px;
+}
+.level-card {
+    background: var(--tg-theme-secondary-bg-color);
+    border-radius: 10px;
+    padding: 10px 6px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.1s, opacity 0.2s;
+    border: 2px solid transparent;
+    user-select: none;
+}
+.level-card:active { transform: scale(0.94); }
+.level-card.completed { border-color: #10b981; }
+.level-card.locked { opacity: 0.5; cursor: not-allowed; }
+.level-card .level-number {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--tg-theme-button-color);
+}
+.level-card .level-status { font-size: 12px; color: var(--tg-theme-hint-color); }
+.level-card.completed .level-status { color: #10b981; }
+.level-card .level-score { font-size: 10px; color: var(--tg-theme-hint-color); margin-top: 2px; }
+
+/* ── Quest level nav bar ─────────────────────────────────────────────────── */
+.level-nav-bar {
+    background: var(--tg-theme-secondary-bg-color);
+    padding: 12px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4px;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+.level-title { font-size: 16px; font-weight: 700; color: var(--tg-theme-text-color); margin: 0; }
+.level-score-info { font-size: 13px; color: var(--tg-theme-hint-color); }
+
+/* ── Quiz container & question elements ──────────────────────────────────── */
+.quiz-container { padding: 15px; min-height: 200px; }
+.question-header { margin-bottom: 14px; }
+.question-type {
+    display: inline-block;
+    background: var(--tg-theme-button-color);
+    color: var(--tg-theme-button-text-color);
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    text-transform: capitalize;
+    margin-bottom: 8px;
+}
+.question-text { font-size: 16px; font-weight: 600; color: var(--tg-theme-text-color); margin-bottom: 6px; }
+.question-instruction { font-size: 13px; color: var(--tg-theme-hint-color); font-style: italic; margin: 0; }
+.reading-passage {
+    background: var(--tg-theme-secondary-bg-color);
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 14px;
+}
+.passage-title { font-weight: 600; font-size: 14px; color: var(--tg-theme-button-color); margin-bottom: 6px; }
+.passage-text { font-size: 14px; color: var(--tg-theme-text-color); line-height: 1.5; margin: 0; }
+.sentence-with-blank {
+    font-size: 15px;
+    color: var(--tg-theme-text-color);
+    padding: 10px 12px;
+    background: var(--tg-theme-secondary-bg-color);
+    border-radius: 8px;
+    margin-bottom: 14px;
+}
+.answer-options { display: flex; flex-direction: column; gap: 8px; }
+.answer-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    background: var(--tg-theme-secondary-bg-color);
+    border-radius: 10px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.15s;
+}
+.answer-option.selected { border-color: var(--tg-theme-button-color); }
+.answer-option.correct { border-color: #10b981; background: rgba(16,185,129,0.12); }
+.answer-option.wrong { border-color: #ef4444; background: rgba(239,68,68,0.12); }
+.option-marker {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--tg-theme-button-color); color: var(--tg-theme-button-text-color);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 13px; flex-shrink: 0;
+}
+.option-text { font-size: 14px; color: var(--tg-theme-text-color); }
+.blank-input {
+    background: var(--tg-theme-secondary-bg-color);
+    border: 2px solid var(--tg-theme-button-color);
+    color: var(--tg-theme-text-color);
+    border-radius: 8px; padding: 8px 12px; font-size: 15px;
+    width: 160px; outline: none;
+}
+.feedback { margin-top: 12px; font-size: 13px; }
+
+/* ── Quiz navigation bar ─────────────────────────────────────────────────── */
+.quiz-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    background: var(--tg-theme-secondary-bg-color);
+    border-top: 1px solid rgba(0,0,0,0.06);
+    position: sticky;
+    bottom: env(safe-area-inset-bottom, 0);
+}
+.nav-btn {
+    padding: 10px 18px;
+    border: 1px solid var(--tg-theme-hint-color);
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    background: transparent;
+    color: var(--tg-theme-text-color);
+    transition: opacity 0.2s;
+}
+.nav-btn.primary {
+    background: var(--tg-theme-button-color);
+    color: var(--tg-theme-button-text-color);
+    border-color: var(--tg-theme-button-color);
+}
+.nav-btn.success { background: #10b981; color: #fff; border-color: #10b981; }
+.nav-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* ── Results screen ──────────────────────────────────────────────────────── */
+.results-screen { text-align: center; padding: 24px 16px; }
+.results-score { font-size: 48px; font-weight: 700; color: var(--tg-theme-button-color); margin-bottom: 8px; }
+.results-message { font-size: 20px; font-weight: 600; color: var(--tg-theme-text-color); margin-bottom: 20px; }
+.results-stats { display: flex; justify-content: center; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
+.stat-box {
+    background: var(--tg-theme-secondary-bg-color);
+    border-radius: 12px; padding: 12px 16px; min-width: 80px;
+}
+.stat-box .stat-label {
+    display: block; font-size: 11px; color: var(--tg-theme-hint-color);
+    text-transform: uppercase; margin-bottom: 4px;
+}
+.stat-box .stat-value { font-size: 22px; font-weight: 700; color: var(--tg-theme-text-color); }
+.results-actions {
+    display: flex; flex-direction: column; gap: 10px;
+    max-width: 280px; margin: 0 auto;
 }

@@ -1,24 +1,58 @@
 // Initialize Telegram Web App
-const tg = window.Telegram?.WebApp || {
-    expand: () => {},
-    ready: () => {},
-    showAlert: (msg) => alert(msg),
-    themeParams: {}
-};
+const tg = window.Telegram && window.Telegram.WebApp
+    ? window.Telegram.WebApp
+    : {
+        expand: function () {},
+        ready: function () {},
+        showAlert: function (msg, cb) { alert(msg); if (cb) cb(); },
+        showPopup: function (opts, cb) {
+            var isDestructive = opts.buttons && opts.buttons.some(function (b) { return b.type === 'destructive'; });
+            var ok = isDestructive ? confirm(opts.message) : (alert(opts.message), true);
+            if (cb) {
+                var btn = ok && opts.buttons
+                    ? opts.buttons.find(function (b) { return b.type !== 'cancel'; })
+                    : null;
+                cb(btn ? btn.id : '');
+            }
+        },
+        themeParams: {},
+        initData: '',
+        initDataUnsafe: {},
+        colorScheme: 'light',
+        BackButton: { show: function () {}, hide: function () {}, onClick: function () {}, offClick: function () {} },
+        MainButton: {
+            setText: function () { return this; }, show: function () {}, hide: function () {},
+            onClick: function () {}, offClick: function () {},
+            showProgress: function () {}, hideProgress: function () {}, isVisible: false
+        },
+        HapticFeedback: { notificationOccurred: function () {}, impactOccurred: function () {} },
+        onEvent: function () {},
+        enableClosingConfirmation: function () {}
+    };
+
 tg.expand();
+tg.enableClosingConfirmation();
 
 // Apply Telegram theme colors
-if (tg.themeParams) {
-    document.documentElement.style.setProperty('--tg-theme-bg-color', tg.themeParams.bg_color || '#ffffff');
-    document.documentElement.style.setProperty('--tg-theme-text-color', tg.themeParams.text_color || '#000000');
-    document.documentElement.style.setProperty('--tg-theme-hint-color', tg.themeParams.hint_color || '#707579');
-    document.documentElement.style.setProperty('--tg-theme-link-color', tg.themeParams.link_color || '#3390ec');
-    document.documentElement.style.setProperty('--tg-theme-button-color', tg.themeParams.button_color || '#3390ec');
-    document.documentElement.style.setProperty('--tg-theme-button-text-color', tg.themeParams.button_text_color || '#ffffff');
-    document.documentElement.style.setProperty('--tg-theme-secondary-bg-color', tg.themeParams.secondary_bg_color || '#f4f4f5');
+function applyTheme() {
+    var p = tg.themeParams || {};
+    document.documentElement.style.setProperty('--tg-theme-bg-color', p.bg_color || '#ffffff');
+    document.documentElement.style.setProperty('--tg-theme-text-color', p.text_color || '#000000');
+    document.documentElement.style.setProperty('--tg-theme-hint-color', p.hint_color || '#707579');
+    document.documentElement.style.setProperty('--tg-theme-link-color', p.link_color || '#3390ec');
+    document.documentElement.style.setProperty('--tg-theme-button-color', p.button_color || '#3390ec');
+    document.documentElement.style.setProperty('--tg-theme-button-text-color', p.button_text_color || '#ffffff');
+    document.documentElement.style.setProperty('--tg-theme-secondary-bg-color', p.secondary_bg_color || '#f4f4f5');
 }
+applyTheme();
+tg.onEvent('themeChanged', applyTheme);
 
-// App State
+// Current Telegram user
+var tgUser = (tg.initDataUnsafe && tg.initDataUnsafe.user) || null;
+var tgUserId = tgUser && tgUser.id ? String(tgUser.id) : 'guest';
+
+// App State — keyed per Telegram user so each user has separate progress
+var STATE_KEY = 'verba-en-state_' + tgUserId;
 let appState = {
     currentPage: 1,
     totalPages: 1,
@@ -32,7 +66,7 @@ let appState = {
 
 // Load state from localStorage
 function loadState() {
-    const saved = localStorage.getItem('verba-en-state');
+    const saved = localStorage.getItem(STATE_KEY);
     if (saved) {
         try {
             const parsed = JSON.parse(saved);
@@ -46,19 +80,45 @@ function loadState() {
 // Save state to localStorage
 function saveState() {
     try {
-        localStorage.setItem('verba-en-state', JSON.stringify(appState));
+        localStorage.setItem(STATE_KEY, JSON.stringify(appState));
     } catch (e) {
         console.error('Failed to save state:', e);
     }
 }
 
+// Helper: API call that injects the Telegram initData header for server-side auth
+function apiCall(url, options) {
+    options = options || {};
+    var headers = Object.assign({ 'Content-Type': 'application/json' }, options.headers || {});
+    if (tg.initData) {
+        headers['X-Telegram-Init-Data'] = tg.initData;
+    }
+    return fetch(url, Object.assign({}, options, { headers: headers }));
+}
+
 // Initialize app
 async function initApp() {
     loadState();
-    
+
+    // Personalize greeting with Telegram user name
+    if (tgUser && tgUser.first_name) {
+        const greeting = document.getElementById('user-greeting');
+        if (greeting) greeting.textContent = 'Hello, ' + tgUser.first_name + '! 👋';
+    }
+
+    // Handle deep-link start parameter: ?startapp=level_5 or tg start_param
+    const urlParam = new URLSearchParams(window.location.search).get('startapp');
+    const startParam = urlParam || (tg.initDataUnsafe && tg.initDataUnsafe.start_param) || '';
+    if (startParam && startParam.startsWith('level_')) {
+        const levelId = parseInt(startParam.split('_')[1], 10);
+        if (levelId >= 1 && levelId <= 20) {
+            window._pendingQuestLevel = levelId;
+        }
+    }
+
     // Load book content from server
     try {
-        const response = await fetch('/api/book-content');
+        const response = await apiCall('/api/book-content');
         const data = await response.json();
         
         if (data.success) {
@@ -78,6 +138,20 @@ async function initApp() {
     
     updateUI();
     attachEventListeners();
+
+    // Init quest module (defined in quest.js, loaded before app.js)
+    if (typeof questInit === 'function') {
+        questInit(tgUserId);
+    }
+
+    // Handle pending deep-link quest level
+    if (window._pendingQuestLevel) {
+        showScreen('quest');
+        if (typeof startQuestLevel === 'function') {
+            startQuestLevel(window._pendingQuestLevel);
+        }
+        window._pendingQuestLevel = null;
+    }
 }
 
 // Update UI
@@ -150,20 +224,26 @@ function nextPage() {
 
 // Add bookmark
 function addBookmark() {
-    const note = prompt('Add a note for this bookmark (optional):');
-    if (note !== null) { // User didn't cancel
-        const bookmark = {
-            page: appState.currentPage,
-            note: note || 'No note',
-            timestamp: new Date().toISOString()
-        };
-        appState.bookmarks.push(bookmark);
-        updateBookmarks();
-        saveState();
-        
-        // Show feedback
-        tg.showAlert('Bookmark added!');
-    }
+    tg.showPopup({
+        title: 'Add Bookmark',
+        message: 'Bookmark page ' + appState.currentPage + '?',
+        buttons: [
+            { id: 'ok', type: 'default', text: 'Add' },
+            { id: 'cancel', type: 'cancel' }
+        ]
+    }, function (btnId) {
+        if (btnId === 'ok') {
+            const bookmark = {
+                page: appState.currentPage,
+                note: 'Page ' + appState.currentPage,
+                timestamp: new Date().toISOString()
+            };
+            appState.bookmarks.push(bookmark);
+            updateBookmarks();
+            saveState();
+            tg.showAlert('Bookmark added!');
+        }
+    });
 }
 
 // Update bookmarks display
@@ -190,11 +270,19 @@ function updateBookmarks() {
 
 // Delete bookmark
 function deleteBookmark(index) {
-    if (confirm('Delete this bookmark?')) {
-        appState.bookmarks.splice(index, 1);
-        updateBookmarks();
-        saveState();
-    }
+    tg.showPopup({
+        message: 'Delete this bookmark?',
+        buttons: [
+            { id: 'delete', type: 'destructive', text: 'Delete' },
+            { id: 'cancel', type: 'cancel' }
+        ]
+    }, function (btnId) {
+        if (btnId === 'delete') {
+            appState.bookmarks.splice(index, 1);
+            updateBookmarks();
+            saveState();
+        }
+    });
 }
 
 // Add vocabulary
@@ -296,9 +384,8 @@ async function getDefinition() {
     button.disabled = true;
     
     try {
-        const response = await fetch('/api/ai/define', {
+        const response = await apiCall('/api/ai/define', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ word })
         });
         
@@ -345,9 +432,8 @@ async function checkGrammar() {
     button.disabled = true;
     
     try {
-        const response = await fetch('/api/ai/grammar-check', {
+        const response = await apiCall('/api/ai/grammar-check', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ text })
         });
         
@@ -407,9 +493,8 @@ async function summarizePage() {
     button.disabled = true;
     
     try {
-        const response = await fetch('/api/ai/summarize', {
+        const response = await apiCall('/api/ai/summarize', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ text: content })
         });
         
@@ -469,9 +554,8 @@ async function sendChatMessage() {
     chatMessages.scrollTop = chatMessages.scrollHeight;
     
     try {
-        const response = await fetch('/api/ai/chat', {
+        const response = await apiCall('/api/ai/chat', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ 
                 message,
                 history: appState.chatHistory 
@@ -521,6 +605,24 @@ function addChatMessage(text, sender) {
 window.deleteBookmark = deleteBookmark;
 window.prevPage = prevPage;
 window.nextPage = nextPage;
+
+// Screen navigation — switches between reader / quest / quest-level screens
+function showScreen(screenId) {
+    document.querySelectorAll('.screen').forEach(function (s) { s.classList.remove('active'); });
+    var screen = document.getElementById('screen-' + screenId);
+    if (screen) screen.classList.add('active');
+
+    // Update tab highlighting
+    document.querySelectorAll('.mode-tab').forEach(function (t) { t.classList.remove('active'); });
+    var tabId = (screenId === 'quest-level') ? 'tab-quest' : ('tab-' + screenId);
+    var tab = document.getElementById(tabId);
+    if (tab) tab.classList.add('active');
+
+    // Hide mode tabs during quiz to keep full screen for questions
+    var tabs = document.getElementById('mode-tabs');
+    if (tabs) tabs.style.display = screenId === 'quest-level' ? 'none' : 'flex';
+}
+window.showScreen = showScreen;
 
 // Initialize on load
 if (document.readyState === 'loading') {

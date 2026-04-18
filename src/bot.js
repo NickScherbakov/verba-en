@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 const fs = require('fs');
 const pdf = require('pdf-parse');
+const crypto = require('crypto');
 
 // Configuration
 const BOT_TOKEN = process.env.BOT_TOKEN || 'YOUR_BOT_TOKEN_HERE';
@@ -10,6 +11,9 @@ const WEB_APP_URL = process.env.WEB_APP_URL || 'https://your-domain.com';
 const PORT = process.env.PORT || 3000;
 const AI_PROVIDER = process.env.AI_PROVIDER || 'mock';
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
+const WEBHOOK_MODE = process.env.WEBHOOK_MODE === 'true';
+const TELEGRAM_BOT_SECRET = process.env.TELEGRAM_BOT_SECRET || '';
+const VALIDATE_INIT_DATA = process.env.VALIDATE_INIT_DATA === 'true';
 
 // Initialize Express app
 const app = express();
@@ -18,12 +22,155 @@ app.use(express.static(path.join(__dirname, '../public')));
 
 // Initialize Telegram Bot
 let bot;
-try {
-    bot = new TelegramBot(BOT_TOKEN, { polling: true });
-    console.log('Bot started successfully!');
-} catch (error) {
-    console.log('Bot initialization skipped (token not configured):', error.message);
+if (WEBHOOK_MODE) {
+    // In webhook mode the bot instance processes updates via POST /webhook
+    bot = new TelegramBot(BOT_TOKEN);
+    console.log('Bot initialized in webhook mode.');
+} else {
+    try {
+        bot = new TelegramBot(BOT_TOKEN, { polling: true });
+        console.log('Bot started successfully (polling)!');
+    } catch (error) {
+        console.log('Bot initialization skipped (token not configured):', error.message);
+    }
 }
+
+// Webhook endpoint (only active when WEBHOOK_MODE=true)
+app.post('/webhook', (req, res) => {
+    // If a secret token is configured, every request must carry it
+    if (TELEGRAM_BOT_SECRET.length > 0) {
+        if (req.headers['x-telegram-bot-api-secret-token'] !== TELEGRAM_BOT_SECRET) {
+            return res.status(403).send('Forbidden');
+        }
+    }
+    if (bot) bot.processUpdate(req.body);
+    res.sendStatus(200);
+});
+
+// ─── Telegram initData validation ────────────────────────────────────────────
+// Validates the X-Telegram-Init-Data header using HMAC-SHA256 per Telegram spec.
+// Returns { user, params } on success, null on failure.
+function verifyInitData(initDataStr) {
+    if (!initDataStr) return null;
+    try {
+        const params = new URLSearchParams(initDataStr);
+        const hash = params.get('hash');
+        if (!hash) return null;
+        params.delete('hash');
+
+        const dataCheckString = Array.from(params.entries())
+            .sort(([a], [b]) => a.localeCompare(b))
+            .map(([k, v]) => `${k}=${v}`)
+            .join('\n');
+
+        const secretKey = crypto.createHmac('sha256', 'WebAppData')
+            .update(BOT_TOKEN)
+            .digest();
+        const expected = crypto.createHmac('sha256', secretKey)
+            .update(dataCheckString)
+            .digest('hex');
+
+        if (expected !== hash) return null;
+
+        const userStr = params.get('user');
+        const user = userStr ? JSON.parse(userStr) : null;
+        return { user, params };
+    } catch (e) {
+        return null;
+    }
+}
+
+// Middleware: require valid initData on /api/* routes when VALIDATE_INIT_DATA=true.
+// In development (VALIDATE_INIT_DATA=false) the header is optional — a guest user is used.
+function requireInitData(req, res, next) {
+    const initDataStr = req.headers['x-telegram-init-data'];
+    if (!VALIDATE_INIT_DATA) {
+        // Development mode — attach a guest user if no header present
+        if (!initDataStr) {
+            req.tgUser = { id: 'dev_guest', first_name: 'Developer' };
+            return next();
+        }
+    }
+    const result = verifyInitData(initDataStr);
+    if (!result) {
+        return res.status(401).json({ success: false, error: 'Missing or invalid Telegram initData' });
+    }
+    req.tgUser = result.user;
+    next();
+}
+
+// Simple in-memory rate limiter for /api/* routes (no external dependencies)
+const rateLimitStore = new Map();
+const RATE_LIMIT_WINDOW_MS = 60 * 1000; // 1 minute
+const RATE_LIMIT_MAX = 60; // max 60 requests per minute per IP
+
+function rateLimiter(req, res, next) {
+    const key = req.ip || 'unknown';
+    const now = Date.now();
+    const entry = rateLimitStore.get(key);
+
+    if (!entry || (now - entry.start) > RATE_LIMIT_WINDOW_MS) {
+        rateLimitStore.set(key, { start: now, count: 1 });
+        return next();
+    }
+    if (entry.count >= RATE_LIMIT_MAX) {
+        return res.status(429).json({ success: false, error: 'Too many requests. Please slow down.' });
+    }
+    entry.count++;
+    next();
+}
+
+app.use('/api', requireInitData);
+app.use('/api', rateLimiter);
+
+// ─── User progress store ──────────────────────────────────────────────────────
+// In-memory store with JSON file persistence (no native dependencies required).
+const progressStore = new Map();
+const PROGRESS_FILE = path.join(__dirname, '../data/user-progress.json');
+
+function loadProgress() {
+    try {
+        if (fs.existsSync(PROGRESS_FILE)) {
+            const raw = JSON.parse(fs.readFileSync(PROGRESS_FILE, 'utf8'));
+            Object.entries(raw).forEach(([k, v]) => progressStore.set(k, v));
+            console.log(`Loaded progress for ${progressStore.size} user(s).`);
+        }
+    } catch (e) {
+        console.error('Failed to load progress file:', e.message);
+    }
+}
+
+function saveProgress() {
+    try {
+        const dir = path.dirname(PROGRESS_FILE);
+        if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+        const obj = Object.fromEntries(progressStore);
+        fs.writeFileSync(PROGRESS_FILE, JSON.stringify(obj, null, 2));
+    } catch (e) {
+        console.error('Failed to save progress file:', e.message);
+    }
+}
+
+// GET /api/user/progress — return progress for the authenticated user
+app.get('/api/user/progress', (req, res) => {
+    const userId = req.tgUser && req.tgUser.id ? String(req.tgUser.id) : null;
+    if (!userId) return res.status(400).json({ success: false, error: 'No user ID' });
+    const progress = progressStore.get(userId) || null;
+    res.json({ success: true, userId, progress });
+});
+
+// POST /api/user/progress — save progress for the authenticated user
+app.post('/api/user/progress', (req, res) => {
+    const userId = req.tgUser && req.tgUser.id ? String(req.tgUser.id) : null;
+    if (!userId) return res.status(400).json({ success: false, error: 'No user ID' });
+    const { progress } = req.body;
+    if (!progress || typeof progress !== 'object') {
+        return res.status(400).json({ success: false, error: 'Invalid progress payload' });
+    }
+    progressStore.set(userId, progress);
+    saveProgress();
+    res.json({ success: true });
+});
 
 // Store processed book content
 let bookData = {
@@ -378,29 +525,34 @@ app.post('/api/ai/chat', async (req, res) => {
 
 // Bot command handlers
 if (bot) {
-    // Start command
-    bot.onText(/\/start/, (msg) => {
+    // /start with optional deep-link parameter (e.g. /start level_5)
+    bot.onText(/\/start(?:\s+(.+))?/, (msg, match) => {
         const chatId = msg.chat.id;
-        const opts = {
-            reply_markup: {
-                inline_keyboard: [
-                    [
-                        {
-                            text: '📚 Open Book Reader',
-                            web_app: { url: WEB_APP_URL }
-                        }
-                    ]
-                ]
-            }
-        };
-        
-        bot.sendMessage(
-            chatId,
-            '👋 Welcome to Verba-EN!\n\n' +
-            'Your personal English learning companion.\n\n' +
-            'Click the button below to start reading:',
-            opts
-        );
+        const param = match && match[1] ? match[1].trim() : '';
+
+        let text = '👋 Welcome to Verba-EN!\n\nYour personal English learning companion.\n\n';
+        const buttons = [];
+
+        if (param.startsWith('level_')) {
+            const levelId = param.split('_')[1];
+            text += `Click below to open Level ${levelId} directly:`;
+            buttons.push([{
+                text: `🎯 Open Level ${levelId}`,
+                web_app: { url: `${WEB_APP_URL}?startapp=${param}` }
+            }]);
+        } else {
+            text += 'Click below to open the app:';
+            buttons.push([{
+                text: '📚 Open Book Reader',
+                web_app: { url: WEB_APP_URL }
+            }]);
+            buttons.push([{
+                text: '🎯 Open EGE Quest',
+                web_app: { url: `${WEB_APP_URL}?startapp=quest` }
+            }]);
+        }
+
+        bot.sendMessage(chatId, text, { reply_markup: { inline_keyboard: buttons } });
     });
 
     // Help command
@@ -457,5 +609,19 @@ app.listen(PORT, async () => {
     console.log(`📁 Web App: http://localhost:${PORT}`);
     console.log('\n📚 Loading book...');
     await loadBook();
+    loadProgress();
+
+    if (WEBHOOK_MODE && bot && WEB_APP_URL) {
+        const webhookUrl = `${WEB_APP_URL}/webhook`;
+        try {
+            await bot.setWebHook(webhookUrl, {
+                secret_token: TELEGRAM_BOT_SECRET.length > 0 ? TELEGRAM_BOT_SECRET : undefined
+            });
+            console.log(`✅ Webhook set to: ${webhookUrl}`);
+        } catch (e) {
+            console.error('Failed to set webhook:', e.message);
+        }
+    }
+
     console.log('\n✅ Ready to serve!\n');
 });
