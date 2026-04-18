@@ -60,15 +60,41 @@ function extractPassage(chunk) {
     const markerPos = chunk.search(/Прочитайте текст и выполните задания 12/);
     if (markerPos === -1) return null;
 
-    // Skip to after the instruction sentence (ends with "варианту ответа.")
-    let afterInstruction = chunk.indexOf('варианту ответа.', markerPos);
-    if (afterInstruction === -1) afterInstruction = markerPos + 200;
-    else afterInstruction += 'варианту ответа.'.length;
+    // Skip the instruction line(s) - they span ~2 lines after the marker
+    // Look for the end of the instruction block: either "варианту ответа." or a newline after ~200 chars
+    let afterInstruction = -1;
+    // Try to find end of instruction (often garbled in OCR)
+    const instrBlock = chunk.substring(markerPos, markerPos + 350);
+    // Find the last occurrence of a line that looks like noise (non-English, short, garbled)
+    // Strategy: find the first line that starts with a capital English letter after the marker
+    const instrLines = instrBlock.split('\n');
+    let skipLines = 0;
+    for (let i = 0; i < instrLines.length; i++) {
+        const l = instrLines[i].trim();
+        // First line starting with English capital letter that isn't noise = title
+        if (i > 0 && /^[A-Z][a-z]/.test(l) && l.length > 3) {
+            skipLines = i;
+            break;
+        }
+        // Or starts with a cyrillic capital followed by actual title text
+        if (i > 1 && /^[А-Я][а-яёА-ЯЁ ]{2,30}$/.test(l)) {
+            skipLines = i;
+            break;
+        }
+    }
+    afterInstruction = markerPos + instrLines.slice(0, skipLines).join('\n').length;
 
-    // Find where task 12 questions start (marks end of passage)
-    // Task 12 starts as "\n12\n" or "\n12 " followed by question text
-    const task12Re = /\n12\s*\n|\n12\s+[A-ZА-Я]/;
-    const task12Match = chunk.slice(afterInstruction).search(task12Re);
+    // Find where questions start (marks end of passage)
+    // Try task 12, then 13 as fallback (sometimes 12 is merged or missing in OCR)
+    let task12Match = -1;
+    for (const re of [
+        /\n12\s*\n|\n12\s+[A-ZА-Я]/,
+        /\n13\s*\n|\n13\s+[A-ZА-Я]/,
+        /\n14\s*\n|\n14\s+[A-ZА-Я]/
+    ]) {
+        task12Match = chunk.slice(afterInstruction).search(re);
+        if (task12Match !== -1) break;
+    }
     if (task12Match === -1) return null;
 
     const passageBlock = chunk.slice(afterInstruction, afterInstruction + task12Match).trim();
@@ -158,6 +184,8 @@ function parseText(text) {
         const ans = ANSWER_KEYS[v] || { r: [3,4,2,4,1,1,2], v: [3,2,4,1,2,3,3] };
 
         // Find variant chunk
+        // Strategy: find the occurrence of "ВАРИАНТ N" that is followed by "Раздел 2. Чтение"
+        // within the next ~30 lines. This is the reading section start.
         const variantPattern = `ВАРИАНТ ${v}`;
         let startIdx = -1;
         let count = 0;
@@ -165,8 +193,9 @@ function parseText(text) {
             if (lines[i].trim() === variantPattern) {
                 count++;
                 if (count >= 2) {
-                    const nearby = lines.slice(i, i + 15).join(' ');
-                    if (nearby.includes('Раздел 2') || nearby.includes('Чтение') || nearby.includes('12')) {
+                    // Check if this occurrence leads to the reading section (Раздел 2)
+                    const nearby = lines.slice(i, i + 30).join(' ');
+                    if (nearby.includes('Раздел 2') || nearby.includes('Чтение')) {
                         startIdx = i;
                         break;
                     }
@@ -180,6 +209,7 @@ function parseText(text) {
             continue;
         }
 
+        // End at next variant's start
         let endIdx = lines.length;
         for (let i = startIdx + 5; i < lines.length; i++) {
             if (lines[i].trim() === `ВАРИАНТ ${v + 1}`) { endIdx = i; break; }
@@ -210,14 +240,24 @@ function parseText(text) {
             if (q) vocabQs.push(q);
         }
 
-        const allQs = [...readingQs, ...vocabQs];
-        if (allQs.length >= 7) {
-            variants.push({ id: v, passage, questions: allQs.slice(0, 10) });
-        } else {
+        let allQs = [...readingQs, ...vocabQs];
+        if (allQs.length < 7) {
             console.log(`Variant ${v}: only ${allQs.length} questions, padding`);
             const fallback = generateFallbackQuestions(v, ans);
-            variants.push({ id: v, passage, questions: [...allQs, ...fallback].slice(0, 10) });
+            allQs = [...allQs, ...fallback].slice(0, 10);
+        } else {
+            allQs = allQs.slice(0, 10);
         }
+
+        // Ensure ALL reading-type questions have the passage (not just the first one)
+        if (passage) {
+            allQs = allQs.map(q => {
+                if (q.type === 'reading' && !q.passage) return { ...q, passage };
+                return q;
+            });
+        }
+
+        variants.push({ id: v, passage, questions: allQs });
     }
 
     return variants;
@@ -242,7 +282,7 @@ function generateFallbackQuestions(variantNum, ans) {
     const vAnswers = ans.v || [3,2,4,1,2,3,3];
     const qs = [];
     readingTopics.forEach((t, i) => qs.push({
-        type: 'reading',
+        type: 'multiple-choice',
         text: `Variant ${variantNum} · Task ${12 + i}: ${t.text}`,
         options: t.opts,
         correct: Math.max(0, Math.min(3, (rAnswers[i] || 1) - 1)),

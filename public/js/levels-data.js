@@ -131,6 +131,10 @@ var LEVELS_DATA = [
             {
                 type: "reading",
                 text: "Task 12: According to the text, the majority of people in the USA plan to ... on Thanksgiving.",
+                passage: {
+                    title: "Happy holidays?",
+                    text: "Thanksgiving is approaching and most Americans have solidified their family plans for the holiday. Whether you’re hosting a big meal or heading to a relative’s house, the holidays are often a chance to reconnect with loved ones. However, Thanksgiving Day isn’t always a family-oriented occasion. Over the years, several studies have found that the seemingly joyous holiday season isn’t always easy for everyone. In one survey, 31 per cent of respondents said they felt lonely during the holidays throughout the last five years. Meanwhile, 41 per cent of participants were concerned about a family member or a friend feeling lonely around the holidays. Another survey also found that 70 per cent of respondents struggled with different types of loneliness before Thanksgiving and Christmas, partly due to the effects of the Covid-19 pandemic. While socially-distanced holiday parties have mostly become a thing of the past since then, there are still many reasons why some people spend the season by themselves. Some have family members living on the opposite side of the country, or world, while others may not have a close relationship with their relatives at all. There’s no one concrete way to , spend the holidays, and everyone has their own reasons why they choose not to see certain people on a festive day. A therapist, Lilia Magon, acknowledged that when we spend the holidays alone, our feelings of loneliness can be heightened. While everyone experiences loneliness in a different way, Magon believes that the feeling could be tied to how Thanksgiving has been portrayed over the years. “I think a lot of the anxieties and concerns that come up have to do with unmet expectations of what you think a holiday is supposed to look like, and what you think your relationship with your family or your friends is supposed to look like,” she said. “I think that’s where a lot of people themselves feel a little bit of a stressful state. Just maybe feeling a little let down by the expectations the"
+                },
                 options: [
                     "more than a half of respondents felt lonely in the last five years.",
                     "more people actually worry about their friends than family.",
@@ -143,6 +147,10 @@ var LEVELS_DATA = [
             {
                 type: "reading",
                 text: "Task 13: The statistics mentioned in paragraph 2 prove that...",
+                passage: {
+                    title: "Happy holidays?",
+                    text: "Thanksgiving is approaching and most Americans have solidified their family plans for the holiday. Whether you’re hosting a big meal or heading to a relative’s house, the holidays are often a chance to reconnect with loved ones. However, Thanksgiving Day isn’t always a family-oriented occasion. Over the years, several studies have found that the seemingly joyous holiday season isn’t always easy for everyone. In one survey, 31 per cent of respondents said they felt lonely during the holidays throughout the last five years. Meanwhile, 41 per cent of participants were concerned about a family member or a friend feeling lonely around the holidays. Another survey also found that 70 per cent of respondents struggled with different types of loneliness before Thanksgiving and Christmas, partly due to the effects of the Covid-19 pandemic. While socially-distanced holiday parties have mostly become a thing of the past since then, there are still many reasons why some people spend the season by themselves. Some have family members living on the opposite side of the country, or world, while others may not have a close relationship with their relatives at all. There’s no one concrete way to , spend the holidays, and everyone has their own reasons why they choose not to see certain people on a festive day. A therapist, Lilia Magon, acknowledged that when we spend the holidays alone, our feelings of loneliness can be heightened. While everyone experiences loneliness in a different way, Magon believes that the feeling could be tied to how Thanksgiving has been portrayed over the years. “I think a lot of the anxieties and concerns that come up have to do with unmet expectations of what you think a holiday is supposed to look like, and what you think your relationship with your family or your friends is supposed to look like,” she said. “I think that’s where a lot of people themselves feel a little bit of a stressful state. Just maybe feeling a little let down by the expectations the"
+                },
                 options: [
                     "more than a half of respondents felt lonely in the last five years.",
                     "more people actually worry about their friends than family.",
@@ -155,6 +163,10 @@ var LEVELS_DATA = [
             {
                 type: "reading",
                 text: "Task 14: How does the therapist Lilia Magon explain feeling lonely at Thanksgiving?",
+                passage: {
+                    title: "Happy holidays?",
+                    text: "Thanksgiving is approaching and most Americans have solidified their family plans for the holiday. Whether you’re hosting a big meal or heading to a relative’s house, the holidays are often a chance to reconnect with loved ones. However, Thanksgiving Day isn’t always a family-oriented occasion. Over the years, several studies have found that the seemingly joyous holiday season isn’t always easy for everyone. In one survey, 31 per cent of respondents said they felt lonely during the holidays throughout the last five years. Meanwhile, 41 per cent of participants were concerned about a family member or a friend feeling lonely around the holidays. Another survey also found that 70 per cent of respondents struggled with different types of loneliness before Thanksgiving and Christmas, partly due to the effects of the Covid-19 pandemic. While socially-distanced holiday parties have mostly become a thing of the past since then, there are still many reasons why some people spend the season by themselves. Some have family members living on the opposite side of the country, or world, while others may not have a close relationship with their relatives at all. There’s no one concrete way to , spend the holidays, and everyone has their own reasons why they choose not to see certain people on a festive day. A therapist, Lilia Magon, acknowledged that when we spend the holidays alone, our feelings of loneliness can be heightened. While everyone experiences loneliness in a different way, Magon believes that the feeling could be tied to how Thanksgiving has been portrayed over the years. “I think a lot of the anxieties and concerns that come up have to do with unmet expectations of what you think a holiday is supposed to look like, and what you think your relationship with your family or your friends is supposed to look like,” she said. “I think that’s where a lot of people themselves feel a little bit of a stressful state. Just maybe feeling a little let down by the expectations the"
+                },
                 options: [
                     "The traditional image of the holiday is family-related.",
                     "Family relationships may become worse during the holidays.",
@@ -167,6 +179,10 @@ var LEVELS_DATA = [
             {
                 type: "reading",
                 text: "Task 15: Which is NOT mentioned in paragraphs 6-7 as a way to fight loneliness during the holiday season?",
+                passage: {
+                    title: "Happy holidays?",
+                    text: "Thanksgiving is approaching and most Americans have solidified their family plans for the holiday. Whether you’re hosting a big meal or heading to a relative’s house, the holidays are often a chance to reconnect with loved ones. However, Thanksgiving Day isn’t always a family-oriented occasion. Over the years, several studies have found that the seemingly joyous holiday season isn’t always easy for everyone. In one survey, 31 per cent of respondents said they felt lonely during the holidays throughout the last five years. Meanwhile, 41 per cent of participants were concerned about a family member or a friend feeling lonely around the holidays. Another survey also found that 70 per cent of respondents struggled with different types of loneliness before Thanksgiving and Christmas, partly due to the effects of the Covid-19 pandemic. While socially-distanced holiday parties have mostly become a thing of the past since then, there are still many reasons why some people spend the season by themselves. Some have family members living on the opposite side of the country, or world, while others may not have a close relationship with their relatives at all. There’s no one concrete way to , spend the holidays, and everyone has their own reasons why they choose not to see certain people on a festive day. A therapist, Lilia Magon, acknowledged that when we spend the holidays alone, our feelings of loneliness can be heightened. While everyone experiences loneliness in a different way, Magon believes that the feeling could be tied to how Thanksgiving has been portrayed over the years. “I think a lot of the anxieties and concerns that come up have to do with unmet expectations of what you think a holiday is supposed to look like, and what you think your relationship with your family or your friends is supposed to look like,” she said. “I think that’s where a lot of people themselves feel a little bit of a stressful state. Just maybe feeling a little let down by the expectations the"
+                },
                 options: [
                     "individualism.",
                     "unfriendliness.",
@@ -179,6 +195,10 @@ var LEVELS_DATA = [
             {
                 type: "reading",
                 text: "Task 16: Which is NOT mentioned in paragraphs 6-7 as a way to fight loneliness during the holiday season?",
+                passage: {
+                    title: "Happy holidays?",
+                    text: "Thanksgiving is approaching and most Americans have solidified their family plans for the holiday. Whether you’re hosting a big meal or heading to a relative’s house, the holidays are often a chance to reconnect with loved ones. However, Thanksgiving Day isn’t always a family-oriented occasion. Over the years, several studies have found that the seemingly joyous holiday season isn’t always easy for everyone. In one survey, 31 per cent of respondents said they felt lonely during the holidays throughout the last five years. Meanwhile, 41 per cent of participants were concerned about a family member or a friend feeling lonely around the holidays. Another survey also found that 70 per cent of respondents struggled with different types of loneliness before Thanksgiving and Christmas, partly due to the effects of the Covid-19 pandemic. While socially-distanced holiday parties have mostly become a thing of the past since then, there are still many reasons why some people spend the season by themselves. Some have family members living on the opposite side of the country, or world, while others may not have a close relationship with their relatives at all. There’s no one concrete way to , spend the holidays, and everyone has their own reasons why they choose not to see certain people on a festive day. A therapist, Lilia Magon, acknowledged that when we spend the holidays alone, our feelings of loneliness can be heightened. While everyone experiences loneliness in a different way, Magon believes that the feeling could be tied to how Thanksgiving has been portrayed over the years. “I think a lot of the anxieties and concerns that come up have to do with unmet expectations of what you think a holiday is supposed to look like, and what you think your relationship with your family or your friends is supposed to look like,” she said. “I think that’s where a lot of people themselves feel a little bit of a stressful state. Just maybe feeling a little let down by the expectations the"
+                },
                 options: [
                     "individualism.",
                     "unfriendliness.",
@@ -191,6 +211,10 @@ var LEVELS_DATA = [
             {
                 type: "reading",
                 text: "Task 17: Which is NOT mentioned in paragraphs 6-7 as a way to fight loneliness during the holiday season?",
+                passage: {
+                    title: "Happy holidays?",
+                    text: "Thanksgiving is approaching and most Americans have solidified their family plans for the holiday. Whether you’re hosting a big meal or heading to a relative’s house, the holidays are often a chance to reconnect with loved ones. However, Thanksgiving Day isn’t always a family-oriented occasion. Over the years, several studies have found that the seemingly joyous holiday season isn’t always easy for everyone. In one survey, 31 per cent of respondents said they felt lonely during the holidays throughout the last five years. Meanwhile, 41 per cent of participants were concerned about a family member or a friend feeling lonely around the holidays. Another survey also found that 70 per cent of respondents struggled with different types of loneliness before Thanksgiving and Christmas, partly due to the effects of the Covid-19 pandemic. While socially-distanced holiday parties have mostly become a thing of the past since then, there are still many reasons why some people spend the season by themselves. Some have family members living on the opposite side of the country, or world, while others may not have a close relationship with their relatives at all. There’s no one concrete way to , spend the holidays, and everyone has their own reasons why they choose not to see certain people on a festive day. A therapist, Lilia Magon, acknowledged that when we spend the holidays alone, our feelings of loneliness can be heightened. While everyone experiences loneliness in a different way, Magon believes that the feeling could be tied to how Thanksgiving has been portrayed over the years. “I think a lot of the anxieties and concerns that come up have to do with unmet expectations of what you think a holiday is supposed to look like, and what you think your relationship with your family or your friends is supposed to look like,” she said. “I think that’s where a lot of people themselves feel a little bit of a stressful state. Just maybe feeling a little let down by the expectations the"
+                },
                 options: [
                     "individualism.",
                     "unfriendliness.",
@@ -203,6 +227,10 @@ var LEVELS_DATA = [
             {
                 type: "reading",
                 text: "Task 18: What is the main idea of the text?",
+                passage: {
+                    title: "Happy holidays?",
+                    text: "Thanksgiving is approaching and most Americans have solidified their family plans for the holiday. Whether you’re hosting a big meal or heading to a relative’s house, the holidays are often a chance to reconnect with loved ones. However, Thanksgiving Day isn’t always a family-oriented occasion. Over the years, several studies have found that the seemingly joyous holiday season isn’t always easy for everyone. In one survey, 31 per cent of respondents said they felt lonely during the holidays throughout the last five years. Meanwhile, 41 per cent of participants were concerned about a family member or a friend feeling lonely around the holidays. Another survey also found that 70 per cent of respondents struggled with different types of loneliness before Thanksgiving and Christmas, partly due to the effects of the Covid-19 pandemic. While socially-distanced holiday parties have mostly become a thing of the past since then, there are still many reasons why some people spend the season by themselves. Some have family members living on the opposite side of the country, or world, while others may not have a close relationship with their relatives at all. There’s no one concrete way to , spend the holidays, and everyone has their own reasons why they choose not to see certain people on a festive day. A therapist, Lilia Magon, acknowledged that when we spend the holidays alone, our feelings of loneliness can be heightened. While everyone experiences loneliness in a different way, Magon believes that the feeling could be tied to how Thanksgiving has been portrayed over the years. “I think a lot of the anxieties and concerns that come up have to do with unmet expectations of what you think a holiday is supposed to look like, and what you think your relationship with your family or your friends is supposed to look like,” she said. “I think that’s where a lot of people themselves feel a little bit of a stressful state. Just maybe feeling a little let down by the expectations the"
+                },
                 options: [
                     "The holiday season is the best time to reconnect with your family.",
                     "Loneliness has become a major problem for humanity nowadays.",
@@ -541,22 +569,6 @@ var LEVELS_DATA = [
             },
             {
                 type: "reading",
-                text: "Task 16: According to the text, the majority of young people try to...",
-                passage: {
-                    title: "Understanding the media",
-                    text: "There was an unspoken agreement in previous generations that the news media shared the whole truth and nothing but the truth”. Information was often shared by word of mouth and was sourced from a handful of generally reliable newspapers, news broadcasts, and radio programmes. It’s not so simple today. Youth are coming of age in a time of technical sophistication. The news cycle runs 24 hours a day across multiple modes of media, available in nearly every teen’s pocket. Anyone with a computer and modest technical skills can create fake videos or alter images, and everyone with a social media account can author content and share posts to millions of viewers. On social media, false information has been found to spread further and faster than accurate information. Sometimes, inaccurate or false information can be shared without bad intent — posters may not recognize the information is false, they may be sharing it to alert others to a hoax, or they may be sharing what they recognize is a joke (but others may not). Other times, people are spreading misinformation purposefully to cause harm — to gain social media followers, to cause confusion about an issue, or for their own power gain. Young people seem to understand the importance of combating misinformation, and are aware of how it relates to their own habits online and on social media. A lot of youth are checking their sources too — a special research on kids and news found that 70% of respondents “often” or “sometimes” try to validate a suspicious piece of news. Nevertheless, it’s important for parents and teachers to guide youth in acquiring media literacy. Young children inay not always understand what they are seeing or hearing, even if it looks like they are. To help them, you can explore one type of media at a time, identify what is happening, and encourage a child to ask questions about what they are seeing or hearing. It’s also a good idea to explore how media are made — make a video together, take apart an ol"
-                },
-                options: [
-                    "Playing an investigation game.",
-                    "Subscribing to popular accounts.",
-                    "Sharing your life experience.",
-                    "Guiding them in content creation.",
-                ],
-                correct: 0,
-                points: 10
-            },
-            {
-                type: "reading",
                 text: "Task 17: What way does the author recommend in dealing with teenage children?",
                 passage: {
                     title: "Understanding the media",
@@ -587,6 +599,54 @@ var LEVELS_DATA = [
                 correct: 3,
                 points: 10
             },
+            {
+                type: "multiple-choice",
+                text: "Variant 5 · Task 12: What is the main purpose of the text?",
+                options: [
+                    "To entertain the reader",
+                    "To inform about a topic",
+                    "To persuade the reader",
+                    "To describe a process",
+                ],
+                correct: 1,
+                points: 10
+            },
+            {
+                type: "multiple-choice",
+                text: "Variant 5 · Task 13: According to the text, what is the author's main argument?",
+                options: [
+                    "Technology is harmful",
+                    "Education needs reform",
+                    "Change requires effort",
+                    "Science solves problems",
+                ],
+                correct: 0,
+                points: 10
+            },
+            {
+                type: "multiple-choice",
+                text: "Variant 5 · Task 14: What does the author suggest readers should do?",
+                options: [
+                    "Ignore advice",
+                    "Seek more information",
+                    "Act immediately",
+                    "Wait for results",
+                ],
+                correct: 3,
+                points: 10
+            },
+            {
+                type: "multiple-choice",
+                text: "Variant 5 · Task 15: The word \"significant\" in the text is closest in meaning to...",
+                options: [
+                    "minor",
+                    "important",
+                    "unusual",
+                    "popular",
+                ],
+                correct: 2,
+                points: 10
+            },
         ]
     },
     {
@@ -599,6 +659,10 @@ var LEVELS_DATA = [
             {
                 type: "reading",
                 text: "Task 12: According to the text, carbon emissions in the USA... 13",
+                passage: {
+                    title: "Slow down climate change",
+                    text: "Rising sea levels. Raging storms. Searing heat. Ferocious fires. Severe drought. Punishing floods. The effects of climate change are already threatening our health, our communities, our economy, and our children’s future. What can you do? A whole lot, as it turns out. Americans, on average, produce 21 tons of carbon a year, about four times the global average. Personal action is, of course, substitute for meaningful government policies. We still must limit carbon pollution and move away from dirty fossil fuels and toward cleaner power. But it’s important to remember the equally vital contributions that can be made by private citizens — which is to say, by you. “Change only happens when individuals take action,” says clean energy advocate Emily Dain. “There’s no other way, if it doesn’t start with people.” Here are some easy, effective ways each one of us can make a difference. First, weatherize. Building heating and cooling are among the biggest uses of energy. Indeed, heating and air-conditioning account for almost half of home energy use. You can make your space more energy efficient by sealing drafts and ensuring it’s adequately insulated. In the USA it is possible to claim federal tax credits for many energy efficiency home improvements. Next, invest in energy-efficient appliances. Since they were first implemented in 1987, efficiency standards for dozens of appliances and products have kept 2.3 billion tons of carbon dioxide out of the air. That’s about the same amount as the annual carbon pollution coughed up by nearly 440 million cars. Energy efficiency is the lowest-cost way to reduce emissions. When shopping for refrigerators, washing machines, water heaters, and other appliances, look for the Energy Eco label. It will tell you which of them are the most efficient. And when you’re ready to swap out your old machines, don’t just put them on the curb. Recycling an old refrigerator through a special appliance disposal program can prevent an additional 10,000 p"
+                },
                 options: [
                     "are about the same as in other developed countries.",
                     "have risen four times in the last few years.",
@@ -611,6 +675,10 @@ var LEVELS_DATA = [
             {
                 type: "reading",
                 text: "Task 16: refers to...",
+                passage: {
+                    title: "Slow down climate change",
+                    text: "Rising sea levels. Raging storms. Searing heat. Ferocious fires. Severe drought. Punishing floods. The effects of climate change are already threatening our health, our communities, our economy, and our children’s future. What can you do? A whole lot, as it turns out. Americans, on average, produce 21 tons of carbon a year, about four times the global average. Personal action is, of course, substitute for meaningful government policies. We still must limit carbon pollution and move away from dirty fossil fuels and toward cleaner power. But it’s important to remember the equally vital contributions that can be made by private citizens — which is to say, by you. “Change only happens when individuals take action,” says clean energy advocate Emily Dain. “There’s no other way, if it doesn’t start with people.” Here are some easy, effective ways each one of us can make a difference. First, weatherize. Building heating and cooling are among the biggest uses of energy. Indeed, heating and air-conditioning account for almost half of home energy use. You can make your space more energy efficient by sealing drafts and ensuring it’s adequately insulated. In the USA it is possible to claim federal tax credits for many energy efficiency home improvements. Next, invest in energy-efficient appliances. Since they were first implemented in 1987, efficiency standards for dozens of appliances and products have kept 2.3 billion tons of carbon dioxide out of the air. That’s about the same amount as the annual carbon pollution coughed up by nearly 440 million cars. Energy efficiency is the lowest-cost way to reduce emissions. When shopping for refrigerators, washing machines, water heaters, and other appliances, look for the Energy Eco label. It will tell you which of them are the most efficient. And when you’re ready to swap out your old machines, don’t just put them on the curb. Recycling an old refrigerator through a special appliance disposal program can prevent an additional 10,000 p"
+                },
                 options: [
                     "saves more water for areas with lack of rain.",
                     "is connected with energy-efficient equipment.",
@@ -621,7 +689,7 @@ var LEVELS_DATA = [
                 points: 10
             },
             {
-                type: "reading",
+                type: "multiple-choice",
                 text: "Variant 6 · Task 12: What is the main purpose of the text?",
                 options: [
                     "To entertain the reader",
@@ -633,7 +701,7 @@ var LEVELS_DATA = [
                 points: 10
             },
             {
-                type: "reading",
+                type: "multiple-choice",
                 text: "Variant 6 · Task 13: According to the text, what is the author's main argument?",
                 options: [
                     "Technology is harmful",
@@ -645,7 +713,7 @@ var LEVELS_DATA = [
                 points: 10
             },
             {
-                type: "reading",
+                type: "multiple-choice",
                 text: "Variant 6 · Task 14: What does the author suggest readers should do?",
                 options: [
                     "Ignore advice",
@@ -657,7 +725,7 @@ var LEVELS_DATA = [
                 points: 10
             },
             {
-                type: "reading",
+                type: "multiple-choice",
                 text: "Variant 6 · Task 15: The word \"significant\" in the text is closest in meaning to...",
                 options: [
                     "minor",
@@ -669,7 +737,7 @@ var LEVELS_DATA = [
                 points: 10
             },
             {
-                type: "reading",
+                type: "multiple-choice",
                 text: "Variant 6 · Task 16: Which statement BEST summarises the final paragraph?",
                 options: [
                     "Problems are inevitable",
@@ -681,7 +749,7 @@ var LEVELS_DATA = [
                 points: 10
             },
             {
-                type: "reading",
+                type: "multiple-choice",
                 text: "Variant 6 · Task 17: What can be inferred from the text about the subject?",
                 options: [
                     "It is widely ignored",
@@ -693,7 +761,7 @@ var LEVELS_DATA = [
                 points: 10
             },
             {
-                type: "reading",
+                type: "multiple-choice",
                 text: "Variant 6 · Task 18: The author uses examples primarily to...",
                 options: [
                     "Entertain readers",
@@ -728,6 +796,10 @@ var LEVELS_DATA = [
             {
                 type: "reading",
                 text: "Task 13: Student clubs are characterised in the text as a place where students...",
+                passage: {
+                    title: "Should students join clubs on campus?",
+                    text: "Student clubs are an important part of the social and emotional development of young adults. Engagement in student organisations and activities can further develop self-awareness, self-management, and foster empathetic connections with others. I recognize a few downsides to the number of student organisations on my campus, especially in how resume-building opportunities appear to drive these numbers more often than a personal desire to help your community. But that doesn’t outweigh the positive impact such memberships can have on social and emotional development for college students and on boosting their soft skills. Soft skills are “people skills” that allow us to effectively interact with others, like communication and work ethic. Campus clubs are spaces where students are encouraged to be themselves, make potential mistakes, miss deadlines, and use their experiences to grow in a supportive environment. Joining a student organisation presents many opportunities to learn more about yourself, your goals and your strengths. You can learn from how others handle certain situations and test your current knowledge. You can also find out what you’re good at, whether that’s multitasking, staying organised, generating ideas, or serving others. This self-awareness will be beneficial in your future career. Some of my peers have mentioned the issue of over-committing when they’re pressured to be involved. When classroom work increases and time feels like it’s running out, it may feel like there is no other option than to drop a commitment or two. In my experience, many student clubs welcome conversations about needing some time. In spaces run by others who may be struggling with work-life balance, I have never had a club tell me that stepping back isn’t an option or that there won’t be space for me when I feel ready to return. From sports and wellness focused organisations to cultural, or creative groups, there is space for everyone in a student club on my campus if students c"
+                },
                 options: [
                     "Seek a club that requires less time.",
                     "Tell the club members that you lack time.",
@@ -740,6 +812,10 @@ var LEVELS_DATA = [
             {
                 type: "reading",
                 text: "Task 14: What is the author’s advice if you are short of time?",
+                passage: {
+                    title: "Should students join clubs on campus?",
+                    text: "Student clubs are an important part of the social and emotional development of young adults. Engagement in student organisations and activities can further develop self-awareness, self-management, and foster empathetic connections with others. I recognize a few downsides to the number of student organisations on my campus, especially in how resume-building opportunities appear to drive these numbers more often than a personal desire to help your community. But that doesn’t outweigh the positive impact such memberships can have on social and emotional development for college students and on boosting their soft skills. Soft skills are “people skills” that allow us to effectively interact with others, like communication and work ethic. Campus clubs are spaces where students are encouraged to be themselves, make potential mistakes, miss deadlines, and use their experiences to grow in a supportive environment. Joining a student organisation presents many opportunities to learn more about yourself, your goals and your strengths. You can learn from how others handle certain situations and test your current knowledge. You can also find out what you’re good at, whether that’s multitasking, staying organised, generating ideas, or serving others. This self-awareness will be beneficial in your future career. Some of my peers have mentioned the issue of over-committing when they’re pressured to be involved. When classroom work increases and time feels like it’s running out, it may feel like there is no other option than to drop a commitment or two. In my experience, many student clubs welcome conversations about needing some time. In spaces run by others who may be struggling with work-life balance, I have never had a club tell me that stepping back isn’t an option or that there won’t be space for me when I feel ready to return. From sports and wellness focused organisations to cultural, or creative groups, there is space for everyone in a student club on my campus if students c"
+                },
                 options: [
                     "Seek a club that requires less time.",
                     "Tell the club members that you lack time.",
@@ -752,6 +828,10 @@ var LEVELS_DATA = [
             {
                 type: "reading",
                 text: "Task 15: This in “oftentimes this creates a problem for students” (paragraph 5) most probably refers to...",
+                passage: {
+                    title: "Should students join clubs on campus?",
+                    text: "Student clubs are an important part of the social and emotional development of young adults. Engagement in student organisations and activities can further develop self-awareness, self-management, and foster empathetic connections with others. I recognize a few downsides to the number of student organisations on my campus, especially in how resume-building opportunities appear to drive these numbers more often than a personal desire to help your community. But that doesn’t outweigh the positive impact such memberships can have on social and emotional development for college students and on boosting their soft skills. Soft skills are “people skills” that allow us to effectively interact with others, like communication and work ethic. Campus clubs are spaces where students are encouraged to be themselves, make potential mistakes, miss deadlines, and use their experiences to grow in a supportive environment. Joining a student organisation presents many opportunities to learn more about yourself, your goals and your strengths. You can learn from how others handle certain situations and test your current knowledge. You can also find out what you’re good at, whether that’s multitasking, staying organised, generating ideas, or serving others. This self-awareness will be beneficial in your future career. Some of my peers have mentioned the issue of over-committing when they’re pressured to be involved. When classroom work increases and time feels like it’s running out, it may feel like there is no other option than to drop a commitment or two. In my experience, many student clubs welcome conversations about needing some time. In spaces run by others who may be struggling with work-life balance, I have never had a club tell me that stepping back isn’t an option or that there won’t be space for me when I feel ready to return. From sports and wellness focused organisations to cultural, or creative groups, there is space for everyone in a student club on my campus if students c"
+                },
                 options: [
                     "become too demanding for some members.",
                     "should be sponsored by the university.",
@@ -764,6 +844,10 @@ var LEVELS_DATA = [
             {
                 type: "reading",
                 text: "Task 16: It is implied that student clubs that require funding...",
+                passage: {
+                    title: "Should students join clubs on campus?",
+                    text: "Student clubs are an important part of the social and emotional development of young adults. Engagement in student organisations and activities can further develop self-awareness, self-management, and foster empathetic connections with others. I recognize a few downsides to the number of student organisations on my campus, especially in how resume-building opportunities appear to drive these numbers more often than a personal desire to help your community. But that doesn’t outweigh the positive impact such memberships can have on social and emotional development for college students and on boosting their soft skills. Soft skills are “people skills” that allow us to effectively interact with others, like communication and work ethic. Campus clubs are spaces where students are encouraged to be themselves, make potential mistakes, miss deadlines, and use their experiences to grow in a supportive environment. Joining a student organisation presents many opportunities to learn more about yourself, your goals and your strengths. You can learn from how others handle certain situations and test your current knowledge. You can also find out what you’re good at, whether that’s multitasking, staying organised, generating ideas, or serving others. This self-awareness will be beneficial in your future career. Some of my peers have mentioned the issue of over-committing when they’re pressured to be involved. When classroom work increases and time feels like it’s running out, it may feel like there is no other option than to drop a commitment or two. In my experience, many student clubs welcome conversations about needing some time. In spaces run by others who may be struggling with work-life balance, I have never had a club tell me that stepping back isn’t an option or that there won’t be space for me when I feel ready to return. From sports and wellness focused organisations to cultural, or creative groups, there is space for everyone in a student club on my campus if students c"
+                },
                 options: [
                     "become too demanding for some members.",
                     "should be sponsored by the university.",
@@ -776,6 +860,10 @@ var LEVELS_DATA = [
             {
                 type: "reading",
                 text: "Task 17: What is the author’s attitude to clubs that promote themselves as ’good job experience for the real world’?",
+                passage: {
+                    title: "Should students join clubs on campus?",
+                    text: "Student clubs are an important part of the social and emotional development of young adults. Engagement in student organisations and activities can further develop self-awareness, self-management, and foster empathetic connections with others. I recognize a few downsides to the number of student organisations on my campus, especially in how resume-building opportunities appear to drive these numbers more often than a personal desire to help your community. But that doesn’t outweigh the positive impact such memberships can have on social and emotional development for college students and on boosting their soft skills. Soft skills are “people skills” that allow us to effectively interact with others, like communication and work ethic. Campus clubs are spaces where students are encouraged to be themselves, make potential mistakes, miss deadlines, and use their experiences to grow in a supportive environment. Joining a student organisation presents many opportunities to learn more about yourself, your goals and your strengths. You can learn from how others handle certain situations and test your current knowledge. You can also find out what you’re good at, whether that’s multitasking, staying organised, generating ideas, or serving others. This self-awareness will be beneficial in your future career. Some of my peers have mentioned the issue of over-committing when they’re pressured to be involved. When classroom work increases and time feels like it’s running out, it may feel like there is no other option than to drop a commitment or two. In my experience, many student clubs welcome conversations about needing some time. In spaces run by others who may be struggling with work-life balance, I have never had a club tell me that stepping back isn’t an option or that there won’t be space for me when I feel ready to return. From sports and wellness focused organisations to cultural, or creative groups, there is space for everyone in a student club on my campus if students c"
+                },
                 options: [
                     "They provide good resources for success.",
                     "They are great for making connections.",
@@ -788,6 +876,10 @@ var LEVELS_DATA = [
             {
                 type: "reading",
                 text: "Task 18: What is the main idea of the article?",
+                passage: {
+                    title: "Should students join clubs on campus?",
+                    text: "Student clubs are an important part of the social and emotional development of young adults. Engagement in student organisations and activities can further develop self-awareness, self-management, and foster empathetic connections with others. I recognize a few downsides to the number of student organisations on my campus, especially in how resume-building opportunities appear to drive these numbers more often than a personal desire to help your community. But that doesn’t outweigh the positive impact such memberships can have on social and emotional development for college students and on boosting their soft skills. Soft skills are “people skills” that allow us to effectively interact with others, like communication and work ethic. Campus clubs are spaces where students are encouraged to be themselves, make potential mistakes, miss deadlines, and use their experiences to grow in a supportive environment. Joining a student organisation presents many opportunities to learn more about yourself, your goals and your strengths. You can learn from how others handle certain situations and test your current knowledge. You can also find out what you’re good at, whether that’s multitasking, staying organised, generating ideas, or serving others. This self-awareness will be beneficial in your future career. Some of my peers have mentioned the issue of over-committing when they’re pressured to be involved. When classroom work increases and time feels like it’s running out, it may feel like there is no other option than to drop a commitment or two. In my experience, many student clubs welcome conversations about needing some time. In spaces run by others who may be struggling with work-life balance, I have never had a club tell me that stepping back isn’t an option or that there won’t be space for me when I feel ready to return. From sports and wellness focused organisations to cultural, or creative groups, there is space for everyone in a student club on my campus if students c"
+                },
                 options: [
                     "Joining student organisations is a must for every student.",
                     "Joining the right club can benefit your future career.",
@@ -821,6 +913,10 @@ var LEVELS_DATA = [
             {
                 type: "reading",
                 text: "Task 12: The author’s club organised activities connected with...",
+                passage: {
+                    title: "What I learned from student clubs",
+                    text: "At the end of last semester, I was elected president of the Asian Studies Club at my university. It’s a pretty cool deal — the school gives us a lot of support to host fun events, like foreign movie nights, happy hours. And special receptions, and we also sponsor speakers to give special talks on Asia-related topics. It goes without saying that becoming a leader or an officer in a student club will help you develop leadership skills that will be invaluable in all areas of life. Being in different roles, I realised that it requires a combination of leadership, advocacy, and community. And I also learned that managing people is not easy... especially students. This lesson is probably pretty obvious, but it’s something that I didn’t fully understand until I experienced it myself. Taking on leadership positions is one of the most intimidating things I’ve ever done. However, it’s also one of the most rewarding experiences, because I learned a lot about the nuances of managing teams, people, and expectations. First of all, when adopting a leadership role, I struggle in finding the right balance between being “one of the team” and being taken seriously. I always avoid becoming an overly authoritative figure and I try to become super friendly to the people I work with. As a result, people stop taking my deadlines and requests seriously. I used to be scared of imposing real consequences, and I thought I could get things done just by being best friends with my team. I learned the hard way that this does not always work — it is important to set expectations on the very first day of a project and to have tough conversations once in a while. Additionally, I cannot emphasise how much I came to value the importance of communication. I realised that I am usually the most frustrated when I’m working on projects where communication is lacking. This is when people don’t respond to group messages (or when they do, it’s very minimal), don’t share their concerns or challenges, don’t part"
+                },
                 options: [
                     "trying different roles.",
                     "combining studies and clubs.",
@@ -833,6 +929,10 @@ var LEVELS_DATA = [
             {
                 type: "reading",
                 text: "Task 13: The author’s club organised activities connected with...",
+                passage: {
+                    title: "What I learned from student clubs",
+                    text: "At the end of last semester, I was elected president of the Asian Studies Club at my university. It’s a pretty cool deal — the school gives us a lot of support to host fun events, like foreign movie nights, happy hours. And special receptions, and we also sponsor speakers to give special talks on Asia-related topics. It goes without saying that becoming a leader or an officer in a student club will help you develop leadership skills that will be invaluable in all areas of life. Being in different roles, I realised that it requires a combination of leadership, advocacy, and community. And I also learned that managing people is not easy... especially students. This lesson is probably pretty obvious, but it’s something that I didn’t fully understand until I experienced it myself. Taking on leadership positions is one of the most intimidating things I’ve ever done. However, it’s also one of the most rewarding experiences, because I learned a lot about the nuances of managing teams, people, and expectations. First of all, when adopting a leadership role, I struggle in finding the right balance between being “one of the team” and being taken seriously. I always avoid becoming an overly authoritative figure and I try to become super friendly to the people I work with. As a result, people stop taking my deadlines and requests seriously. I used to be scared of imposing real consequences, and I thought I could get things done just by being best friends with my team. I learned the hard way that this does not always work — it is important to set expectations on the very first day of a project and to have tough conversations once in a while. Additionally, I cannot emphasise how much I came to value the importance of communication. I realised that I am usually the most frustrated when I’m working on projects where communication is lacking. This is when people don’t respond to group messages (or when they do, it’s very minimal), don’t share their concerns or challenges, don’t part"
+                },
                 options: [
                     "trying different roles.",
                     "combining studies and clubs.",
@@ -845,6 +945,10 @@ var LEVELS_DATA = [
             {
                 type: "reading",
                 text: "Task 14: The author’s club organised activities connected with...",
+                passage: {
+                    title: "What I learned from student clubs",
+                    text: "At the end of last semester, I was elected president of the Asian Studies Club at my university. It’s a pretty cool deal — the school gives us a lot of support to host fun events, like foreign movie nights, happy hours. And special receptions, and we also sponsor speakers to give special talks on Asia-related topics. It goes without saying that becoming a leader or an officer in a student club will help you develop leadership skills that will be invaluable in all areas of life. Being in different roles, I realised that it requires a combination of leadership, advocacy, and community. And I also learned that managing people is not easy... especially students. This lesson is probably pretty obvious, but it’s something that I didn’t fully understand until I experienced it myself. Taking on leadership positions is one of the most intimidating things I’ve ever done. However, it’s also one of the most rewarding experiences, because I learned a lot about the nuances of managing teams, people, and expectations. First of all, when adopting a leadership role, I struggle in finding the right balance between being “one of the team” and being taken seriously. I always avoid becoming an overly authoritative figure and I try to become super friendly to the people I work with. As a result, people stop taking my deadlines and requests seriously. I used to be scared of imposing real consequences, and I thought I could get things done just by being best friends with my team. I learned the hard way that this does not always work — it is important to set expectations on the very first day of a project and to have tough conversations once in a while. Additionally, I cannot emphasise how much I came to value the importance of communication. I realised that I am usually the most frustrated when I’m working on projects where communication is lacking. This is when people don’t respond to group messages (or when they do, it’s very minimal), don’t share their concerns or challenges, don’t part"
+                },
                 options: [
                     "trying different roles.",
                     "combining studies and clubs.",
@@ -857,6 +961,10 @@ var LEVELS_DATA = [
             {
                 type: "reading",
                 text: "Task 15: The author’s club organised activities connected with...",
+                passage: {
+                    title: "What I learned from student clubs",
+                    text: "At the end of last semester, I was elected president of the Asian Studies Club at my university. It’s a pretty cool deal — the school gives us a lot of support to host fun events, like foreign movie nights, happy hours. And special receptions, and we also sponsor speakers to give special talks on Asia-related topics. It goes without saying that becoming a leader or an officer in a student club will help you develop leadership skills that will be invaluable in all areas of life. Being in different roles, I realised that it requires a combination of leadership, advocacy, and community. And I also learned that managing people is not easy... especially students. This lesson is probably pretty obvious, but it’s something that I didn’t fully understand until I experienced it myself. Taking on leadership positions is one of the most intimidating things I’ve ever done. However, it’s also one of the most rewarding experiences, because I learned a lot about the nuances of managing teams, people, and expectations. First of all, when adopting a leadership role, I struggle in finding the right balance between being “one of the team” and being taken seriously. I always avoid becoming an overly authoritative figure and I try to become super friendly to the people I work with. As a result, people stop taking my deadlines and requests seriously. I used to be scared of imposing real consequences, and I thought I could get things done just by being best friends with my team. I learned the hard way that this does not always work — it is important to set expectations on the very first day of a project and to have tough conversations once in a while. Additionally, I cannot emphasise how much I came to value the importance of communication. I realised that I am usually the most frustrated when I’m working on projects where communication is lacking. This is when people don’t respond to group messages (or when they do, it’s very minimal), don’t share their concerns or challenges, don’t part"
+                },
                 options: [
                     "trying different roles.",
                     "combining studies and clubs.",
@@ -869,6 +977,10 @@ var LEVELS_DATA = [
             {
                 type: "reading",
                 text: "Task 16: The author’s club organised activities connected with...",
+                passage: {
+                    title: "What I learned from student clubs",
+                    text: "At the end of last semester, I was elected president of the Asian Studies Club at my university. It’s a pretty cool deal — the school gives us a lot of support to host fun events, like foreign movie nights, happy hours. And special receptions, and we also sponsor speakers to give special talks on Asia-related topics. It goes without saying that becoming a leader or an officer in a student club will help you develop leadership skills that will be invaluable in all areas of life. Being in different roles, I realised that it requires a combination of leadership, advocacy, and community. And I also learned that managing people is not easy... especially students. This lesson is probably pretty obvious, but it’s something that I didn’t fully understand until I experienced it myself. Taking on leadership positions is one of the most intimidating things I’ve ever done. However, it’s also one of the most rewarding experiences, because I learned a lot about the nuances of managing teams, people, and expectations. First of all, when adopting a leadership role, I struggle in finding the right balance between being “one of the team” and being taken seriously. I always avoid becoming an overly authoritative figure and I try to become super friendly to the people I work with. As a result, people stop taking my deadlines and requests seriously. I used to be scared of imposing real consequences, and I thought I could get things done just by being best friends with my team. I learned the hard way that this does not always work — it is important to set expectations on the very first day of a project and to have tough conversations once in a while. Additionally, I cannot emphasise how much I came to value the importance of communication. I realised that I am usually the most frustrated when I’m working on projects where communication is lacking. This is when people don’t respond to group messages (or when they do, it’s very minimal), don’t share their concerns or challenges, don’t part"
+                },
                 options: [
                     "trying different roles.",
                     "combining studies and clubs.",
@@ -881,6 +993,10 @@ var LEVELS_DATA = [
             {
                 type: "reading",
                 text: "Task 17: How does the author characterise students he worked with?",
+                passage: {
+                    title: "What I learned from student clubs",
+                    text: "At the end of last semester, I was elected president of the Asian Studies Club at my university. It’s a pretty cool deal — the school gives us a lot of support to host fun events, like foreign movie nights, happy hours. And special receptions, and we also sponsor speakers to give special talks on Asia-related topics. It goes without saying that becoming a leader or an officer in a student club will help you develop leadership skills that will be invaluable in all areas of life. Being in different roles, I realised that it requires a combination of leadership, advocacy, and community. And I also learned that managing people is not easy... especially students. This lesson is probably pretty obvious, but it’s something that I didn’t fully understand until I experienced it myself. Taking on leadership positions is one of the most intimidating things I’ve ever done. However, it’s also one of the most rewarding experiences, because I learned a lot about the nuances of managing teams, people, and expectations. First of all, when adopting a leadership role, I struggle in finding the right balance between being “one of the team” and being taken seriously. I always avoid becoming an overly authoritative figure and I try to become super friendly to the people I work with. As a result, people stop taking my deadlines and requests seriously. I used to be scared of imposing real consequences, and I thought I could get things done just by being best friends with my team. I learned the hard way that this does not always work — it is important to set expectations on the very first day of a project and to have tough conversations once in a while. Additionally, I cannot emphasise how much I came to value the importance of communication. I realised that I am usually the most frustrated when I’m working on projects where communication is lacking. This is when people don’t respond to group messages (or when they do, it’s very minimal), don’t share their concerns or challenges, don’t part"
+                },
                 options: [
                     "A leader should support the team and set objectives clearly.",
                     "Being a leader enables you to make your community better.",
@@ -893,6 +1009,10 @@ var LEVELS_DATA = [
             {
                 type: "reading",
                 text: "Task 18: What conclusion does the author come to in the last paragraph?",
+                passage: {
+                    title: "What I learned from student clubs",
+                    text: "At the end of last semester, I was elected president of the Asian Studies Club at my university. It’s a pretty cool deal — the school gives us a lot of support to host fun events, like foreign movie nights, happy hours. And special receptions, and we also sponsor speakers to give special talks on Asia-related topics. It goes without saying that becoming a leader or an officer in a student club will help you develop leadership skills that will be invaluable in all areas of life. Being in different roles, I realised that it requires a combination of leadership, advocacy, and community. And I also learned that managing people is not easy... especially students. This lesson is probably pretty obvious, but it’s something that I didn’t fully understand until I experienced it myself. Taking on leadership positions is one of the most intimidating things I’ve ever done. However, it’s also one of the most rewarding experiences, because I learned a lot about the nuances of managing teams, people, and expectations. First of all, when adopting a leadership role, I struggle in finding the right balance between being “one of the team” and being taken seriously. I always avoid becoming an overly authoritative figure and I try to become super friendly to the people I work with. As a result, people stop taking my deadlines and requests seriously. I used to be scared of imposing real consequences, and I thought I could get things done just by being best friends with my team. I learned the hard way that this does not always work — it is important to set expectations on the very first day of a project and to have tough conversations once in a while. Additionally, I cannot emphasise how much I came to value the importance of communication. I realised that I am usually the most frustrated when I’m working on projects where communication is lacking. This is when people don’t respond to group messages (or when they do, it’s very minimal), don’t share their concerns or challenges, don’t part"
+                },
                 options: [
                     "A leader should support the team and set objectives clearly.",
                     "Being a leader enables you to make your community better.",
@@ -1035,6 +1155,10 @@ var LEVELS_DATA = [
             {
                 type: "reading",
                 text: "Task 13: The expression tedious stuff in “It could be very tedious stuff” (paragraph 2) most probably refers to...",
+                passage: {
+                    title: "Seeing the big picture",
+                    text: "In my very first experiences of interning or doing part-time work, I usually get placed at the very bottom of the food chain. One summer I was an administrative assistant, and now I hold a part-time job as an accounts receivable clerk. Since I mostly come inexperienced, I would have to get trained and mentored by the employees there. Most of the time, I get paired with an employee who introduces me to their daily tasks. After a few times experiencing this, and having the position of an outsider who is given a glimpse of the inner workings of a company, I’ve started to notice something that companies have in common. Most of us are missing the big picture. As an employee starting a career in a specific company, in a non-decision-making position, we are often given a set of instructions for our daily tasks. These are the things that need to be done (by us) in order for the organisation to run well. It could be creating clippings of real estate advertisements from the newspaper. It might be processing a payment by following a detailed set of instructions. It could be very tedious stuff that might lead you to start to think: “Why am I doing this?” I completely understand that sometimes there just isn’t enough time or resources to explain everything to everyone in the team. But here is why I think understanding the big picture is great for everyone in the organisation. First and foremost, not understanding the significance of what you are doing kills motivation. When you are stuck repeatedly doing the same things, for weeks and months... no matter how good of an employee you are, you will get bored. Especially if you don’t understand the contributions that you are making as you work. When you lose motivation, then the quality of your work will automatically decrease. This is bad not just for you, but for the entire company as well — because now you are inefficient. On the other hand, if you understand the reasoning behind your tasks why it has to be done, you will feel th"
+                },
                 options: [
                     "detailed instructions.",
                     "boring responsibilities.",
@@ -1047,6 +1171,10 @@ var LEVELS_DATA = [
             {
                 type: "reading",
                 text: "Task 14: Which is NOT mentioned as a result of lacking “understanding the big picture” in an organisation?",
+                passage: {
+                    title: "Seeing the big picture",
+                    text: "In my very first experiences of interning or doing part-time work, I usually get placed at the very bottom of the food chain. One summer I was an administrative assistant, and now I hold a part-time job as an accounts receivable clerk. Since I mostly come inexperienced, I would have to get trained and mentored by the employees there. Most of the time, I get paired with an employee who introduces me to their daily tasks. After a few times experiencing this, and having the position of an outsider who is given a glimpse of the inner workings of a company, I’ve started to notice something that companies have in common. Most of us are missing the big picture. As an employee starting a career in a specific company, in a non-decision-making position, we are often given a set of instructions for our daily tasks. These are the things that need to be done (by us) in order for the organisation to run well. It could be creating clippings of real estate advertisements from the newspaper. It might be processing a payment by following a detailed set of instructions. It could be very tedious stuff that might lead you to start to think: “Why am I doing this?” I completely understand that sometimes there just isn’t enough time or resources to explain everything to everyone in the team. But here is why I think understanding the big picture is great for everyone in the organisation. First and foremost, not understanding the significance of what you are doing kills motivation. When you are stuck repeatedly doing the same things, for weeks and months... no matter how good of an employee you are, you will get bored. Especially if you don’t understand the contributions that you are making as you work. When you lose motivation, then the quality of your work will automatically decrease. This is bad not just for you, but for the entire company as well — because now you are inefficient. On the other hand, if you understand the reasoning behind your tasks why it has to be done, you will feel th"
+                },
                 options: [
                     "Employees will be unproductive.",
                     "It will affect the whole company.",
@@ -1059,6 +1187,10 @@ var LEVELS_DATA = [
             {
                 type: "reading",
                 text: "Task 15: The author uses the example with page numbers (paragraph 6) to...",
+                passage: {
+                    title: "Seeing the big picture",
+                    text: "In my very first experiences of interning or doing part-time work, I usually get placed at the very bottom of the food chain. One summer I was an administrative assistant, and now I hold a part-time job as an accounts receivable clerk. Since I mostly come inexperienced, I would have to get trained and mentored by the employees there. Most of the time, I get paired with an employee who introduces me to their daily tasks. After a few times experiencing this, and having the position of an outsider who is given a glimpse of the inner workings of a company, I’ve started to notice something that companies have in common. Most of us are missing the big picture. As an employee starting a career in a specific company, in a non-decision-making position, we are often given a set of instructions for our daily tasks. These are the things that need to be done (by us) in order for the organisation to run well. It could be creating clippings of real estate advertisements from the newspaper. It might be processing a payment by following a detailed set of instructions. It could be very tedious stuff that might lead you to start to think: “Why am I doing this?” I completely understand that sometimes there just isn’t enough time or resources to explain everything to everyone in the team. But here is why I think understanding the big picture is great for everyone in the organisation. First and foremost, not understanding the significance of what you are doing kills motivation. When you are stuck repeatedly doing the same things, for weeks and months... no matter how good of an employee you are, you will get bored. Especially if you don’t understand the contributions that you are making as you work. When you lose motivation, then the quality of your work will automatically decrease. This is bad not just for you, but for the entire company as well — because now you are inefficient. On the other hand, if you understand the reasoning behind your tasks why it has to be done, you will feel th"
+                },
                 options: [
                     "show how to stop doing boring work.",
                     "prove the benefit of knowing your goals.",
@@ -1071,6 +1203,10 @@ var LEVELS_DATA = [
             {
                 type: "reading",
                 text: "Task 16: This in paragraph 6 (“After realising this, I started...”) most probably refers to...",
+                passage: {
+                    title: "Seeing the big picture",
+                    text: "In my very first experiences of interning or doing part-time work, I usually get placed at the very bottom of the food chain. One summer I was an administrative assistant, and now I hold a part-time job as an accounts receivable clerk. Since I mostly come inexperienced, I would have to get trained and mentored by the employees there. Most of the time, I get paired with an employee who introduces me to their daily tasks. After a few times experiencing this, and having the position of an outsider who is given a glimpse of the inner workings of a company, I’ve started to notice something that companies have in common. Most of us are missing the big picture. As an employee starting a career in a specific company, in a non-decision-making position, we are often given a set of instructions for our daily tasks. These are the things that need to be done (by us) in order for the organisation to run well. It could be creating clippings of real estate advertisements from the newspaper. It might be processing a payment by following a detailed set of instructions. It could be very tedious stuff that might lead you to start to think: “Why am I doing this?” I completely understand that sometimes there just isn’t enough time or resources to explain everything to everyone in the team. But here is why I think understanding the big picture is great for everyone in the organisation. First and foremost, not understanding the significance of what you are doing kills motivation. When you are stuck repeatedly doing the same things, for weeks and months... no matter how good of an employee you are, you will get bored. Especially if you don’t understand the contributions that you are making as you work. When you lose motivation, then the quality of your work will automatically decrease. This is bad not just for you, but for the entire company as well — because now you are inefficient. On the other hand, if you understand the reasoning behind your tasks why it has to be done, you will feel th"
+                },
                 options: [
                     "reasons for being upset.",
                     "a client’s request.",
@@ -1083,6 +1219,10 @@ var LEVELS_DATA = [
             {
                 type: "reading",
                 text: "Task 17: It is implied that if employees understand the reasoning behind their tasks they will...",
+                passage: {
+                    title: "Seeing the big picture",
+                    text: "In my very first experiences of interning or doing part-time work, I usually get placed at the very bottom of the food chain. One summer I was an administrative assistant, and now I hold a part-time job as an accounts receivable clerk. Since I mostly come inexperienced, I would have to get trained and mentored by the employees there. Most of the time, I get paired with an employee who introduces me to their daily tasks. After a few times experiencing this, and having the position of an outsider who is given a glimpse of the inner workings of a company, I’ve started to notice something that companies have in common. Most of us are missing the big picture. As an employee starting a career in a specific company, in a non-decision-making position, we are often given a set of instructions for our daily tasks. These are the things that need to be done (by us) in order for the organisation to run well. It could be creating clippings of real estate advertisements from the newspaper. It might be processing a payment by following a detailed set of instructions. It could be very tedious stuff that might lead you to start to think: “Why am I doing this?” I completely understand that sometimes there just isn’t enough time or resources to explain everything to everyone in the team. But here is why I think understanding the big picture is great for everyone in the organisation. First and foremost, not understanding the significance of what you are doing kills motivation. When you are stuck repeatedly doing the same things, for weeks and months... no matter how good of an employee you are, you will get bored. Especially if you don’t understand the contributions that you are making as you work. When you lose motivation, then the quality of your work will automatically decrease. This is bad not just for you, but for the entire company as well — because now you are inefficient. On the other hand, if you understand the reasoning behind your tasks why it has to be done, you will feel th"
+                },
                 options: [
                     "understand their employers better.",
                     "change their position faster.",
@@ -1095,6 +1235,10 @@ var LEVELS_DATA = [
             {
                 type: "reading",
                 text: "Task 18: What is the main idea of the last paragraph?",
+                passage: {
+                    title: "Seeing the big picture",
+                    text: "In my very first experiences of interning or doing part-time work, I usually get placed at the very bottom of the food chain. One summer I was an administrative assistant, and now I hold a part-time job as an accounts receivable clerk. Since I mostly come inexperienced, I would have to get trained and mentored by the employees there. Most of the time, I get paired with an employee who introduces me to their daily tasks. After a few times experiencing this, and having the position of an outsider who is given a glimpse of the inner workings of a company, I’ve started to notice something that companies have in common. Most of us are missing the big picture. As an employee starting a career in a specific company, in a non-decision-making position, we are often given a set of instructions for our daily tasks. These are the things that need to be done (by us) in order for the organisation to run well. It could be creating clippings of real estate advertisements from the newspaper. It might be processing a payment by following a detailed set of instructions. It could be very tedious stuff that might lead you to start to think: “Why am I doing this?” I completely understand that sometimes there just isn’t enough time or resources to explain everything to everyone in the team. But here is why I think understanding the big picture is great for everyone in the organisation. First and foremost, not understanding the significance of what you are doing kills motivation. When you are stuck repeatedly doing the same things, for weeks and months... no matter how good of an employee you are, you will get bored. Especially if you don’t understand the contributions that you are making as you work. When you lose motivation, then the quality of your work will automatically decrease. This is bad not just for you, but for the entire company as well — because now you are inefficient. On the other hand, if you understand the reasoning behind your tasks why it has to be done, you will feel th"
+                },
                 options: [
                     "People often like to complain without trying to change things.",
                     "Only those who see the big picture can do their tasks perfectly.",
@@ -1249,6 +1393,10 @@ var LEVELS_DATA = [
             {
                 type: "reading",
                 text: "Task 13: The phrase this devilish commodity in “We have learned to shake hands with this devilish commodity” (paragraph 3) most probably refers to...",
+                passage: {
+                    title: "The dangers of microplastics",
+                    text: "With recent research, it appears that retiring plastic from our lives should be an expedited process. About a month ago it was reported that microplastics had been found in human blood. The finding was supported in a study co-authored by Professor Vethaak, who asked the question if the particles retained in the body or transported to certain organs. These are questions that scientific research has yet to answer, showing the dubious knowledge we have the effect of such an invasive material on our bodies and our culture. We have learned to shake hands with this devilish commodity, holding its hand while we carry groceries, and unknowingly consuming it in the food we eat. Even worse, infants are the most vulnerable to it. Babies often play and interact with plastic items from birth. From chewing on plastic teething rings to playing with plastic tub toys, children have a lot of exposure to plastic and its additives. According to a study released in September 2021, that exposure may be cause for concern. We need to urge our local governments to support bills that limit our usage of single-use plastics that are very often dumped into our environments, whether that is holding businesses and manufacturers accountable through taxes or even making environmentally-friendly packaging more accessible. One of these types of plastics that can be found in our blood is polyethylene, the kind used in carrying bags and food containers. This type of plastic has the highest propensity to be dangerous because plastic bags are an extremely common occurrence in our trash. Due to winds, and careless littering, they have also been a plague on the natural world. Plastic can be found in our solid and liquid waste. It can damage human cells and be found in placentas, the essential organ that babies live off until birth. It can be deduced from this that there is a potential for cancer risks and for us to be born with these invasive plastics in us. Truly chilling. We have an opportunity to ban th"
+                },
                 options: [
                     "grocery bags.",
                     "food additives.",
@@ -1261,6 +1409,10 @@ var LEVELS_DATA = [
             {
                 type: "reading",
                 text: "Task 14: What does the author think local governments should do?",
+                passage: {
+                    title: "The dangers of microplastics",
+                    text: "With recent research, it appears that retiring plastic from our lives should be an expedited process. About a month ago it was reported that microplastics had been found in human blood. The finding was supported in a study co-authored by Professor Vethaak, who asked the question if the particles retained in the body or transported to certain organs. These are questions that scientific research has yet to answer, showing the dubious knowledge we have the effect of such an invasive material on our bodies and our culture. We have learned to shake hands with this devilish commodity, holding its hand while we carry groceries, and unknowingly consuming it in the food we eat. Even worse, infants are the most vulnerable to it. Babies often play and interact with plastic items from birth. From chewing on plastic teething rings to playing with plastic tub toys, children have a lot of exposure to plastic and its additives. According to a study released in September 2021, that exposure may be cause for concern. We need to urge our local governments to support bills that limit our usage of single-use plastics that are very often dumped into our environments, whether that is holding businesses and manufacturers accountable through taxes or even making environmentally-friendly packaging more accessible. One of these types of plastics that can be found in our blood is polyethylene, the kind used in carrying bags and food containers. This type of plastic has the highest propensity to be dangerous because plastic bags are an extremely common occurrence in our trash. Due to winds, and careless littering, they have also been a plague on the natural world. Plastic can be found in our solid and liquid waste. It can damage human cells and be found in placentas, the essential organ that babies live off until birth. It can be deduced from this that there is a potential for cancer risks and for us to be born with these invasive plastics in us. Truly chilling. We have an opportunity to ban th"
+                },
                 options: [
                     "Prohibit all plastic items.",
                     "Provide free packaging.",
@@ -1273,6 +1425,10 @@ var LEVELS_DATA = [
             {
                 type: "reading",
                 text: "Task 15: According to the text, plastic used in bags and food containers can be dangerous because...",
+                passage: {
+                    title: "The dangers of microplastics",
+                    text: "With recent research, it appears that retiring plastic from our lives should be an expedited process. About a month ago it was reported that microplastics had been found in human blood. The finding was supported in a study co-authored by Professor Vethaak, who asked the question if the particles retained in the body or transported to certain organs. These are questions that scientific research has yet to answer, showing the dubious knowledge we have the effect of such an invasive material on our bodies and our culture. We have learned to shake hands with this devilish commodity, holding its hand while we carry groceries, and unknowingly consuming it in the food we eat. Even worse, infants are the most vulnerable to it. Babies often play and interact with plastic items from birth. From chewing on plastic teething rings to playing with plastic tub toys, children have a lot of exposure to plastic and its additives. According to a study released in September 2021, that exposure may be cause for concern. We need to urge our local governments to support bills that limit our usage of single-use plastics that are very often dumped into our environments, whether that is holding businesses and manufacturers accountable through taxes or even making environmentally-friendly packaging more accessible. One of these types of plastics that can be found in our blood is polyethylene, the kind used in carrying bags and food containers. This type of plastic has the highest propensity to be dangerous because plastic bags are an extremely common occurrence in our trash. Due to winds, and careless littering, they have also been a plague on the natural world. Plastic can be found in our solid and liquid waste. It can damage human cells and be found in placentas, the essential organ that babies live off until birth. It can be deduced from this that there is a potential for cancer risks and for us to be born with these invasive plastics in us. Truly chilling. We have an opportunity to ban th"
+                },
                 options: [
                     "it is very different from elements in the nature.",
                     "people have direct contact with it while eating.",
@@ -1285,6 +1441,10 @@ var LEVELS_DATA = [
             {
                 type: "reading",
                 text: "Task 16: What is the author’s position on plastic bags?",
+                passage: {
+                    title: "The dangers of microplastics",
+                    text: "With recent research, it appears that retiring plastic from our lives should be an expedited process. About a month ago it was reported that microplastics had been found in human blood. The finding was supported in a study co-authored by Professor Vethaak, who asked the question if the particles retained in the body or transported to certain organs. These are questions that scientific research has yet to answer, showing the dubious knowledge we have the effect of such an invasive material on our bodies and our culture. We have learned to shake hands with this devilish commodity, holding its hand while we carry groceries, and unknowingly consuming it in the food we eat. Even worse, infants are the most vulnerable to it. Babies often play and interact with plastic items from birth. From chewing on plastic teething rings to playing with plastic tub toys, children have a lot of exposure to plastic and its additives. According to a study released in September 2021, that exposure may be cause for concern. We need to urge our local governments to support bills that limit our usage of single-use plastics that are very often dumped into our environments, whether that is holding businesses and manufacturers accountable through taxes or even making environmentally-friendly packaging more accessible. One of these types of plastics that can be found in our blood is polyethylene, the kind used in carrying bags and food containers. This type of plastic has the highest propensity to be dangerous because plastic bags are an extremely common occurrence in our trash. Due to winds, and careless littering, they have also been a plague on the natural world. Plastic can be found in our solid and liquid waste. It can damage human cells and be found in placentas, the essential organ that babies live off until birth. It can be deduced from this that there is a potential for cancer risks and for us to be born with these invasive plastics in us. Truly chilling. We have an opportunity to ban th"
+                },
                 options: [
                     "They must be prohibited without delay.",
                     "They are convenient for many people.",
@@ -1297,6 +1457,10 @@ var LEVELS_DATA = [
             {
                 type: "reading",
                 text: "Task 17: The author compares plastic to lead in order to...",
+                passage: {
+                    title: "The dangers of microplastics",
+                    text: "With recent research, it appears that retiring plastic from our lives should be an expedited process. About a month ago it was reported that microplastics had been found in human blood. The finding was supported in a study co-authored by Professor Vethaak, who asked the question if the particles retained in the body or transported to certain organs. These are questions that scientific research has yet to answer, showing the dubious knowledge we have the effect of such an invasive material on our bodies and our culture. We have learned to shake hands with this devilish commodity, holding its hand while we carry groceries, and unknowingly consuming it in the food we eat. Even worse, infants are the most vulnerable to it. Babies often play and interact with plastic items from birth. From chewing on plastic teething rings to playing with plastic tub toys, children have a lot of exposure to plastic and its additives. According to a study released in September 2021, that exposure may be cause for concern. We need to urge our local governments to support bills that limit our usage of single-use plastics that are very often dumped into our environments, whether that is holding businesses and manufacturers accountable through taxes or even making environmentally-friendly packaging more accessible. One of these types of plastics that can be found in our blood is polyethylene, the kind used in carrying bags and food containers. This type of plastic has the highest propensity to be dangerous because plastic bags are an extremely common occurrence in our trash. Due to winds, and careless littering, they have also been a plague on the natural world. Plastic can be found in our solid and liquid waste. It can damage human cells and be found in placentas, the essential organ that babies live off until birth. It can be deduced from this that there is a potential for cancer risks and for us to be born with these invasive plastics in us. Truly chilling. We have an opportunity to ban th"
+                },
                 options: [
                     "explain how it is used in everyday things.",
                     "give an example of how science can help.",
@@ -1309,6 +1473,10 @@ var LEVELS_DATA = [
             {
                 type: "reading",
                 text: "Task 18: What is the main aim of the article?",
+                passage: {
+                    title: "The dangers of microplastics",
+                    text: "With recent research, it appears that retiring plastic from our lives should be an expedited process. About a month ago it was reported that microplastics had been found in human blood. The finding was supported in a study co-authored by Professor Vethaak, who asked the question if the particles retained in the body or transported to certain organs. These are questions that scientific research has yet to answer, showing the dubious knowledge we have the effect of such an invasive material on our bodies and our culture. We have learned to shake hands with this devilish commodity, holding its hand while we carry groceries, and unknowingly consuming it in the food we eat. Even worse, infants are the most vulnerable to it. Babies often play and interact with plastic items from birth. From chewing on plastic teething rings to playing with plastic tub toys, children have a lot of exposure to plastic and its additives. According to a study released in September 2021, that exposure may be cause for concern. We need to urge our local governments to support bills that limit our usage of single-use plastics that are very often dumped into our environments, whether that is holding businesses and manufacturers accountable through taxes or even making environmentally-friendly packaging more accessible. One of these types of plastics that can be found in our blood is polyethylene, the kind used in carrying bags and food containers. This type of plastic has the highest propensity to be dangerous because plastic bags are an extremely common occurrence in our trash. Due to winds, and careless littering, they have also been a plague on the natural world. Plastic can be found in our solid and liquid waste. It can damage human cells and be found in placentas, the essential organ that babies live off until birth. It can be deduced from this that there is a potential for cancer risks and for us to be born with these invasive plastics in us. Truly chilling. We have an opportunity to ban th"
+                },
                 options: [
                     "To persuade people to stop using plastic.",
                     "To discuss the recent research about plastic.",
@@ -1319,7 +1487,7 @@ var LEVELS_DATA = [
                 points: 10
             },
             {
-                type: "reading",
+                type: "multiple-choice",
                 text: "Variant 12 · Task 12: What is the main purpose of the text?",
                 options: [
                     "To entertain the reader",
@@ -1331,7 +1499,7 @@ var LEVELS_DATA = [
                 points: 10
             },
             {
-                type: "reading",
+                type: "multiple-choice",
                 text: "Variant 12 · Task 13: According to the text, what is the author's main argument?",
                 options: [
                     "Technology is harmful",
@@ -1343,7 +1511,7 @@ var LEVELS_DATA = [
                 points: 10
             },
             {
-                type: "reading",
+                type: "multiple-choice",
                 text: "Variant 12 · Task 14: What does the author suggest readers should do?",
                 options: [
                     "Ignore advice",
@@ -1355,7 +1523,7 @@ var LEVELS_DATA = [
                 points: 10
             },
             {
-                type: "reading",
+                type: "multiple-choice",
                 text: "Variant 12 · Task 15: The word \"significant\" in the text is closest in meaning to...",
                 options: [
                     "minor",
@@ -1378,6 +1546,10 @@ var LEVELS_DATA = [
             {
                 type: "reading",
                 text: "Task 14: The expression being thwarted in “how a student is growing or being thwarted” (paragraph 5) is closest in meaning to being...",
+                passage: {
+                    title: "Educational technology",
+                    text: "The covid outbreak showed all of us that education online is possible. Moreover, it can be even effective if we learn to implement educational technology available today. Educational technology is the use of tools in the classroom to develop an engaging and personalized learning experience. Beyond the use of computers, students and teachers can use interactive platforms, devices, and even analytical software to better gauge students’ progress using data in real-time. Learning has never been a one-size-fits-all endeavour, and with educational technology, teachers can better serve students’ individualized needs. The benefits of technology in education are far-reaching and growing with each day. Let’s take a look at some of the upsides of how technology impacts education positively. The first thing that comes to mind is 24/7 availability and accessibility. Technology like the internet and the ability to record lectures, upload learning resources to a platform, and host discussion forums make it possible to expand one’s access and availability to learn. For example, at many universities around the world students can earn their degrees entirely online through the use of an online learning system. Students used to have to be physically located inside a classroom to obtain their education. These days, online learning (by choice or by circumstance) has led to a revolution in education that makes it accessible to anyone, anywhere. Furthermore, technology offers great metrics for tracking progress. With technological platforms, students and teachers can report and review progress based on each individual’s performance. Through the use of analytics, teachers can easily visualize how a student is growing or being thwarted. This can help teachers spot inefficiencies or areas that are ripe for improvement or attention. Follow-up activities in online education are more diverse. Once a student leaves their designated class time, homework is a standard follow-up. However, when handi"
+                },
                 options: [
                     "Lack of communication is just a minor problem.",
                     "Communication with parents online is more difficult.",
@@ -1390,6 +1562,10 @@ var LEVELS_DATA = [
             {
                 type: "reading",
                 text: "Task 15: What is the author’s view of homework?",
+                passage: {
+                    title: "Educational technology",
+                    text: "The covid outbreak showed all of us that education online is possible. Moreover, it can be even effective if we learn to implement educational technology available today. Educational technology is the use of tools in the classroom to develop an engaging and personalized learning experience. Beyond the use of computers, students and teachers can use interactive platforms, devices, and even analytical software to better gauge students’ progress using data in real-time. Learning has never been a one-size-fits-all endeavour, and with educational technology, teachers can better serve students’ individualized needs. The benefits of technology in education are far-reaching and growing with each day. Let’s take a look at some of the upsides of how technology impacts education positively. The first thing that comes to mind is 24/7 availability and accessibility. Technology like the internet and the ability to record lectures, upload learning resources to a platform, and host discussion forums make it possible to expand one’s access and availability to learn. For example, at many universities around the world students can earn their degrees entirely online through the use of an online learning system. Students used to have to be physically located inside a classroom to obtain their education. These days, online learning (by choice or by circumstance) has led to a revolution in education that makes it accessible to anyone, anywhere. Furthermore, technology offers great metrics for tracking progress. With technological platforms, students and teachers can report and review progress based on each individual’s performance. Through the use of analytics, teachers can easily visualize how a student is growing or being thwarted. This can help teachers spot inefficiencies or areas that are ripe for improvement or attention. Follow-up activities in online education are more diverse. Once a student leaves their designated class time, homework is a standard follow-up. However, when handi"
+                },
                 options: [
                     "Lack of communication is just a minor problem.",
                     "Communication with parents online is more difficult.",
@@ -1402,6 +1578,10 @@ var LEVELS_DATA = [
             {
                 type: "reading",
                 text: "Task 16: What is the author’s response to the opponents of online education?",
+                passage: {
+                    title: "Educational technology",
+                    text: "The covid outbreak showed all of us that education online is possible. Moreover, it can be even effective if we learn to implement educational technology available today. Educational technology is the use of tools in the classroom to develop an engaging and personalized learning experience. Beyond the use of computers, students and teachers can use interactive platforms, devices, and even analytical software to better gauge students’ progress using data in real-time. Learning has never been a one-size-fits-all endeavour, and with educational technology, teachers can better serve students’ individualized needs. The benefits of technology in education are far-reaching and growing with each day. Let’s take a look at some of the upsides of how technology impacts education positively. The first thing that comes to mind is 24/7 availability and accessibility. Technology like the internet and the ability to record lectures, upload learning resources to a platform, and host discussion forums make it possible to expand one’s access and availability to learn. For example, at many universities around the world students can earn their degrees entirely online through the use of an online learning system. Students used to have to be physically located inside a classroom to obtain their education. These days, online learning (by choice or by circumstance) has led to a revolution in education that makes it accessible to anyone, anywhere. Furthermore, technology offers great metrics for tracking progress. With technological platforms, students and teachers can report and review progress based on each individual’s performance. Through the use of analytics, teachers can easily visualize how a student is growing or being thwarted. This can help teachers spot inefficiencies or areas that are ripe for improvement or attention. Follow-up activities in online education are more diverse. Once a student leaves their designated class time, homework is a standard follow-up. However, when handi"
+                },
                 options: [
                     "Lack of communication is just a minor problem.",
                     "Communication with parents online is more difficult.",
@@ -1414,6 +1594,10 @@ var LEVELS_DATA = [
             {
                 type: "reading",
                 text: "Task 17: It is implied that the role of a teacher in education...",
+                passage: {
+                    title: "Educational technology",
+                    text: "The covid outbreak showed all of us that education online is possible. Moreover, it can be even effective if we learn to implement educational technology available today. Educational technology is the use of tools in the classroom to develop an engaging and personalized learning experience. Beyond the use of computers, students and teachers can use interactive platforms, devices, and even analytical software to better gauge students’ progress using data in real-time. Learning has never been a one-size-fits-all endeavour, and with educational technology, teachers can better serve students’ individualized needs. The benefits of technology in education are far-reaching and growing with each day. Let’s take a look at some of the upsides of how technology impacts education positively. The first thing that comes to mind is 24/7 availability and accessibility. Technology like the internet and the ability to record lectures, upload learning resources to a platform, and host discussion forums make it possible to expand one’s access and availability to learn. For example, at many universities around the world students can earn their degrees entirely online through the use of an online learning system. Students used to have to be physically located inside a classroom to obtain their education. These days, online learning (by choice or by circumstance) has led to a revolution in education that makes it accessible to anyone, anywhere. Furthermore, technology offers great metrics for tracking progress. With technological platforms, students and teachers can report and review progress based on each individual’s performance. Through the use of analytics, teachers can easily visualize how a student is growing or being thwarted. This can help teachers spot inefficiencies or areas that are ripe for improvement or attention. Follow-up activities in online education are more diverse. Once a student leaves their designated class time, homework is a standard follow-up. However, when handi"
+                },
                 options: [
                     "The teacher plays the most important role in education.",
                     "Technology helps adapt learning process to students’ needs.",
@@ -1424,7 +1608,7 @@ var LEVELS_DATA = [
                 points: 10
             },
             {
-                type: "reading",
+                type: "multiple-choice",
                 text: "Variant 13 · Task 12: What is the main purpose of the text?",
                 options: [
                     "To entertain the reader",
@@ -1436,7 +1620,7 @@ var LEVELS_DATA = [
                 points: 10
             },
             {
-                type: "reading",
+                type: "multiple-choice",
                 text: "Variant 13 · Task 13: According to the text, what is the author's main argument?",
                 options: [
                     "Technology is harmful",
@@ -1448,7 +1632,7 @@ var LEVELS_DATA = [
                 points: 10
             },
             {
-                type: "reading",
+                type: "multiple-choice",
                 text: "Variant 13 · Task 14: What does the author suggest readers should do?",
                 options: [
                     "Ignore advice",
@@ -1460,7 +1644,7 @@ var LEVELS_DATA = [
                 points: 10
             },
             {
-                type: "reading",
+                type: "multiple-choice",
                 text: "Variant 13 · Task 15: The word \"significant\" in the text is closest in meaning to...",
                 options: [
                     "minor",
@@ -1472,7 +1656,7 @@ var LEVELS_DATA = [
                 points: 10
             },
             {
-                type: "reading",
+                type: "multiple-choice",
                 text: "Variant 13 · Task 16: Which statement BEST summarises the final paragraph?",
                 options: [
                     "Problems are inevitable",
@@ -1484,7 +1668,7 @@ var LEVELS_DATA = [
                 points: 10
             },
             {
-                type: "reading",
+                type: "multiple-choice",
                 text: "Variant 13 · Task 17: What can be inferred from the text about the subject?",
                 options: [
                     "It is widely ignored",
@@ -1749,6 +1933,10 @@ var LEVELS_DATA = [
             {
                 type: "reading",
                 text: "Task 13: According to the article, internships...",
+                passage: {
+                    title: "Summer jobs",
+                    text: "As a high schooler, you may feel as though you lack the necessary experience to land a prime gig. However, there are plenty of jobs you are qualified for that pay rather well. Both part-time and full-time jobs are available for people of all abilities. While it may be difficult to know exactly what career you want to pursue when you graduate from high school, summer jobs can offer the perfect opportunity to test a job you think you may like. If you do a great job and are still interested in the line of work once summer is over, you will have some much-needed experience. This can lead to more work next summer, and perhaps a part-time job while you attend school. The pay may not be great (internships are often unpaid) but the experience can be priceless. To find an internship you would like, you could ask a counselor at school for assistance, call up businesses you find interesting and ask whether they are hiring interns, and check out websites, which focus solely on interning. If you want to earn some money, babysitter’s job is a great choice. Friends of mine with two young children pay their babysitter $15 per hour — that’s not a bad pay-rate for a part- time summer job. Ask any parent, and you will find that good babysitters are hard to come by. Do a great job taking care of the kids, and you could find yourself gainfully employed, earning great income and setting your own hours all summer long. Get your certification to further boost your credentials as a prospective nanny. While networking in your neighborhood will probably provide you with plenty of leads, you can also check out some websites to find more. If you enjoy being outdoors, going camping and hiking, and playing sports, then working as a camp counselor is the perfect job for you — that is, if you don’t mind watching over groups of kids away from their parents for weeks at a time! There are summer camps all over the country designated for almost any activity you could imagine, so you can likely find a p"
+                },
                 options: [
                     "Additional training you take.",
                     "Defining your work hours.",
@@ -1761,6 +1949,10 @@ var LEVELS_DATA = [
             {
                 type: "reading",
                 text: "Task 14: What can increase your chances of getting a job as a babysitter according to the article?",
+                passage: {
+                    title: "Summer jobs",
+                    text: "As a high schooler, you may feel as though you lack the necessary experience to land a prime gig. However, there are plenty of jobs you are qualified for that pay rather well. Both part-time and full-time jobs are available for people of all abilities. While it may be difficult to know exactly what career you want to pursue when you graduate from high school, summer jobs can offer the perfect opportunity to test a job you think you may like. If you do a great job and are still interested in the line of work once summer is over, you will have some much-needed experience. This can lead to more work next summer, and perhaps a part-time job while you attend school. The pay may not be great (internships are often unpaid) but the experience can be priceless. To find an internship you would like, you could ask a counselor at school for assistance, call up businesses you find interesting and ask whether they are hiring interns, and check out websites, which focus solely on interning. If you want to earn some money, babysitter’s job is a great choice. Friends of mine with two young children pay their babysitter $15 per hour — that’s not a bad pay-rate for a part- time summer job. Ask any parent, and you will find that good babysitters are hard to come by. Do a great job taking care of the kids, and you could find yourself gainfully employed, earning great income and setting your own hours all summer long. Get your certification to further boost your credentials as a prospective nanny. While networking in your neighborhood will probably provide you with plenty of leads, you can also check out some websites to find more. If you enjoy being outdoors, going camping and hiking, and playing sports, then working as a camp counselor is the perfect job for you — that is, if you don’t mind watching over groups of kids away from their parents for weeks at a time! There are summer camps all over the country designated for almost any activity you could imagine, so you can likely find a p"
+                },
                 options: [
                     "Additional training you take.",
                     "Defining your work hours.",
@@ -1773,6 +1965,10 @@ var LEVELS_DATA = [
             {
                 type: "reading",
                 text: "Task 15: It is implied that working as a camp counselor suits those who...",
+                passage: {
+                    title: "Summer jobs",
+                    text: "As a high schooler, you may feel as though you lack the necessary experience to land a prime gig. However, there are plenty of jobs you are qualified for that pay rather well. Both part-time and full-time jobs are available for people of all abilities. While it may be difficult to know exactly what career you want to pursue when you graduate from high school, summer jobs can offer the perfect opportunity to test a job you think you may like. If you do a great job and are still interested in the line of work once summer is over, you will have some much-needed experience. This can lead to more work next summer, and perhaps a part-time job while you attend school. The pay may not be great (internships are often unpaid) but the experience can be priceless. To find an internship you would like, you could ask a counselor at school for assistance, call up businesses you find interesting and ask whether they are hiring interns, and check out websites, which focus solely on interning. If you want to earn some money, babysitter’s job is a great choice. Friends of mine with two young children pay their babysitter $15 per hour — that’s not a bad pay-rate for a part- time summer job. Ask any parent, and you will find that good babysitters are hard to come by. Do a great job taking care of the kids, and you could find yourself gainfully employed, earning great income and setting your own hours all summer long. Get your certification to further boost your credentials as a prospective nanny. While networking in your neighborhood will probably provide you with plenty of leads, you can also check out some websites to find more. If you enjoy being outdoors, going camping and hiking, and playing sports, then working as a camp counselor is the perfect job for you — that is, if you don’t mind watching over groups of kids away from their parents for weeks at a time! There are summer camps all over the country designated for almost any activity you could imagine, so you can likely find a p"
+                },
                 options: [
                     "are professional athletes.",
                     "like spending time outside.",
@@ -1785,6 +1981,10 @@ var LEVELS_DATA = [
             {
                 type: "reading",
                 text: "Task 16: Which is NOT true about working as a tutor?",
+                passage: {
+                    title: "Summer jobs",
+                    text: "As a high schooler, you may feel as though you lack the necessary experience to land a prime gig. However, there are plenty of jobs you are qualified for that pay rather well. Both part-time and full-time jobs are available for people of all abilities. While it may be difficult to know exactly what career you want to pursue when you graduate from high school, summer jobs can offer the perfect opportunity to test a job you think you may like. If you do a great job and are still interested in the line of work once summer is over, you will have some much-needed experience. This can lead to more work next summer, and perhaps a part-time job while you attend school. The pay may not be great (internships are often unpaid) but the experience can be priceless. To find an internship you would like, you could ask a counselor at school for assistance, call up businesses you find interesting and ask whether they are hiring interns, and check out websites, which focus solely on interning. If you want to earn some money, babysitter’s job is a great choice. Friends of mine with two young children pay their babysitter $15 per hour — that’s not a bad pay-rate for a part- time summer job. Ask any parent, and you will find that good babysitters are hard to come by. Do a great job taking care of the kids, and you could find yourself gainfully employed, earning great income and setting your own hours all summer long. Get your certification to further boost your credentials as a prospective nanny. While networking in your neighborhood will probably provide you with plenty of leads, you can also check out some websites to find more. If you enjoy being outdoors, going camping and hiking, and playing sports, then working as a camp counselor is the perfect job for you — that is, if you don’t mind watching over groups of kids away from their parents for weeks at a time! There are summer camps all over the country designated for almost any activity you could imagine, so you can likely find a p"
+                },
                 options: [
                     "have problems.",
                     "start a journey.",
@@ -1797,6 +1997,10 @@ var LEVELS_DATA = [
             {
                 type: "reading",
                 text: "Task 17: The expression hit the road in “so many people hit the road to” (paragraph 6) is closest in meaning to...",
+                passage: {
+                    title: "Summer jobs",
+                    text: "As a high schooler, you may feel as though you lack the necessary experience to land a prime gig. However, there are plenty of jobs you are qualified for that pay rather well. Both part-time and full-time jobs are available for people of all abilities. While it may be difficult to know exactly what career you want to pursue when you graduate from high school, summer jobs can offer the perfect opportunity to test a job you think you may like. If you do a great job and are still interested in the line of work once summer is over, you will have some much-needed experience. This can lead to more work next summer, and perhaps a part-time job while you attend school. The pay may not be great (internships are often unpaid) but the experience can be priceless. To find an internship you would like, you could ask a counselor at school for assistance, call up businesses you find interesting and ask whether they are hiring interns, and check out websites, which focus solely on interning. If you want to earn some money, babysitter’s job is a great choice. Friends of mine with two young children pay their babysitter $15 per hour — that’s not a bad pay-rate for a part- time summer job. Ask any parent, and you will find that good babysitters are hard to come by. Do a great job taking care of the kids, and you could find yourself gainfully employed, earning great income and setting your own hours all summer long. Get your certification to further boost your credentials as a prospective nanny. While networking in your neighborhood will probably provide you with plenty of leads, you can also check out some websites to find more. If you enjoy being outdoors, going camping and hiking, and playing sports, then working as a camp counselor is the perfect job for you — that is, if you don’t mind watching over groups of kids away from their parents for weeks at a time! There are summer camps all over the country designated for almost any activity you could imagine, so you can likely find a p"
+                },
                 options: [
                     "have problems.",
                     "start a journey.",
@@ -1807,7 +2011,7 @@ var LEVELS_DATA = [
                 points: 10
             },
             {
-                type: "reading",
+                type: "multiple-choice",
                 text: "Variant 16 · Task 12: What is the main purpose of the text?",
                 options: [
                     "To entertain the reader",
@@ -1819,7 +2023,7 @@ var LEVELS_DATA = [
                 points: 10
             },
             {
-                type: "reading",
+                type: "multiple-choice",
                 text: "Variant 16 · Task 13: According to the text, what is the author's main argument?",
                 options: [
                     "Technology is harmful",
@@ -1831,7 +2035,7 @@ var LEVELS_DATA = [
                 points: 10
             },
             {
-                type: "reading",
+                type: "multiple-choice",
                 text: "Variant 16 · Task 14: What does the author suggest readers should do?",
                 options: [
                     "Ignore advice",
@@ -1843,7 +2047,7 @@ var LEVELS_DATA = [
                 points: 10
             },
             {
-                type: "reading",
+                type: "multiple-choice",
                 text: "Variant 16 · Task 15: The word \"significant\" in the text is closest in meaning to...",
                 options: [
                     "minor",
@@ -1855,7 +2059,7 @@ var LEVELS_DATA = [
                 points: 10
             },
             {
-                type: "reading",
+                type: "multiple-choice",
                 text: "Variant 16 · Task 16: Which statement BEST summarises the final paragraph?",
                 options: [
                     "Problems are inevitable",
@@ -1877,120 +2081,112 @@ var LEVELS_DATA = [
         questions: [
             {
                 type: "reading",
-                text: "Variant 17 · Task 12: What is the main purpose of the text?",
+                text: "Task 12: According to the article, commuting by bike is...",
+                passage: {
+                    title: "Cycling to work",
+                    text: "In larger cities, walking and transit get a much larger share of total commutes, but biking is still the laggard. Car commuting remains the overwhelming favorite, making up more than three-quarters of all trips even in major metro areas with long commute times. As an enthusiastic cyclist and proponent of eco- (and wallet-) friendly transit alternatives, I find these numbers disappointing. However, I’m also a realist. Due to low population density and dispersed employment in the exurban belts around major cities, commuting by bike just isn’t a viable option for millions of workers. The good news is that it is also possible for quite a lot. For many who make the switch to bike commuting, health is a big reason why. Even if you ride at a leisurely pace, you get more exercise than you would by sitting behind the wheel of your car. An 80-kg person riding at about 24 km per hour — a brisk but not aggressive pace — burns more than 400 calories in a 30-minute ride. For someone of the same weight, a more leisurely 18-km per hour pace burns 245 calories in 30 minutes. By contrast, according to a Harvard study, an 84-kg person burns about 45 calories during 30 minutes of driving. Office work is even less energy-intensive. Per the same Harvard study, sitting at your desk or in a meeting burns roughly 70 calories per hour. If you weigh more, the caloric benefits are actually greater, as heavier people tend to burn calories faster. You may have heard that “sitting is the new smoking.” There’s still debate about just how unhealthy it is to sit for long periods, but few experts argue that it’s good for you. Studies have linked prolonged sitting — as in a typical day at the office — to increased risk for certain cancers, blood clots, obesity, cardiovascular disease, and other conditions. If you’re an office drone, starting and ending your workday on a bike and not in a car can cut out a significant amount of daily sitting time. It’s important to note that biking to and from work isn"
+                },
                 options: [
-                    "To entertain the reader",
-                    "To inform about a topic",
-                    "To persuade the reader",
-                    "To describe a process",
+                    "Heavier people burn more calories while cycling.",
+                    "Cycling speed influences how many calories you burn.",
+                    "You can burn 800 calories daily commuting by bike.",
+                    "Sitting at a desk burns more calories than driving.",
                 ],
                 correct: 1,
                 points: 10
             },
             {
                 type: "reading",
-                text: "Variant 17 · Task 13: According to the text, what is the author's main argument?",
+                text: "Task 13: What is the author’s attitude to using bikes?",
+                passage: {
+                    title: "Cycling to work",
+                    text: "In larger cities, walking and transit get a much larger share of total commutes, but biking is still the laggard. Car commuting remains the overwhelming favorite, making up more than three-quarters of all trips even in major metro areas with long commute times. As an enthusiastic cyclist and proponent of eco- (and wallet-) friendly transit alternatives, I find these numbers disappointing. However, I’m also a realist. Due to low population density and dispersed employment in the exurban belts around major cities, commuting by bike just isn’t a viable option for millions of workers. The good news is that it is also possible for quite a lot. For many who make the switch to bike commuting, health is a big reason why. Even if you ride at a leisurely pace, you get more exercise than you would by sitting behind the wheel of your car. An 80-kg person riding at about 24 km per hour — a brisk but not aggressive pace — burns more than 400 calories in a 30-minute ride. For someone of the same weight, a more leisurely 18-km per hour pace burns 245 calories in 30 minutes. By contrast, according to a Harvard study, an 84-kg person burns about 45 calories during 30 minutes of driving. Office work is even less energy-intensive. Per the same Harvard study, sitting at your desk or in a meeting burns roughly 70 calories per hour. If you weigh more, the caloric benefits are actually greater, as heavier people tend to burn calories faster. You may have heard that “sitting is the new smoking.” There’s still debate about just how unhealthy it is to sit for long periods, but few experts argue that it’s good for you. Studies have linked prolonged sitting — as in a typical day at the office — to increased risk for certain cancers, blood clots, obesity, cardiovascular disease, and other conditions. If you’re an office drone, starting and ending your workday on a bike and not in a car can cut out a significant amount of daily sitting time. It’s important to note that biking to and from work isn"
+                },
                 options: [
-                    "Technology is harmful",
-                    "Education needs reform",
-                    "Change requires effort",
-                    "Science solves problems",
+                    "Heavier people burn more calories while cycling.",
+                    "Cycling speed influences how many calories you burn.",
+                    "You can burn 800 calories daily commuting by bike.",
+                    "Sitting at a desk burns more calories than driving.",
                 ],
                 correct: 3,
                 points: 10
             },
             {
                 type: "reading",
-                text: "Variant 17 · Task 14: What does the author suggest readers should do?",
+                text: "Task 14: Which is NOT true about physical exercise, according to the article?",
+                passage: {
+                    title: "Cycling to work",
+                    text: "In larger cities, walking and transit get a much larger share of total commutes, but biking is still the laggard. Car commuting remains the overwhelming favorite, making up more than three-quarters of all trips even in major metro areas with long commute times. As an enthusiastic cyclist and proponent of eco- (and wallet-) friendly transit alternatives, I find these numbers disappointing. However, I’m also a realist. Due to low population density and dispersed employment in the exurban belts around major cities, commuting by bike just isn’t a viable option for millions of workers. The good news is that it is also possible for quite a lot. For many who make the switch to bike commuting, health is a big reason why. Even if you ride at a leisurely pace, you get more exercise than you would by sitting behind the wheel of your car. An 80-kg person riding at about 24 km per hour — a brisk but not aggressive pace — burns more than 400 calories in a 30-minute ride. For someone of the same weight, a more leisurely 18-km per hour pace burns 245 calories in 30 minutes. By contrast, according to a Harvard study, an 84-kg person burns about 45 calories during 30 minutes of driving. Office work is even less energy-intensive. Per the same Harvard study, sitting at your desk or in a meeting burns roughly 70 calories per hour. If you weigh more, the caloric benefits are actually greater, as heavier people tend to burn calories faster. You may have heard that “sitting is the new smoking.” There’s still debate about just how unhealthy it is to sit for long periods, but few experts argue that it’s good for you. Studies have linked prolonged sitting — as in a typical day at the office — to increased risk for certain cancers, blood clots, obesity, cardiovascular disease, and other conditions. If you’re an office drone, starting and ending your workday on a bike and not in a car can cut out a significant amount of daily sitting time. It’s important to note that biking to and from work isn"
+                },
                 options: [
-                    "Ignore advice",
-                    "Seek more information",
-                    "Act immediately",
-                    "Wait for results",
+                    "Heavier people burn more calories while cycling.",
+                    "Cycling speed influences how many calories you burn.",
+                    "You can burn 800 calories daily commuting by bike.",
+                    "Sitting at a desk burns more calories than driving.",
                 ],
                 correct: 0,
                 points: 10
             },
             {
                 type: "reading",
-                text: "Variant 17 · Task 15: The word \"significant\" in the text is closest in meaning to...",
+                text: "Task 15: Why does the author compare sitting to smoking?",
+                passage: {
+                    title: "Cycling to work",
+                    text: "In larger cities, walking and transit get a much larger share of total commutes, but biking is still the laggard. Car commuting remains the overwhelming favorite, making up more than three-quarters of all trips even in major metro areas with long commute times. As an enthusiastic cyclist and proponent of eco- (and wallet-) friendly transit alternatives, I find these numbers disappointing. However, I’m also a realist. Due to low population density and dispersed employment in the exurban belts around major cities, commuting by bike just isn’t a viable option for millions of workers. The good news is that it is also possible for quite a lot. For many who make the switch to bike commuting, health is a big reason why. Even if you ride at a leisurely pace, you get more exercise than you would by sitting behind the wheel of your car. An 80-kg person riding at about 24 km per hour — a brisk but not aggressive pace — burns more than 400 calories in a 30-minute ride. For someone of the same weight, a more leisurely 18-km per hour pace burns 245 calories in 30 minutes. By contrast, according to a Harvard study, an 84-kg person burns about 45 calories during 30 minutes of driving. Office work is even less energy-intensive. Per the same Harvard study, sitting at your desk or in a meeting burns roughly 70 calories per hour. If you weigh more, the caloric benefits are actually greater, as heavier people tend to burn calories faster. You may have heard that “sitting is the new smoking.” There’s still debate about just how unhealthy it is to sit for long periods, but few experts argue that it’s good for you. Studies have linked prolonged sitting — as in a typical day at the office — to increased risk for certain cancers, blood clots, obesity, cardiovascular disease, and other conditions. If you’re an office drone, starting and ending your workday on a bike and not in a car can cut out a significant amount of daily sitting time. It’s important to note that biking to and from work isn"
+                },
                 options: [
-                    "minor",
-                    "important",
-                    "unusual",
-                    "popular",
+                    "You get addicted to sitting rather quickly.",
+                    "People sit and smoke on a typical office day.",
+                    "Sitting time is compared to smoking time.",
+                    "Both can do harm to your well-being.",
                 ],
                 correct: 2,
                 points: 10
             },
             {
                 type: "reading",
-                text: "Variant 17 · Task 16: Which statement BEST summarises the final paragraph?",
+                text: "Task 16: An expression an office drone in “If you’re an office drone” (paragraph 5) is closest in meaning to a person who...",
+                passage: {
+                    title: "Cycling to work",
+                    text: "In larger cities, walking and transit get a much larger share of total commutes, but biking is still the laggard. Car commuting remains the overwhelming favorite, making up more than three-quarters of all trips even in major metro areas with long commute times. As an enthusiastic cyclist and proponent of eco- (and wallet-) friendly transit alternatives, I find these numbers disappointing. However, I’m also a realist. Due to low population density and dispersed employment in the exurban belts around major cities, commuting by bike just isn’t a viable option for millions of workers. The good news is that it is also possible for quite a lot. For many who make the switch to bike commuting, health is a big reason why. Even if you ride at a leisurely pace, you get more exercise than you would by sitting behind the wheel of your car. An 80-kg person riding at about 24 km per hour — a brisk but not aggressive pace — burns more than 400 calories in a 30-minute ride. For someone of the same weight, a more leisurely 18-km per hour pace burns 245 calories in 30 minutes. By contrast, according to a Harvard study, an 84-kg person burns about 45 calories during 30 minutes of driving. Office work is even less energy-intensive. Per the same Harvard study, sitting at your desk or in a meeting burns roughly 70 calories per hour. If you weigh more, the caloric benefits are actually greater, as heavier people tend to burn calories faster. You may have heard that “sitting is the new smoking.” There’s still debate about just how unhealthy it is to sit for long periods, but few experts argue that it’s good for you. Studies have linked prolonged sitting — as in a typical day at the office — to increased risk for certain cancers, blood clots, obesity, cardiovascular disease, and other conditions. If you’re an office drone, starting and ending your workday on a bike and not in a car can cut out a significant amount of daily sitting time. It’s important to note that biking to and from work isn"
+                },
                 options: [
-                    "Problems are inevitable",
-                    "Success requires patience",
-                    "Learning never ends",
-                    "Results speak clearly",
+                    "hates office work.",
+                    "enjoys fixed hours.",
+                    "has an office job.",
+                    "has a boring job.",
                 ],
                 correct: 3,
                 points: 10
             },
             {
                 type: "reading",
-                text: "Variant 17 · Task 17: What can be inferred from the text about the subject?",
+                text: "Task 17: The author thinks that biking clothing and equipment...",
+                passage: {
+                    title: "Cycling to work",
+                    text: "In larger cities, walking and transit get a much larger share of total commutes, but biking is still the laggard. Car commuting remains the overwhelming favorite, making up more than three-quarters of all trips even in major metro areas with long commute times. As an enthusiastic cyclist and proponent of eco- (and wallet-) friendly transit alternatives, I find these numbers disappointing. However, I’m also a realist. Due to low population density and dispersed employment in the exurban belts around major cities, commuting by bike just isn’t a viable option for millions of workers. The good news is that it is also possible for quite a lot. For many who make the switch to bike commuting, health is a big reason why. Even if you ride at a leisurely pace, you get more exercise than you would by sitting behind the wheel of your car. An 80-kg person riding at about 24 km per hour — a brisk but not aggressive pace — burns more than 400 calories in a 30-minute ride. For someone of the same weight, a more leisurely 18-km per hour pace burns 245 calories in 30 minutes. By contrast, according to a Harvard study, an 84-kg person burns about 45 calories during 30 minutes of driving. Office work is even less energy-intensive. Per the same Harvard study, sitting at your desk or in a meeting burns roughly 70 calories per hour. If you weigh more, the caloric benefits are actually greater, as heavier people tend to burn calories faster. You may have heard that “sitting is the new smoking.” There’s still debate about just how unhealthy it is to sit for long periods, but few experts argue that it’s good for you. Studies have linked prolonged sitting — as in a typical day at the office — to increased risk for certain cancers, blood clots, obesity, cardiovascular disease, and other conditions. If you’re an office drone, starting and ending your workday on a bike and not in a car can cut out a significant amount of daily sitting time. It’s important to note that biking to and from work isn"
+                },
                 options: [
-                    "It is widely ignored",
-                    "It has a long history",
-                    "It is recently discovered",
-                    "It is only local",
+                    "Riding a bike is unsuitable for lots of people.",
+                    "Commuting by bike can be a good option.",
+                    "Cycling can cure diseases caused by sitting.",
+                    "There are no disadvantages to cycling to work.",
                 ],
                 correct: 0,
                 points: 10
             },
             {
                 type: "reading",
-                text: "Variant 17 · Task 18: The author uses examples primarily to...",
+                text: "Task 18: What’s the main idea of the article?",
+                passage: {
+                    title: "Cycling to work",
+                    text: "In larger cities, walking and transit get a much larger share of total commutes, but biking is still the laggard. Car commuting remains the overwhelming favorite, making up more than three-quarters of all trips even in major metro areas with long commute times. As an enthusiastic cyclist and proponent of eco- (and wallet-) friendly transit alternatives, I find these numbers disappointing. However, I’m also a realist. Due to low population density and dispersed employment in the exurban belts around major cities, commuting by bike just isn’t a viable option for millions of workers. The good news is that it is also possible for quite a lot. For many who make the switch to bike commuting, health is a big reason why. Even if you ride at a leisurely pace, you get more exercise than you would by sitting behind the wheel of your car. An 80-kg person riding at about 24 km per hour — a brisk but not aggressive pace — burns more than 400 calories in a 30-minute ride. For someone of the same weight, a more leisurely 18-km per hour pace burns 245 calories in 30 minutes. By contrast, according to a Harvard study, an 84-kg person burns about 45 calories during 30 minutes of driving. Office work is even less energy-intensive. Per the same Harvard study, sitting at your desk or in a meeting burns roughly 70 calories per hour. If you weigh more, the caloric benefits are actually greater, as heavier people tend to burn calories faster. You may have heard that “sitting is the new smoking.” There’s still debate about just how unhealthy it is to sit for long periods, but few experts argue that it’s good for you. Studies have linked prolonged sitting — as in a typical day at the office — to increased risk for certain cancers, blood clots, obesity, cardiovascular disease, and other conditions. If you’re an office drone, starting and ending your workday on a bike and not in a car can cut out a significant amount of daily sitting time. It’s important to note that biking to and from work isn"
+                },
                 options: [
-                    "Entertain readers",
-                    "Support the argument",
-                    "Criticise others",
-                    "Avoid the topic",
-                ],
-                correct: 2,
-                points: 10
-            },
-            {
-                type: "multiple-choice",
-                text: "Variant 17 · Task 30: Choose the correct word: She was _____ by the result.",
-                options: [
-                    "amazed",
-                    "amused",
-                    "confused",
-                    "refused",
-                ],
-                correct: 3,
-                points: 10
-            },
-            {
-                type: "multiple-choice",
-                text: "Variant 17 · Task 31: Choose the correct word: The experiment _____ surprising results.",
-                options: [
-                    "brought",
-                    "produced",
-                    "made",
-                    "created",
-                ],
-                correct: 0,
-                points: 10
-            },
-            {
-                type: "multiple-choice",
-                text: "Variant 17 · Task 32: Choose the correct word: They decided to _____ the meeting until Friday.",
-                options: [
-                    "postpone",
-                    "propose",
-                    "prepare",
-                    "promote",
+                    "Riding a bike is unsuitable for lots of people.",
+                    "Commuting by bike can be a good option.",
+                    "Cycling can cure diseases caused by sitting.",
+                    "There are no disadvantages to cycling to work.",
                 ],
                 correct: 2,
                 points: 10
@@ -2250,8 +2446,8 @@ var LEVELS_DATA = [
                 type: "reading",
                 text: "Task 12: According to the author, a great ESL teacher...",
                 passage: {
-                    title: "A great ESL teacher",
-                    text: "Being an ESL student — English as a second language — can be a painful experience. Many of us who have been ESL students know what it’s like to get pulled out of class in front of everyone, so you can learn to master the verbs and retrain your tongue to twist differently from what your parents taught you. What you need is a great teacher who lets you make mistakes. “It takes a lot for any student,” Whaley explains, “especially for a student who is learning English as their new language, to feel confident enough to say, ‘I don’t know, but I want to know.’” Impeccably dressed, with a gravelly Long Island accent that turns one vowel into many, Whaley does not look like the kind of guy that dabbles in magic markers. Before he was a second-grade teacher, he worked at a public relations company in New York City. He says he started thinking about doing something else while riding to and from work on the Long Island Rail Road. “I would talk with people on the train at 6 a.m. and 8 p.m. on the way home,” he recalls. “They were people who had a complete disconnect from the young people of the world. They were all so focused on adults and the rat race. And I realised that this was not for me.” That was 16 years ago. He has been teaching ever since. In addition, Whaley has found time to write a novel called Leaving Montana, and he’s starting to write children’s books. Last year, he won the New York state teacher-of-the-year award. This second-grade presidential campaign is an example of why. He tells me he got the idea when he asked the children one day to raise their hands if they thought they could never be a U.S. president. The answer broke his heart. “Almost every single child who is an English- language learner believed that they couldn’t be,” Whaley recalls. Whaley says the presidential speech project is about more than just learning to read and speak in public. He wants these kids to learn to boast about themselves. “Bragging about yourself, and your best qualities,” Wha"
+                    title: "Being an ESL student — English as a second language — can be a painful experience.",
+                    text: "Many of us who have been ESL students know what it’s like to get pulled out of class in front of everyone, so you can learn to master the verbs and retrain your tongue to twist differently from what your parents taught you. What you need is a great teacher who lets you make mistakes. “It takes a lot for any student,” Whaley explains, “especially for a student who is learning English as their new language, to feel confident enough to say, ‘I don’t know, but I want to know.’” Impeccably dressed, with a gravelly Long Island accent that turns one vowel into many, Whaley does not look like the kind of guy that dabbles in magic markers. Before he was a second-grade teacher, he worked at a public relations company in New York City. He says he started thinking about doing something else while riding to and from work on the Long Island Rail Road. “I would talk with people on the train at 6 a.m. and 8 p.m. on the way home,” he recalls. “They were people who had a complete disconnect from the young people of the world. They were all so focused on adults and the rat race. And I realised that this was not for me.” That was 16 years ago. He has been teaching ever since. In addition, Whaley has found time to write a novel called Leaving Montana, and he’s starting to write children’s books. Last year, he won the New York state teacher-of-the-year award. This second-grade presidential campaign is an example of why. He tells me he got the idea when he asked the children one day to raise their hands if they thought they could never be a U.S. president. The answer broke his heart. “Almost every single child who is an English- language learner believed that they couldn’t be,” Whaley recalls. Whaley says the presidential speech project is about more than just learning to read and speak in public. He wants these kids to learn to boast about themselves. “Bragging about yourself, and your best qualities,” Whaley says, “is very difficult for a child who came into the classroom not feeling an"
                 },
                 options: [
                     "pays attention to grammar and pronunciation.",
@@ -2266,8 +2462,8 @@ var LEVELS_DATA = [
                 type: "reading",
                 text: "Task 13: What is NOT characteristic of Whaley?",
                 passage: {
-                    title: "A great ESL teacher",
-                    text: "Being an ESL student — English as a second language — can be a painful experience. Many of us who have been ESL students know what it’s like to get pulled out of class in front of everyone, so you can learn to master the verbs and retrain your tongue to twist differently from what your parents taught you. What you need is a great teacher who lets you make mistakes. “It takes a lot for any student,” Whaley explains, “especially for a student who is learning English as their new language, to feel confident enough to say, ‘I don’t know, but I want to know.’” Impeccably dressed, with a gravelly Long Island accent that turns one vowel into many, Whaley does not look like the kind of guy that dabbles in magic markers. Before he was a second-grade teacher, he worked at a public relations company in New York City. He says he started thinking about doing something else while riding to and from work on the Long Island Rail Road. “I would talk with people on the train at 6 a.m. and 8 p.m. on the way home,” he recalls. “They were people who had a complete disconnect from the young people of the world. They were all so focused on adults and the rat race. And I realised that this was not for me.” That was 16 years ago. He has been teaching ever since. In addition, Whaley has found time to write a novel called Leaving Montana, and he’s starting to write children’s books. Last year, he won the New York state teacher-of-the-year award. This second-grade presidential campaign is an example of why. He tells me he got the idea when he asked the children one day to raise their hands if they thought they could never be a U.S. president. The answer broke his heart. “Almost every single child who is an English- language learner believed that they couldn’t be,” Whaley recalls. Whaley says the presidential speech project is about more than just learning to read and speak in public. He wants these kids to learn to boast about themselves. “Bragging about yourself, and your best qualities,” Wha"
+                    title: "Being an ESL student — English as a second language — can be a painful experience.",
+                    text: "Many of us who have been ESL students know what it’s like to get pulled out of class in front of everyone, so you can learn to master the verbs and retrain your tongue to twist differently from what your parents taught you. What you need is a great teacher who lets you make mistakes. “It takes a lot for any student,” Whaley explains, “especially for a student who is learning English as their new language, to feel confident enough to say, ‘I don’t know, but I want to know.’” Impeccably dressed, with a gravelly Long Island accent that turns one vowel into many, Whaley does not look like the kind of guy that dabbles in magic markers. Before he was a second-grade teacher, he worked at a public relations company in New York City. He says he started thinking about doing something else while riding to and from work on the Long Island Rail Road. “I would talk with people on the train at 6 a.m. and 8 p.m. on the way home,” he recalls. “They were people who had a complete disconnect from the young people of the world. They were all so focused on adults and the rat race. And I realised that this was not for me.” That was 16 years ago. He has been teaching ever since. In addition, Whaley has found time to write a novel called Leaving Montana, and he’s starting to write children’s books. Last year, he won the New York state teacher-of-the-year award. This second-grade presidential campaign is an example of why. He tells me he got the idea when he asked the children one day to raise their hands if they thought they could never be a U.S. president. The answer broke his heart. “Almost every single child who is an English- language learner believed that they couldn’t be,” Whaley recalls. Whaley says the presidential speech project is about more than just learning to read and speak in public. He wants these kids to learn to boast about themselves. “Bragging about yourself, and your best qualities,” Whaley says, “is very difficult for a child who came into the classroom not feeling an"
                 },
                 options: [
                     "He started his career in business.",
@@ -2282,8 +2478,8 @@ var LEVELS_DATA = [
                 type: "reading",
                 text: "Task 14: Whaley started teaching because he...",
                 passage: {
-                    title: "A great ESL teacher",
-                    text: "Being an ESL student — English as a second language — can be a painful experience. Many of us who have been ESL students know what it’s like to get pulled out of class in front of everyone, so you can learn to master the verbs and retrain your tongue to twist differently from what your parents taught you. What you need is a great teacher who lets you make mistakes. “It takes a lot for any student,” Whaley explains, “especially for a student who is learning English as their new language, to feel confident enough to say, ‘I don’t know, but I want to know.’” Impeccably dressed, with a gravelly Long Island accent that turns one vowel into many, Whaley does not look like the kind of guy that dabbles in magic markers. Before he was a second-grade teacher, he worked at a public relations company in New York City. He says he started thinking about doing something else while riding to and from work on the Long Island Rail Road. “I would talk with people on the train at 6 a.m. and 8 p.m. on the way home,” he recalls. “They were people who had a complete disconnect from the young people of the world. They were all so focused on adults and the rat race. And I realised that this was not for me.” That was 16 years ago. He has been teaching ever since. In addition, Whaley has found time to write a novel called Leaving Montana, and he’s starting to write children’s books. Last year, he won the New York state teacher-of-the-year award. This second-grade presidential campaign is an example of why. He tells me he got the idea when he asked the children one day to raise their hands if they thought they could never be a U.S. president. The answer broke his heart. “Almost every single child who is an English- language learner believed that they couldn’t be,” Whaley recalls. Whaley says the presidential speech project is about more than just learning to read and speak in public. He wants these kids to learn to boast about themselves. “Bragging about yourself, and your best qualities,” Wha"
+                    title: "Being an ESL student — English as a second language — can be a painful experience.",
+                    text: "Many of us who have been ESL students know what it’s like to get pulled out of class in front of everyone, so you can learn to master the verbs and retrain your tongue to twist differently from what your parents taught you. What you need is a great teacher who lets you make mistakes. “It takes a lot for any student,” Whaley explains, “especially for a student who is learning English as their new language, to feel confident enough to say, ‘I don’t know, but I want to know.’” Impeccably dressed, with a gravelly Long Island accent that turns one vowel into many, Whaley does not look like the kind of guy that dabbles in magic markers. Before he was a second-grade teacher, he worked at a public relations company in New York City. He says he started thinking about doing something else while riding to and from work on the Long Island Rail Road. “I would talk with people on the train at 6 a.m. and 8 p.m. on the way home,” he recalls. “They were people who had a complete disconnect from the young people of the world. They were all so focused on adults and the rat race. And I realised that this was not for me.” That was 16 years ago. He has been teaching ever since. In addition, Whaley has found time to write a novel called Leaving Montana, and he’s starting to write children’s books. Last year, he won the New York state teacher-of-the-year award. This second-grade presidential campaign is an example of why. He tells me he got the idea when he asked the children one day to raise their hands if they thought they could never be a U.S. president. The answer broke his heart. “Almost every single child who is an English- language learner believed that they couldn’t be,” Whaley recalls. Whaley says the presidential speech project is about more than just learning to read and speak in public. He wants these kids to learn to boast about themselves. “Bragging about yourself, and your best qualities,” Whaley says, “is very difficult for a child who came into the classroom not feeling an"
                 },
                 options: [
                     "applied for a prestigious award.",
@@ -2298,8 +2494,8 @@ var LEVELS_DATA = [
                 type: "reading",
                 text: "Task 15: What is NOT characteristic of Whaley?",
                 passage: {
-                    title: "A great ESL teacher",
-                    text: "Being an ESL student — English as a second language — can be a painful experience. Many of us who have been ESL students know what it’s like to get pulled out of class in front of everyone, so you can learn to master the verbs and retrain your tongue to twist differently from what your parents taught you. What you need is a great teacher who lets you make mistakes. “It takes a lot for any student,” Whaley explains, “especially for a student who is learning English as their new language, to feel confident enough to say, ‘I don’t know, but I want to know.’” Impeccably dressed, with a gravelly Long Island accent that turns one vowel into many, Whaley does not look like the kind of guy that dabbles in magic markers. Before he was a second-grade teacher, he worked at a public relations company in New York City. He says he started thinking about doing something else while riding to and from work on the Long Island Rail Road. “I would talk with people on the train at 6 a.m. and 8 p.m. on the way home,” he recalls. “They were people who had a complete disconnect from the young people of the world. They were all so focused on adults and the rat race. And I realised that this was not for me.” That was 16 years ago. He has been teaching ever since. In addition, Whaley has found time to write a novel called Leaving Montana, and he’s starting to write children’s books. Last year, he won the New York state teacher-of-the-year award. This second-grade presidential campaign is an example of why. He tells me he got the idea when he asked the children one day to raise their hands if they thought they could never be a U.S. president. The answer broke his heart. “Almost every single child who is an English- language learner believed that they couldn’t be,” Whaley recalls. Whaley says the presidential speech project is about more than just learning to read and speak in public. He wants these kids to learn to boast about themselves. “Bragging about yourself, and your best qualities,” Wha"
+                    title: "Being an ESL student — English as a second language — can be a painful experience.",
+                    text: "Many of us who have been ESL students know what it’s like to get pulled out of class in front of everyone, so you can learn to master the verbs and retrain your tongue to twist differently from what your parents taught you. What you need is a great teacher who lets you make mistakes. “It takes a lot for any student,” Whaley explains, “especially for a student who is learning English as their new language, to feel confident enough to say, ‘I don’t know, but I want to know.’” Impeccably dressed, with a gravelly Long Island accent that turns one vowel into many, Whaley does not look like the kind of guy that dabbles in magic markers. Before he was a second-grade teacher, he worked at a public relations company in New York City. He says he started thinking about doing something else while riding to and from work on the Long Island Rail Road. “I would talk with people on the train at 6 a.m. and 8 p.m. on the way home,” he recalls. “They were people who had a complete disconnect from the young people of the world. They were all so focused on adults and the rat race. And I realised that this was not for me.” That was 16 years ago. He has been teaching ever since. In addition, Whaley has found time to write a novel called Leaving Montana, and he’s starting to write children’s books. Last year, he won the New York state teacher-of-the-year award. This second-grade presidential campaign is an example of why. He tells me he got the idea when he asked the children one day to raise their hands if they thought they could never be a U.S. president. The answer broke his heart. “Almost every single child who is an English- language learner believed that they couldn’t be,” Whaley recalls. Whaley says the presidential speech project is about more than just learning to read and speak in public. He wants these kids to learn to boast about themselves. “Bragging about yourself, and your best qualities,” Whaley says, “is very difficult for a child who came into the classroom not feeling an"
                 },
                 options: [
                     "He started his career in business.",
@@ -2314,8 +2510,8 @@ var LEVELS_DATA = [
                 type: "reading",
                 text: "Task 16: Whaley introduced presidential speech project to improve children’s...",
                 passage: {
-                    title: "A great ESL teacher",
-                    text: "Being an ESL student — English as a second language — can be a painful experience. Many of us who have been ESL students know what it’s like to get pulled out of class in front of everyone, so you can learn to master the verbs and retrain your tongue to twist differently from what your parents taught you. What you need is a great teacher who lets you make mistakes. “It takes a lot for any student,” Whaley explains, “especially for a student who is learning English as their new language, to feel confident enough to say, ‘I don’t know, but I want to know.’” Impeccably dressed, with a gravelly Long Island accent that turns one vowel into many, Whaley does not look like the kind of guy that dabbles in magic markers. Before he was a second-grade teacher, he worked at a public relations company in New York City. He says he started thinking about doing something else while riding to and from work on the Long Island Rail Road. “I would talk with people on the train at 6 a.m. and 8 p.m. on the way home,” he recalls. “They were people who had a complete disconnect from the young people of the world. They were all so focused on adults and the rat race. And I realised that this was not for me.” That was 16 years ago. He has been teaching ever since. In addition, Whaley has found time to write a novel called Leaving Montana, and he’s starting to write children’s books. Last year, he won the New York state teacher-of-the-year award. This second-grade presidential campaign is an example of why. He tells me he got the idea when he asked the children one day to raise their hands if they thought they could never be a U.S. president. The answer broke his heart. “Almost every single child who is an English- language learner believed that they couldn’t be,” Whaley recalls. Whaley says the presidential speech project is about more than just learning to read and speak in public. He wants these kids to learn to boast about themselves. “Bragging about yourself, and your best qualities,” Wha"
+                    title: "Being an ESL student — English as a second language — can be a painful experience.",
+                    text: "Many of us who have been ESL students know what it’s like to get pulled out of class in front of everyone, so you can learn to master the verbs and retrain your tongue to twist differently from what your parents taught you. What you need is a great teacher who lets you make mistakes. “It takes a lot for any student,” Whaley explains, “especially for a student who is learning English as their new language, to feel confident enough to say, ‘I don’t know, but I want to know.’” Impeccably dressed, with a gravelly Long Island accent that turns one vowel into many, Whaley does not look like the kind of guy that dabbles in magic markers. Before he was a second-grade teacher, he worked at a public relations company in New York City. He says he started thinking about doing something else while riding to and from work on the Long Island Rail Road. “I would talk with people on the train at 6 a.m. and 8 p.m. on the way home,” he recalls. “They were people who had a complete disconnect from the young people of the world. They were all so focused on adults and the rat race. And I realised that this was not for me.” That was 16 years ago. He has been teaching ever since. In addition, Whaley has found time to write a novel called Leaving Montana, and he’s starting to write children’s books. Last year, he won the New York state teacher-of-the-year award. This second-grade presidential campaign is an example of why. He tells me he got the idea when he asked the children one day to raise their hands if they thought they could never be a U.S. president. The answer broke his heart. “Almost every single child who is an English- language learner believed that they couldn’t be,” Whaley recalls. Whaley says the presidential speech project is about more than just learning to read and speak in public. He wants these kids to learn to boast about themselves. “Bragging about yourself, and your best qualities,” Whaley says, “is very difficult for a child who came into the classroom not feeling an"
                 },
                 options: [
                     "public speaking.",
@@ -2330,8 +2526,8 @@ var LEVELS_DATA = [
                 type: "reading",
                 text: "Task 17: Whaley’s job is difficult because he...",
                 passage: {
-                    title: "A great ESL teacher",
-                    text: "Being an ESL student — English as a second language — can be a painful experience. Many of us who have been ESL students know what it’s like to get pulled out of class in front of everyone, so you can learn to master the verbs and retrain your tongue to twist differently from what your parents taught you. What you need is a great teacher who lets you make mistakes. “It takes a lot for any student,” Whaley explains, “especially for a student who is learning English as their new language, to feel confident enough to say, ‘I don’t know, but I want to know.’” Impeccably dressed, with a gravelly Long Island accent that turns one vowel into many, Whaley does not look like the kind of guy that dabbles in magic markers. Before he was a second-grade teacher, he worked at a public relations company in New York City. He says he started thinking about doing something else while riding to and from work on the Long Island Rail Road. “I would talk with people on the train at 6 a.m. and 8 p.m. on the way home,” he recalls. “They were people who had a complete disconnect from the young people of the world. They were all so focused on adults and the rat race. And I realised that this was not for me.” That was 16 years ago. He has been teaching ever since. In addition, Whaley has found time to write a novel called Leaving Montana, and he’s starting to write children’s books. Last year, he won the New York state teacher-of-the-year award. This second-grade presidential campaign is an example of why. He tells me he got the idea when he asked the children one day to raise their hands if they thought they could never be a U.S. president. The answer broke his heart. “Almost every single child who is an English- language learner believed that they couldn’t be,” Whaley recalls. Whaley says the presidential speech project is about more than just learning to read and speak in public. He wants these kids to learn to boast about themselves. “Bragging about yourself, and your best qualities,” Wha"
+                    title: "Being an ESL student — English as a second language — can be a painful experience.",
+                    text: "Many of us who have been ESL students know what it’s like to get pulled out of class in front of everyone, so you can learn to master the verbs and retrain your tongue to twist differently from what your parents taught you. What you need is a great teacher who lets you make mistakes. “It takes a lot for any student,” Whaley explains, “especially for a student who is learning English as their new language, to feel confident enough to say, ‘I don’t know, but I want to know.’” Impeccably dressed, with a gravelly Long Island accent that turns one vowel into many, Whaley does not look like the kind of guy that dabbles in magic markers. Before he was a second-grade teacher, he worked at a public relations company in New York City. He says he started thinking about doing something else while riding to and from work on the Long Island Rail Road. “I would talk with people on the train at 6 a.m. and 8 p.m. on the way home,” he recalls. “They were people who had a complete disconnect from the young people of the world. They were all so focused on adults and the rat race. And I realised that this was not for me.” That was 16 years ago. He has been teaching ever since. In addition, Whaley has found time to write a novel called Leaving Montana, and he’s starting to write children’s books. Last year, he won the New York state teacher-of-the-year award. This second-grade presidential campaign is an example of why. He tells me he got the idea when he asked the children one day to raise their hands if they thought they could never be a U.S. president. The answer broke his heart. “Almost every single child who is an English- language learner believed that they couldn’t be,” Whaley recalls. Whaley says the presidential speech project is about more than just learning to read and speak in public. He wants these kids to learn to boast about themselves. “Bragging about yourself, and your best qualities,” Whaley says, “is very difficult for a child who came into the classroom not feeling an"
                 },
                 options: [
                     "has native and non-native students.",
