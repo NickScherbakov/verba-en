@@ -10,14 +10,14 @@
 <body>
     <div id="app">
 
-        <!-- Mode tabs (hidden during quiz level) -->
-        <div class="mode-tabs" id="mode-tabs">
-            <button class="mode-tab active" id="tab-reader">📚 Reader</button>
-            <button class="mode-tab" id="tab-quest">🎯 Quest</button>
+        <!-- Mode tabs hidden -->
+        <div class="mode-tabs" id="mode-tabs" style="display:none">
+            <button class="mode-tab" id="tab-reader" style="display:none">📚 Reader</button>
+            <button class="mode-tab active" id="tab-quest">🎯 Quest</button>
         </div>
 
         <!-- ── Reader Screen ─────────────────────────────────────────── -->
-        <div id="screen-reader" class="screen active">
+        <div id="screen-reader" class="screen" style="display:none">
             <header class="app-header">
                 <h1>📚 Verba-EN</h1>
                 <p class="subtitle" id="user-greeting">Your English Learning Companion</p>
@@ -117,9 +117,9 @@
         </div><!-- /screen-reader -->
 
         <!-- ── Quest Home Screen ──────────────────────────────────────── -->
-        <div id="screen-quest" class="screen">
-            <header class="app-header">
-                <h1>🎯 EGE English Quest</h1>
+        <div id="screen-quest" class="screen active">
+            <header class="app-header" style="display:none">
+                <h1>EGE English Quest</h1>
                 <p class="subtitle">20 Practice Variants</p>
             </header>
 
@@ -144,8 +144,12 @@
 
             <div class="levels-grid" id="q-levelsGrid"></div>
 
-            <div style="padding: 10px 15px 20px;">
+            <div style="padding: 10px 15px 4px;">
                 <button class="action-button" id="q-resetProgress">🔄 Reset Progress</button>
+            </div>
+            <div style="display:flex; gap:10px; padding: 4px 15px 30px;">
+                <button onclick="(function(){var w=window.Telegram&&window.Telegram.WebApp;if(!w)return;if(w.collapse)w.collapse();else if(w.close)w.close();})()" style="flex:1;padding:12px;background:#2a2a2a;color:#aaa;border:none;border-radius:12px;font-size:14px;cursor:pointer;">&#8964; Свернуть</button>
+                <button onclick="window.Telegram&&window.Telegram.WebApp&&window.Telegram.WebApp.close&&window.Telegram.WebApp.close()" style="flex:1;padding:12px;background:#2a2a2a;color:#aaa;border:none;border-radius:12px;font-size:14px;cursor:pointer;">&#10005; Закрыть</button>
             </div>
         </div><!-- /screen-quest -->
 

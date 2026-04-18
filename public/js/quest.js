@@ -76,8 +76,7 @@ QuestStorage.prototype.isCompleted = function (id) {
 };
 
 QuestStorage.prototype.isUnlocked = function (id) {
-    if (id === 1) return true;
-    var d = this._get(); return !!(d && d.completedLevels.indexOf(id - 1) !== -1);
+    return true;
 };
 
 QuestStorage.prototype.getLevelScore = function (id) {
@@ -432,7 +431,7 @@ function questShowResults(score, maxScore) {
     if (nav) nav.style.display = 'none';
 }
 
-// ─── DOMContentLoaded: wire navigation buttons ────────────────────────────────
+// ─── DOMContentLoaded: wire navigation buttons + auto-init quest ──────────────
 document.addEventListener('DOMContentLoaded', function () {
     var prevBtn = document.getElementById('q-prevBtn');
     var nextBtn = document.getElementById('q-nextBtn');
@@ -440,6 +439,18 @@ document.addEventListener('DOMContentLoaded', function () {
     if (prevBtn) prevBtn.addEventListener('click', questPrevQuestion);
     if (nextBtn) nextBtn.addEventListener('click', questNextQuestion);
     if (submitBtn) submitBtn.addEventListener('click', questSubmit);
+
+    // Auto-init quest with guest userId so grid renders immediately,
+    // even if app.js async initApp() hasn't called questInit() yet.
+    // When app.js calls questInit(realUserId) later it will reinitialise with real user data.
+    if (!questStorage) {
+        var userId = (window.Telegram && window.Telegram.WebApp && window.Telegram.WebApp.initDataUnsafe
+            && window.Telegram.WebApp.initDataUnsafe.user
+            && window.Telegram.WebApp.initDataUnsafe.user.id)
+            ? String(window.Telegram.WebApp.initDataUnsafe.user.id)
+            : 'guest';
+        questInit(userId);
+    }
 });
 
 // ─── Exports to global scope ──────────────────────────────────────────────────
