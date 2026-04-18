@@ -1,0 +1,25 @@
+name: Build Docker Image
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build Docker image
+        run: docker build -t verba-en:test .
+      - name: Smoke test
+        run: |
+          docker run -d --name test-container \
+            -e BOT_TOKEN=test \
+            -e WEB_APP_URL=http://localhost:3000 \
+            -p 3000:3000 \
+            verba-en:test
+          sleep 5
+          curl -f http://localhost:3000 || exit 1
+          docker stop test-container
