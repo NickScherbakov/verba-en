@@ -98,14 +98,7 @@ class ProgressStorage {
     }
 
     isLevelUnlocked(levelId) {
-        const data = this.getData();
-        if (!data) return levelId === 1;
-        
-        // Level 1 is always unlocked
-        if (levelId === 1) return true;
-        
-        // Other levels unlock after completing the previous one
-        return data.completedLevels.includes(levelId - 1);
+        return true; // All variants are unlocked — free software
     }
 
     getLevelScore(levelId) {
