@@ -78,7 +78,7 @@ QuestStorage.prototype._syncToServer = function (data) {
     } catch (e) { /* ignore */ }
 };
 
-// Load server-side progress and merge (server wins on completedLevels, client wins on score)
+// Load server-side progress and merge (union completedLevels, keep best score per level)
 QuestStorage.prototype.loadFromServer = function (callback) {
     try {
         var self = this;
@@ -91,13 +91,21 @@ QuestStorage.prototype.loadFromServer = function (callback) {
                 if (resp && resp.success && resp.progress) {
                     var remote = resp.progress;
                     var local = self._get() || {};
-                    // Merge: union of completedLevels, keep best scores
+                    // Union of completedLevels from both sources
                     var completedSet = {};
                     (local.completedLevels || []).forEach(function (id) { completedSet[id] = true; });
                     (remote.completedLevels || []).forEach(function (id) { completedSet[id] = true; });
+                    // Best score wins per level (not always local)
+                    var localScores = local.levelScores || {};
+                    var remoteScores = remote.levelScores || {};
+                    var mergedScores = {};
+                    var allLevelIds = Object.keys(Object.assign({}, localScores, remoteScores));
+                    allLevelIds.forEach(function (id) {
+                        mergedScores[id] = Math.max(localScores[id] || 0, remoteScores[id] || 0);
+                    });
                     var merged = Object.assign({}, local, {
                         completedLevels: Object.keys(completedSet).map(Number),
-                        levelScores: Object.assign({}, remote.levelScores || {}, local.levelScores || {}),
+                        levelScores: mergedScores
                     });
                     merged.totalScore = Object.values(merged.levelScores).reduce(function (s, v) { return s + v; }, 0);
                     merged.currentLevel = Math.min(merged.completedLevels.length + 1, 20);
@@ -147,10 +155,11 @@ function questInit(userId) {
     questStorage = new QuestStorage(userId);
 
     // Try to load remote progress and re-render once loaded
+    // Render immediately with local data, then silently update after server sync
+    renderQuestHome();
     questStorage.loadFromServer(function () {
         renderQuestHome();
     });
-    renderQuestHome(); // initial render with local data
 
     var resetBtn = document.getElementById('q-resetProgress');
     if (resetBtn) resetBtn.addEventListener('click', onQuestResetProgress);

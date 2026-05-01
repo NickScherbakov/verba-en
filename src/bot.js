@@ -4,6 +4,7 @@ const path = require('path');
 const fs = require('fs');
 const pdf = require('pdf-parse');
 const crypto = require('crypto');
+const axios = require('axios');
 
 // Configuration
 const BOT_TOKEN = process.env.BOT_TOKEN || 'YOUR_BOT_TOKEN_HERE';
@@ -11,6 +12,7 @@ const WEB_APP_URL = process.env.WEB_APP_URL || 'https://your-domain.com';
 const PORT = process.env.PORT || 3000;
 const AI_PROVIDER = process.env.AI_PROVIDER || 'mock';
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
+const OPENAI_MODEL = process.env.OPENAI_MODEL || 'gpt-4o-mini';
 const WEBHOOK_MODE = process.env.WEBHOOK_MODE === 'true';
 const TELEGRAM_BOT_SECRET = process.env.TELEGRAM_BOT_SECRET || '';
 const VALIDATE_INIT_DATA = process.env.VALIDATE_INIT_DATA === 'true';
@@ -257,11 +259,10 @@ class AIService {
 
     // Call OpenAI chat completions and return parsed JSON from the model
     async _openaiJson(messages, temperature = 0.3) {
-        const axios = require('axios');
         const resp = await axios.post(
             'https://api.openai.com/v1/chat/completions',
             {
-                model: 'gpt-4o-mini',
+                model: OPENAI_MODEL,
                 messages,
                 temperature,
                 response_format: { type: 'json_object' }
