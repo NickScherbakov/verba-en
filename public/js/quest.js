@@ -61,6 +61,61 @@ QuestStorage.prototype.updateProgress = function (levelId, score) {
     this._updateBadges(d);
     d.lastUpdated = new Date().toISOString();
     this._set(d);
+    this._syncToServer(d);
+};
+
+// Fire-and-forget server sync — failure is non-fatal (localStorage is the source of truth)
+QuestStorage.prototype._syncToServer = function (data) {
+    try {
+        var tgInit = window.Telegram && window.Telegram.WebApp && window.Telegram.WebApp.initData;
+        var headers = { 'Content-Type': 'application/json' };
+        if (tgInit) headers['X-Telegram-Init-Data'] = tgInit;
+        fetch('/api/user/progress', {
+            method: 'POST',
+            headers: headers,
+            body: JSON.stringify({ progress: data })
+        }).catch(function () { /* ignore network errors */ });
+    } catch (e) { /* ignore */ }
+};
+
+// Load server-side progress and merge (union completedLevels, keep best score per level)
+QuestStorage.prototype.loadFromServer = function (callback) {
+    try {
+        var self = this;
+        var tgInit = window.Telegram && window.Telegram.WebApp && window.Telegram.WebApp.initData;
+        var headers = {};
+        if (tgInit) headers['X-Telegram-Init-Data'] = tgInit;
+        fetch('/api/user/progress', { headers: headers })
+            .then(function (r) { return r.json(); })
+            .then(function (resp) {
+                if (resp && resp.success && resp.progress) {
+                    var remote = resp.progress;
+                    var local = self._get() || {};
+                    // Union of completedLevels from both sources
+                    var completedSet = {};
+                    (local.completedLevels || []).forEach(function (id) { completedSet[id] = true; });
+                    (remote.completedLevels || []).forEach(function (id) { completedSet[id] = true; });
+                    // Best score wins per level (not always local)
+                    var localScores = local.levelScores || {};
+                    var remoteScores = remote.levelScores || {};
+                    var mergedScores = {};
+                    var allLevelIds = Object.keys(Object.assign({}, localScores, remoteScores));
+                    allLevelIds.forEach(function (id) {
+                        mergedScores[id] = Math.max(localScores[id] || 0, remoteScores[id] || 0);
+                    });
+                    var merged = Object.assign({}, local, {
+                        completedLevels: Object.keys(completedSet).map(Number),
+                        levelScores: mergedScores
+                    });
+                    merged.totalScore = Object.values(merged.levelScores).reduce(function (s, v) { return s + v; }, 0);
+                    merged.currentLevel = Math.min(merged.completedLevels.length + 1, 20);
+                    self._updateBadges(merged);
+                    self._set(merged);
+                }
+                if (callback) callback();
+            })
+            .catch(function () { if (callback) callback(); });
+    } catch (e) { if (callback) callback(); }
 };
 
 QuestStorage.prototype._updateBadges = function (d) {
@@ -98,7 +153,13 @@ var questScore = 0;
 // ─── Init ─────────────────────────────────────────────────────────────────────
 function questInit(userId) {
     questStorage = new QuestStorage(userId);
+
+    // Try to load remote progress and re-render once loaded
+    // Render immediately with local data, then silently update after server sync
     renderQuestHome();
+    questStorage.loadFromServer(function () {
+        renderQuestHome();
+    });
 
     var resetBtn = document.getElementById('q-resetProgress');
     if (resetBtn) resetBtn.addEventListener('click', onQuestResetProgress);
@@ -195,12 +256,15 @@ function startQuestLevel(levelId) {
     questCurrentQuestion = 0;
     questScore = 0;
 
+    // Compute actual max score from question points (avoids stale declared value)
+    var actualMaxScore = questQuestions.reduce(function (s, q) { return s + (q.points || 0); }, 0);
+
     var titleEl = document.getElementById('q-levelTitle');
     var maxEl = document.getElementById('q-maxScore');
     var scoreEl = document.getElementById('q-currentScore');
     var navEl = document.getElementById('q-navigation');
     if (titleEl) titleEl.textContent = level.title;
-    if (maxEl) maxEl.textContent = level.maxScore;
+    if (maxEl) maxEl.textContent = actualMaxScore;
     if (scoreEl) scoreEl.textContent = '0';
     if (navEl) navEl.style.display = '';
 

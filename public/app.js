@@ -96,6 +96,17 @@ function apiCall(url, options) {
     return fetch(url, Object.assign({}, options, { headers: headers }));
 }
 
+// Helper: escape HTML special characters to prevent XSS when injecting into innerHTML
+function escapeHtml(str) {
+    if (!str && str !== 0) return '';
+    return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#x27;');
+}
+
 // Initialize app
 async function initApp() {
     loadState();
@@ -260,8 +271,8 @@ function updateBookmarks() {
         .map((bookmark, index) => `
             <div class="bookmark-item">
                 <div class="bookmark-info">
-                    <div class="bookmark-page">📖 Page ${bookmark.page}</div>
-                    <div class="bookmark-note">${bookmark.note}</div>
+                    <div class="bookmark-page">📖 Page ${escapeHtml(bookmark.page)}</div>
+                    <div class="bookmark-note">${escapeHtml(bookmark.note)}</div>
                 </div>
                 <button class="delete-button" onclick="deleteBookmark(${index})">Delete</button>
             </div>
@@ -325,9 +336,9 @@ function updateVocabulary() {
         .sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))
         .map((vocab, index) => `
             <div class="vocab-item">
-                <div class="vocab-word">${vocab.word}</div>
-                <div class="vocab-definition">${vocab.definition}</div>
-                <div class="bookmark-note">Page ${vocab.page}</div>
+                <div class="vocab-word">${escapeHtml(vocab.word)}</div>
+                <div class="vocab-definition">${escapeHtml(vocab.definition)}</div>
+                <div class="bookmark-note">Page ${escapeHtml(vocab.page)}</div>
             </div>
         `).join('');
 }
@@ -596,7 +607,9 @@ function addChatMessage(text, sender) {
     const chatMessages = document.getElementById('chat-messages');
     const messageDiv = document.createElement('div');
     messageDiv.className = `chat-message ${sender === 'user' ? 'user-message' : 'bot-message'}`;
-    messageDiv.innerHTML = `<p>${text}</p>`;
+    const p = document.createElement('p');
+    p.textContent = text;
+    messageDiv.appendChild(p);
     chatMessages.appendChild(messageDiv);
     chatMessages.scrollTop = chatMessages.scrollHeight;
 }
