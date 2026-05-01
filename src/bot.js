@@ -120,6 +120,16 @@ function rateLimiter(req, res, next) {
     next();
 }
 
+// Periodically evict stale rate limit entries to prevent unbounded memory growth
+setInterval(() => {
+    const now = Date.now();
+    for (const [key, entry] of rateLimitStore) {
+        if (now - entry.start > RATE_LIMIT_WINDOW_MS) {
+            rateLimitStore.delete(key);
+        }
+    }
+}, 5 * 60 * 1000); // run every 5 minutes
+
 app.use('/api', requireInitData);
 app.use('/api', rateLimiter);
 
@@ -245,6 +255,28 @@ class AIService {
         }
     }
 
+    // Call OpenAI chat completions and return parsed JSON from the model
+    async _openaiJson(messages, temperature = 0.3) {
+        const axios = require('axios');
+        const resp = await axios.post(
+            'https://api.openai.com/v1/chat/completions',
+            {
+                model: 'gpt-4o-mini',
+                messages,
+                temperature,
+                response_format: { type: 'json_object' }
+            },
+            {
+                headers: {
+                    'Authorization': `Bearer ${OPENAI_API_KEY}`,
+                    'Content-Type': 'application/json'
+                },
+                timeout: 15000
+            }
+        );
+        return JSON.parse(resp.data.choices[0].message.content);
+    }
+
     // Get word definition
     async getDefinition(word) {
         const cacheKey = `define:${word.toLowerCase()}`;
@@ -256,14 +288,25 @@ class AIService {
             if (this.provider === 'mock' || !OPENAI_API_KEY) {
                 result = await this.getMockResponse('define', word);
             } else {
-                // In a real implementation, call the AI API here
-                result = await this.getMockResponse('define', word);
+                result = await this._openaiJson([
+                    {
+                        role: 'system',
+                        content: 'You are an English language assistant helping Russian students prepare for the EGE exam. ' +
+                                 'Always respond with valid JSON only, no markdown.'
+                    },
+                    {
+                        role: 'user',
+                        content: `Define the English word "${word}". ` +
+                                 'Return JSON with keys: word (string), definition (string), ' +
+                                 'examples (array of 2 example sentences), partOfSpeech (string).'
+                    }
+                ]);
             }
-            
+
             this.setCache(cacheKey, result);
             return result;
         } catch (error) {
-            console.error('AI Definition Error:', error);
+            console.error('AI Definition Error:', error.message || error);
             return await this.getMockResponse('define', word);
         }
     }
@@ -279,14 +322,25 @@ class AIService {
             if (this.provider === 'mock' || !OPENAI_API_KEY) {
                 result = await this.getMockResponse('summarize', text);
             } else {
-                // In a real implementation, call the AI API here
-                result = await this.getMockResponse('summarize', text);
+                result = await this._openaiJson([
+                    {
+                        role: 'system',
+                        content: 'You are an English language assistant helping Russian students prepare for the EGE exam. ' +
+                                 'Always respond with valid JSON only, no markdown.'
+                    },
+                    {
+                        role: 'user',
+                        content: `Summarize the following English text in 2-3 sentences and provide 3 key points. ` +
+                                 'Return JSON with keys: summary (string), keyPoints (array of 3 strings). ' +
+                                 `Text:\n${text.substring(0, 3000)}`
+                    }
+                ]);
             }
-            
+
             this.setCache(cacheKey, result);
             return result;
         } catch (error) {
-            console.error('AI Summarization Error:', error);
+            console.error('AI Summarization Error:', error.message || error);
             return await this.getMockResponse('summarize', text);
         }
     }
@@ -302,14 +356,27 @@ class AIService {
             if (this.provider === 'mock' || !OPENAI_API_KEY) {
                 result = await this.getMockResponse('grammar', text);
             } else {
-                // In a real implementation, call the AI API here
-                result = await this.getMockResponse('grammar', text);
+                result = await this._openaiJson([
+                    {
+                        role: 'system',
+                        content: 'You are an English grammar checker for Russian EGE students. ' +
+                                 'Always respond with valid JSON only, no markdown.'
+                    },
+                    {
+                        role: 'user',
+                        content: `Check the following English text for grammar and spelling errors. ` +
+                                 'Return JSON with keys: original (string), corrected (string), ' +
+                                 'suggestions (array of strings describing each issue), ' +
+                                 'score (integer 0-100 reflecting grammar quality), ' +
+                                 `message (string with overall feedback). Text: "${text}"`
+                    }
+                ]);
             }
-            
+
             this.setCache(cacheKey, result);
             return result;
         } catch (error) {
-            console.error('AI Grammar Check Error:', error);
+            console.error('AI Grammar Check Error:', error.message || error);
             return await this.getMockResponse('grammar', text);
         }
     }
@@ -321,13 +388,22 @@ class AIService {
             if (this.provider === 'mock' || !OPENAI_API_KEY) {
                 result = await this.getMockResponse('chat', message);
             } else {
-                // In a real implementation, call the AI API here with conversation history
-                result = await this.getMockResponse('chat', message);
+                const messages = [
+                    {
+                        role: 'system',
+                        content: 'You are a friendly English practice partner helping Russian students prepare for the EGE exam. ' +
+                                 'Speak only in English. Keep responses concise (2-4 sentences). ' +
+                                 'Always respond with valid JSON only, no markdown, with a single key: response (string).'
+                    },
+                    ...conversationHistory.slice(-10).map(m => ({ role: m.role, content: m.content })),
+                    { role: 'user', content: message }
+                ];
+                result = await this._openaiJson(messages, 0.7);
             }
-            
+
             return result;
         } catch (error) {
-            console.error('AI Chat Error:', error);
+            console.error('AI Chat Error:', error.message || error);
             return await this.getMockResponse('chat', message);
         }
     }
